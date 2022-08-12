@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<licensePluginReport goal="CHECK" timestamp="1660328402573">
-    <module artifactId="basepom-docs" groupId="org.basepom" version="48-SNAPSHOT"/>
-    <files>
-        <file path="pom.xml" result="PRESENT"/>
-    </files>
-</licensePluginReport>
