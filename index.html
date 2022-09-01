@@ -533,8 +533,8 @@ table.CodeRay td.code{padding:0 0 0 .75em}
 <div id="header">
 <h1>BasePOM Users Guide</h1>
 <div class="details">
-<span id="revnumber">version 48,</span>
-<span id="revdate">08/12/2022 12:29 -0700</span>
+<span id="revnumber">version 49-SNAPSHOT,</span>
+<span id="revdate">08/31/2022 19:44 -0700</span>
 </div>
 <div id="toc" class="toc2">
 <div id="toctitle">Table of Contents</div>
@@ -868,7 +868,7 @@ table.CodeRay td.code{padding:0 0 0 .75em}
     <span class="tag">&lt;parent&gt;</span>
         <span class="tag">&lt;groupId&gt;</span>org.basepom<span class="tag">&lt;/groupId&gt;</span>
         <span class="tag">&lt;artifactId&gt;</span>basepom-foundation<span class="tag">&lt;/artifactId&gt;</span>
-        <span class="tag">&lt;version&gt;</span>48<span class="tag">&lt;/version&gt;</span>
+        <span class="tag">&lt;version&gt;</span>49-SNAPSHOT<span class="tag">&lt;/version&gt;</span>
     <span class="tag">&lt;/parent&gt;</span>
 ...
 <span class="tag">&lt;/project&gt;</span></code></pre>
@@ -892,7 +892,7 @@ table.CodeRay td.code{padding:0 0 0 .75em}
     <span class="tag">&lt;parent&gt;</span>
         <span class="tag">&lt;groupId&gt;</span>org.basepom<span class="tag">&lt;/groupId&gt;</span>
         <span class="tag">&lt;artifactId&gt;</span>basepom-minimal<span class="tag">&lt;/artifactId&gt;</span>
-        <span class="tag">&lt;version&gt;</span>48<span class="tag">&lt;/version&gt;</span>
+        <span class="tag">&lt;version&gt;</span>49-SNAPSHOT<span class="tag">&lt;/version&gt;</span>
     <span class="tag">&lt;/parent&gt;</span>
 ...
 <span class="tag">&lt;/project&gt;</span></code></pre>
@@ -916,7 +916,7 @@ table.CodeRay td.code{padding:0 0 0 .75em}
     <span class="tag">&lt;parent&gt;</span>
         <span class="tag">&lt;groupId&gt;</span>org.basepom<span class="tag">&lt;/groupId&gt;</span>
         <span class="tag">&lt;artifactId&gt;</span>basepom-oss<span class="tag">&lt;/artifactId&gt;</span>
-        <span class="tag">&lt;version&gt;</span>48<span class="tag">&lt;/version&gt;</span>
+        <span class="tag">&lt;version&gt;</span>49-SNAPSHOT<span class="tag">&lt;/version&gt;</span>
     <span class="tag">&lt;/parent&gt;</span>
 ...
 <span class="tag">&lt;/project&gt;</span></code></pre>
@@ -1188,47 +1188,54 @@ contain a <code>customization</code> column that gives some guidance how common 
 <thead>
 <tr>
 <th class="tableblock halign-left valign-top">Property Name</th>
-<th class="tableblock halign-center valign-top">Default Value</th>
-<th class="tableblock halign-center valign-top">customization</th>
+<th class="tableblock halign-center valign-top">Default Value                              customization</th>
 <th class="tableblock halign-center valign-top">defined in</th>
-<th class="tableblock halign-left valign-top">function</th>
+<th class="tableblock halign-center valign-top">function</th>
+<th class="tableblock halign-left valign-top">basepom.at-end</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">basepom.at-end</p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock"><code>false</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>false</code></p></td>
 <td class="tableblock halign-center valign-top"><p class="tableblock">sometimes, policy</p></td>
 <td class="tableblock halign-center valign-top"><p class="tableblock">foundation</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Set the default value for installing and deploying artifacts in the build cycle for Multi Module projects. If <code>true</code>, the respective operation is done after all modules have been built, otherwise it is done as part of the module build cycle.</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">Set the default value for installing and deploying artifacts in the build cycle for Multi Module projects. If <code>true</code>, the respective operation is done after all modules have been built, otherwise it is done as part of the module build cycle.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">basepom.at-end.install</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">basepom.at-end.install</p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock"><code>${basepom.at-end}</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>${basepom.at-end}</code></p></td>
 <td class="tableblock halign-center valign-top"><p class="tableblock">rarely, policy</p></td>
 <td class="tableblock halign-center valign-top"><p class="tableblock">foundation</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">If <code>true</code>, install artifacts at the end of a Multi Module project build cycle.</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">If <code>true</code>, install artifacts at the end of a Multi Module project build cycle.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">basepom.at-end.deploy</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">basepom.at-end.deploy</p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock"><code>${basepom.at-end}</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>${basepom.at-end}</code></p></td>
 <td class="tableblock halign-center valign-top"><p class="tableblock">sometimes, policy</p></td>
 <td class="tableblock halign-center valign-top"><p class="tableblock">foundation</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">If <code>true</code>, deploy artifacts at the end of a Multi Module project build cycle.</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">If <code>true</code>, deploy artifacts at the end of a Multi Module project build cycle.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">basepom.install.skip</p></td>
 </tr>
 <tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>false</code></p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">rarely</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">foundation</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">If <code>true</code>, skip artifact installation.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">basepom.deploy.skip</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>${basepom.install.skip}</code></p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">rarely</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">foundation</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">If <code>true</code>, skip artifact deployment.</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">basepom.release.push-changes</p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock"><code>false</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>false</code></p></td>
 <td class="tableblock halign-center valign-top"><p class="tableblock">sometimes</p></td>
 <td class="tableblock halign-center valign-top"><p class="tableblock">foundation</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">If <code>true</code>, then running the Maven <code>release:prepare</code> goal will push changes directly to the upstream repository. Defaults to <code>false</code>.</p></td>
-</tr>
-<tr>
+<td class="tableblock halign-center valign-top"><p class="tableblock">If <code>true</code>, then running the Maven <code>release:prepare</code> goal will push changes directly to the upstream repository. Defaults to <code>false</code>.</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">basepom.release.tag-name-format</p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock"><code>@{project.artifactId}-@{project.version}</code></p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock">often</p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock">foundation</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Name tag format for the release tag. See the <a href="https://maven.apache.org/maven-release/maven-release-plugin/prepare-mojo.html#tagNameFormat">Maven Release Plugin Documentation</a> for details.</p></td>
 </tr>
 </tbody>
 </table>
@@ -1269,6 +1276,13 @@ contain a <code>customization</code> column that gives some guidance how common 
 <td class="tableblock halign-center valign-top"><p class="tableblock">sometimes</p></td>
 <td class="tableblock halign-center valign-top"><p class="tableblock">foundation</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Controls the <a href="https://docs.oracle.com/javase/8/docs/technotes/tools/windows/javadoc.html#BEJEFABE">Javadoc <code>-Xdoclint</code> setting</a>.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">basepom.javadoc.exclude-package-names</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">``</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">sometimes</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">foundation</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Allows exclusion of package names from javadoc generation. See <a href="https://maven.apache.org/plugins/maven-javadoc-plugin/javadoc-mojo.html#excludePackageNames">Maven javadoc plugin</a> documentation for the exact syntax.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">basepom.javadoc.show</p></td>
@@ -1338,6 +1352,13 @@ contain a <code>customization</code> column that gives some guidance how common 
 <td class="tableblock halign-center valign-top"><p class="tableblock">foundation</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Memory for each forked VM.</p></td>
 </tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">basepom.test.groups</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">``</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">sometimes</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">foundation</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Test group selection for unit tests.</p></td>
+</tr>
 </tbody>
 </table>
 </div>
@@ -1391,6 +1412,13 @@ contain a <code>customization</code> column that gives some guidance how common 
 <td class="tableblock halign-center valign-top"><p class="tableblock">often, policy</p></td>
 <td class="tableblock halign-center valign-top"><p class="tableblock">foundation</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Maximum time in seconds that an integration test can run.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">basepom.it.groups</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">``</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">sometimes</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">foundation</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Test group selection for integration tests.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><span id="invoker-folder">basepom.invoker.folder</span></p></td>
@@ -2058,6 +2086,20 @@ the group properties <code>basepom.check.skip|fail-basic</code> and <code>basepo
 <td class="tableblock halign-center valign-top"><p class="tableblock">sometimes, policy</p></td>
 <td class="tableblock halign-center valign-top"><p class="tableblock">foundation</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Controls which severity levels are considered a violation. Only violations fail the build. Valid values are <code>info</code>, <code>warning</code> and <code>error</code></p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">basepom.dependency-management.allow-versions</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><code>false</code></p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">sometimes, policy</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">foundation</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">If <code>true</code>, dependencies are allowed to specify versions to override the <code>&lt;dependencyManagement&gt;</code> section</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">basepom.dependency-management.allow-exclusions</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><code>false</code></p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">sometimes, policy</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">foundation</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">If <code>true</code>, dependencies are allowed to contain <code>&lt;exclusions&gt;</code> elements to override the <code>&lt;dependencyManagement&gt;</code> section</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">basepom.dependency-management.dependencies</p></td>
@@ -3141,6 +3183,20 @@ the group properties <code>basepom.check.skip|fail-basic</code> and <code>basepo
 <td class="tableblock halign-left valign-top"><p class="tableblock">The settings id used for authenticating the site repository</p></td>
 </tr>
 <tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">basepom.site.scm.try-update</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">false</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">sometimes</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">foundation</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">If true, try a local scm update first before doing a full checkout.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">basepom.site.scm.checkout-directory</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><code>${java.io.tmpdir}/gh-pages-publish/${project.name}</code></p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">sometimes</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">foundation</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">the local checkout directory for the site.</p></td>
+</tr>
+<tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">basepom.site.test.skip</p></td>
 <td class="tableblock halign-center valign-top"><p class="tableblock"><code>${basepom.test.skip}</code></p></td>
 <td class="tableblock halign-center valign-top"><p class="tableblock">rarely</p></td>
@@ -3312,8 +3368,8 @@ the group properties <code>basepom.check.skip|fail-basic</code> and <code>basepo
 </div>
 <div id="footer">
 <div id="footer-text">
-Version 48<br>
-Last updated 08/12/2022 12:29 -0700
+Version 49-SNAPSHOT<br>
+Last updated 08/31/2022 19:44 -0700
 </div>
 </div>
 </body>
