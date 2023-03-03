@@ -533,13 +533,13 @@ table.CodeRay td.code{padding:0 0 0 .75em}
 <div id="header">
 <h1>BasePOM Users Guide</h1>
 <div class="details">
-<span id="revnumber">version 52-SNAPSHOT,</span>
-<span id="revdate">01/03/2023 21:04 -0800</span>
+<span id="revnumber">version 53-SNAPSHOT,</span>
+<span id="revdate">03/02/2023 21:44 -0800</span>
 </div>
 <div id="toc" class="toc2">
 <div id="toctitle">Table of Contents</div>
 <ul class="sectlevel1">
-<li><a href="#_development_documentation_52_snapshot">Development documentation (52-SNAPSHOT)</a>
+<li><a href="#_development_documentation_53_snapshot">Development documentation (53-SNAPSHOT)</a>
 <ul class="sectlevel2">
 <li><a href="#_release_documentation">Release documentation</a></li>
 </ul>
@@ -587,7 +587,8 @@ table.CodeRay td.code{padding:0 0 0 .75em}
 <li><a href="#_basepom_invoker_integration_testing_foundation">8.1.1. <code>basepom.invoker-integration-testing</code> (foundation)</a></li>
 <li><a href="#_basepom_executable_foundation">8.1.2. <code>basepom.executable</code> (foundation)</a></li>
 <li><a href="#_basepom_oss_release_oss">8.1.3. <code>basepom.oss-release</code> (oss)</a></li>
-<li><a href="#_basepom_invoker_reporting_oss">8.1.4. <code>basepom.invoker-reporting</code> (oss)</a></li>
+<li><a href="#_basepom_default_release_oss">8.1.4. <code>basepom.default-release</code> (oss)</a></li>
+<li><a href="#_basepom_invoker_reporting_oss">8.1.5. <code>basepom.invoker-reporting</code> (oss)</a></li>
 </ul>
 </li>
 </ul>
@@ -620,7 +621,7 @@ table.CodeRay td.code{padding:0 0 0 .75em}
 </div>
 <div id="content">
 <div class="sect1">
-<h2 id="_development_documentation_52_snapshot"><a class="anchor" href="#_development_documentation_52_snapshot"></a><a class="link" href="#_development_documentation_52_snapshot">Development documentation (52-SNAPSHOT)</a></h2>
+<h2 id="_development_documentation_53_snapshot"><a class="anchor" href="#_development_documentation_53_snapshot"></a><a class="link" href="#_development_documentation_53_snapshot">Development documentation (53-SNAPSHOT)</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>This is the documentation for the current development state of the BasePOM project. All information in here reflects the current state of development on the <code>main</code> branch and is subject to change until it has been released as a numbered version.</p>
@@ -642,6 +643,9 @@ table.CodeRay td.code{padding:0 0 0 .75em}
 <h3 id="_release_documentation"><a class="anchor" href="#_release_documentation"></a><a class="link" href="#_release_documentation">Release documentation</a></h3>
 <div class="ulist">
 <ul>
+<li>
+<p><a href="https://basepom.org/releases/52">Release 52 - 2023-03-02</a></p>
+</li>
 <li>
 <p><a href="https://basepom.org/releases/51">Release 51 - 2023-01-03</a></p>
 </li>
@@ -747,7 +751,8 @@ table.CodeRay td.code{padding:0 0 0 .75em}
 <p>release and site:
 <a href="https://maven.apache.org/scm/maven-scm-plugin/">scm</a>,
 <a href="https://maven.apache.org/maven-release/maven-release-plugin/">release</a>,
-<a href="https://maven.apache.org/plugins/maven-gpg-plugin/">gpg</a></p>
+<a href="https://maven.apache.org/plugins/maven-gpg-plugin/">gpg</a>,
+<a href="https://github.com/sonatype/nexus-maven-plugins/">nexus-staging</a></p>
 </li>
 <li>
 <p>site building:
@@ -913,7 +918,7 @@ table.CodeRay td.code{padding:0 0 0 .75em}
     <span class="tag">&lt;parent&gt;</span>
         <span class="tag">&lt;groupId&gt;</span>org.basepom<span class="tag">&lt;/groupId&gt;</span>
         <span class="tag">&lt;artifactId&gt;</span>basepom-foundation<span class="tag">&lt;/artifactId&gt;</span>
-        <span class="tag">&lt;version&gt;</span>52-SNAPSHOT<span class="tag">&lt;/version&gt;</span>
+        <span class="tag">&lt;version&gt;</span>53-SNAPSHOT<span class="tag">&lt;/version&gt;</span>
     <span class="tag">&lt;/parent&gt;</span>
 ...
 <span class="tag">&lt;/project&gt;</span></code></pre>
@@ -937,7 +942,7 @@ table.CodeRay td.code{padding:0 0 0 .75em}
     <span class="tag">&lt;parent&gt;</span>
         <span class="tag">&lt;groupId&gt;</span>org.basepom<span class="tag">&lt;/groupId&gt;</span>
         <span class="tag">&lt;artifactId&gt;</span>basepom-minimal<span class="tag">&lt;/artifactId&gt;</span>
-        <span class="tag">&lt;version&gt;</span>52-SNAPSHOT<span class="tag">&lt;/version&gt;</span>
+        <span class="tag">&lt;version&gt;</span>53-SNAPSHOT<span class="tag">&lt;/version&gt;</span>
     <span class="tag">&lt;/parent&gt;</span>
 ...
 <span class="tag">&lt;/project&gt;</span></code></pre>
@@ -947,7 +952,7 @@ table.CodeRay td.code{padding:0 0 0 .75em}
 <dl>
 <dt class="hdlist1">oss</dt>
 <dd>
-<p>A Policy POM for releasing and distributing projects through the Sonatype OSS repository. It can be used as a parent POM for projects that distribute their artifacts through OSS.</p>
+<p>A Policy POM for releasing and distributing projects through the Sonatype OSS repository. It can be used as a parent POM for projects that distribute their artifacts through OSS. The plugin uses the Sonatype Nexus staging plugin by default to deploy a project to OSS.</p>
 </dd>
 </dl>
 </div>
@@ -961,7 +966,7 @@ table.CodeRay td.code{padding:0 0 0 .75em}
     <span class="tag">&lt;parent&gt;</span>
         <span class="tag">&lt;groupId&gt;</span>org.basepom<span class="tag">&lt;/groupId&gt;</span>
         <span class="tag">&lt;artifactId&gt;</span>basepom-oss<span class="tag">&lt;/artifactId&gt;</span>
-        <span class="tag">&lt;version&gt;</span>52-SNAPSHOT<span class="tag">&lt;/version&gt;</span>
+        <span class="tag">&lt;version&gt;</span>53-SNAPSHOT<span class="tag">&lt;/version&gt;</span>
     <span class="tag">&lt;/parent&gt;</span>
 ...
 <span class="tag">&lt;/project&gt;</span></code></pre>
@@ -1233,54 +1238,89 @@ contain a <code>customization</code> column that gives some guidance how common 
 <thead>
 <tr>
 <th class="tableblock halign-left valign-top">Property Name</th>
-<th class="tableblock halign-center valign-top">Default Value                              customization</th>
+<th class="tableblock halign-center valign-top">Default Value</th>
+<th class="tableblock halign-center valign-top">customization</th>
 <th class="tableblock halign-center valign-top">defined in</th>
-<th class="tableblock halign-center valign-top">function</th>
-<th class="tableblock halign-left valign-top">basepom.at-end</th>
+<th class="tableblock halign-left valign-top">function</th>
 </tr>
 </thead>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>false</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">basepom.at-end</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><code>false</code></p></td>
 <td class="tableblock halign-center valign-top"><p class="tableblock">sometimes, policy</p></td>
 <td class="tableblock halign-center valign-top"><p class="tableblock">foundation</p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock">Set the default value for installing and deploying artifacts in the build cycle for Multi Module projects. If <code>true</code>, the respective operation is done after all modules have been built, otherwise it is done as part of the module build cycle.</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">basepom.at-end.install</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Set the default value for installing and deploying artifacts in the build cycle for Multi Module projects. If <code>true</code>, the respective operation is done after all modules have been built, otherwise it is done as part of the module build cycle.</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>${basepom.at-end}</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">basepom.at-end.install</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><code>${basepom.at-end}</code></p></td>
 <td class="tableblock halign-center valign-top"><p class="tableblock">rarely, policy</p></td>
 <td class="tableblock halign-center valign-top"><p class="tableblock">foundation</p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock">If <code>true</code>, install artifacts at the end of a Multi Module project build cycle.</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">basepom.at-end.deploy</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">If <code>true</code>, install artifacts at the end of a Multi Module project build cycle.</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>${basepom.at-end}</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">basepom.at-end.deploy</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><code>${basepom.at-end}</code></p></td>
 <td class="tableblock halign-center valign-top"><p class="tableblock">sometimes, policy</p></td>
 <td class="tableblock halign-center valign-top"><p class="tableblock">foundation</p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock">If <code>true</code>, deploy artifacts at the end of a Multi Module project build cycle.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">If <code>true</code>, deploy artifacts at the end of a Multi Module project build cycle.</p></td>
+</tr>
+<tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">basepom.install.skip</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>false</code></p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><code>false</code></p></td>
 <td class="tableblock halign-center valign-top"><p class="tableblock">rarely</p></td>
 <td class="tableblock halign-center valign-top"><p class="tableblock">foundation</p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock">If <code>true</code>, skip artifact installation.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">If <code>true</code>, skip artifact installation.</p></td>
+</tr>
+<tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">basepom.deploy.skip</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>${basepom.install.skip}</code></p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><code>${basepom.install.skip}</code></p></td>
 <td class="tableblock halign-center valign-top"><p class="tableblock">rarely</p></td>
 <td class="tableblock halign-center valign-top"><p class="tableblock">foundation</p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock">If <code>true</code>, skip artifact deployment.</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">basepom.release.push-changes</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">If <code>true</code>, skip artifact deployment.</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>false</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">basepom.release.profiles</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><code>basepom.oss-release</code></p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">rarely</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">oss</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Sets the name of one or more release profiles. Multiple release profiles must be comma-separated. By default, the <code>basepom.oss-release</code> profile is used which uploads to Sonatype OSS using the Nexus Staging plugin. For other repositories that do not support staging, the <code>basepom.default-release</code> profile can be used.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">basepom.release.push-changes</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><code>false</code></p></td>
 <td class="tableblock halign-center valign-top"><p class="tableblock">sometimes</p></td>
 <td class="tableblock halign-center valign-top"><p class="tableblock">foundation</p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock">If <code>true</code>, then running the Maven <code>release:prepare</code> goal will push changes directly to the upstream repository. Defaults to <code>false</code>.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">If <code>true</code>, then running the Maven <code>release:prepare</code> goal will push changes directly to the upstream repository. Defaults to <code>false</code>.</p></td>
+</tr>
+<tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">basepom.release.tag-name-format</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><code>@{project.artifactId}-@{project.version}</code></p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">often</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">foundation</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Name tag format for the release tag. See the <a href="https://maven.apache.org/maven-release/maven-release-plugin/prepare-mojo.html#tagNameFormat">Maven Release Plugin Documentation</a> for details.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">basepom.nexus-staging.skip</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><code>true</code></p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">rarely</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">oss</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">If <code>true</code> skips artifact installation.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">basepom.nexus-staging.staging-url</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><code><a href="https://s01.oss.sonatype.org/" class="bare">https://s01.oss.sonatype.org/</a></code></p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">rarely</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">oss</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The staging repository for deploying to Sonatype OSS. Used only with the nexus staging plugin. The deploy plugin uses the standard maven repository settings.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">basepom.nexus-staging.release-after-close</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><code>false</code></p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">often</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">oss</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Whether to release right after the deployment ends. The default is <code>false</code> (either run <code>mvn nexus-staging:release</code> or use the Sonatype OSS GUI to deploy).</p></td>
 </tr>
 </tbody>
 </table>
@@ -1717,6 +1757,11 @@ contain a <code>customization</code> column that gives some guidance how common 
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>dep.plugin.license.version</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">oss</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>dep.plugin.nexus-staging.version</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">oss</p></td>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
@@ -2549,6 +2594,65 @@ the group properties <code>basepom.check.skip|fail-basic</code> and <code>basepo
 <div class="ulist">
 <ul>
 <li>
+<p>disables the regular <code>maven-deploy-plugin</code></p>
+</li>
+<li>
+<p>skip unit tests (all tests have already passed as part of the release process)</p>
+</li>
+<li>
+<p>skip all checkers that are following the <code>basepom.check.skip-all</code> setting (they have already been executed as part of the release process)</p>
+</li>
+<li>
+<p>always create a <code>javadoc</code> artifact</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>This profile adds the following goals to the lifecycle:</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 10%;">
+<col style="width: 10%;">
+<col style="width: 10%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Plugin</th>
+<th class="tableblock halign-center valign-top">Phase</th>
+<th class="tableblock halign-center valign-top">execution id</th>
+<th class="tableblock halign-center valign-top">goal(s)</th>
+<th class="tableblock halign-left valign-top">function</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>maven-gpg-plugin</code></p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">verify</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">basepom.release.default</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">sign</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">create GPG signature for releasing to OSS</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>maven-nexus-staging-plugin</code></p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">deploy</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">basepom.release.default</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">deploy</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">deploy the project to the Nexus OSS staging area. Depending on the setting of <code>basepom.nexus-staging.release-after-close</code>, the project will be directly released, otherwise the repo will be closed and must be released in an additional step.</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect3">
+<h4 id="_basepom_default_release_oss"><a class="anchor" href="#_basepom_default_release_oss"></a><a class="link" href="#_basepom_default_release_oss">8.1.4. <code>basepom.default-release</code> (oss)</a></h4>
+<div class="paragraph">
+<p>This is an alternate release profile for releasing an artifact to a non-staging repository. It must be activated by replacing <code>basepom.oss-release</code> in the <code>basepom.release.profiles</code> property with <code>basepom.default-release</code>.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
 <p>skip unit tests (all tests have already passed as part of the release process)</p>
 </li>
 <li>
@@ -2591,7 +2695,7 @@ the group properties <code>basepom.check.skip|fail-basic</code> and <code>basepo
 </table>
 </div>
 <div class="sect3">
-<h4 id="_basepom_invoker_reporting_oss"><a class="anchor" href="#_basepom_invoker_reporting_oss"></a><a class="link" href="#_basepom_invoker_reporting_oss">8.1.4. <code>basepom.invoker-reporting</code> (oss)</a></h4>
+<h4 id="_basepom_invoker_reporting_oss"><a class="anchor" href="#_basepom_invoker_reporting_oss"></a><a class="link" href="#_basepom_invoker_reporting_oss">8.1.5. <code>basepom.invoker-reporting</code> (oss)</a></h4>
 <div class="paragraph">
 <p>This profile activates if the build module contains a <code>src/it</code> directory.</p>
 </div>
@@ -2932,7 +3036,7 @@ the group properties <code>basepom.check.skip|fail-basic</code> and <code>basepo
 <p>configure the OSS repositories for snapshot and release distribution. The repositories are configured as <code>sonatype-nexus-snapshots</code> and <code>sonatype-nexus-staging</code>. The local <code>settings.xml</code> file must contain credentials for these ids to authenticate to the repositories for artifact upload.</p>
 </li>
 <li>
-<p>set the <code>basepom.oss-release</code> profile as release profile for the <code>maven-release-plugin</code></p>
+<p>set the <code>basepom.oss-release</code> profile as release profile for the <code>maven-release-plugin</code>, which uses the nexus staging plugin to upload the project.</p>
 </li>
 </ul>
 </div>
@@ -3147,7 +3251,7 @@ the group properties <code>basepom.check.skip|fail-basic</code> and <code>basepo
 <p>exclude all files in the <code>src/license</code> tree</p>
 </li>
 <li>
-<p>exclude all <code>CNAME</code> files</p>
+<p>exclude all <code>CNAME</code> and <code>.keepme</code> files</p>
 </li>
 </ul>
 </div>
@@ -3413,8 +3517,8 @@ the group properties <code>basepom.check.skip|fail-basic</code> and <code>basepo
 </div>
 <div id="footer">
 <div id="footer-text">
-Version 52-SNAPSHOT<br>
-Last updated 01/03/2023 21:04 -0800
+Version 53-SNAPSHOT<br>
+Last updated 03/02/2023 21:44 -0800
 </div>
 </div>
 </body>
