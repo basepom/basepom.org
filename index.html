@@ -534,7 +534,7 @@ table.CodeRay td.code{padding:0 0 0 .75em}
 <h1>BasePOM Users Guide</h1>
 <div class="details">
 <span id="revnumber">version 54-SNAPSHOT,</span>
-<span id="revdate">05/28/2023 18:17 -0700</span>
+<span id="revdate">05/30/2023 21:34 -0700</span>
 </div>
 <div id="toc" class="toc2">
 <div id="toctitle">Table of Contents</div>
@@ -545,7 +545,11 @@ table.CodeRay td.code{padding:0 0 0 .75em}
 </ul>
 </li>
 <li><a href="#_introduction">1. Introduction</a></li>
-<li><a href="#_features">2. Features</a></li>
+<li><a href="#_features">2. Features</a>
+<ul class="sectlevel2">
+<li><a href="#_basepom_maven_plugins">2.1. BasePOM Maven Plugins</a></li>
+</ul>
+</li>
 <li><a href="#_overview">3. Overview</a>
 <ul class="sectlevel2">
 <li><a href="#_requirements">3.1. Requirements</a></li>
@@ -586,9 +590,10 @@ table.CodeRay td.code{padding:0 0 0 .75em}
 <ul class="sectlevel3">
 <li><a href="#_basepom_invoker_integration_testing_foundation">8.1.1. <code>basepom.invoker-integration-testing</code> (foundation)</a></li>
 <li><a href="#_basepom_executable_foundation">8.1.2. <code>basepom.executable</code> (foundation)</a></li>
-<li><a href="#_basepom_deploy_release_oss">8.1.3. <code>basepom.deploy-release</code> (oss)</a></li>
-<li><a href="#_basepom_oss_release_oss">8.1.4. <code>basepom.oss-release</code> (oss)</a></li>
-<li><a href="#_basepom_invoker_reporting_oss">8.1.5. <code>basepom.invoker-reporting</code> (oss)</a></li>
+<li><a href="#_basepom_repack_foundation">8.1.3. <code>basepom.repack</code> (foundation)</a></li>
+<li><a href="#_basepom_deploy_release_oss">8.1.4. <code>basepom.deploy-release</code> (oss)</a></li>
+<li><a href="#_basepom_oss_release_oss">8.1.5. <code>basepom.oss-release</code> (oss)</a></li>
+<li><a href="#_basepom_invoker_reporting_oss">8.1.6. <code>basepom.invoker-reporting</code> (oss)</a></li>
 </ul>
 </li>
 </ul>
@@ -601,7 +606,8 @@ table.CodeRay td.code{padding:0 0 0 .75em}
 <li><a href="#_pmd_plugin_configuration">9.1.2. <code>pmd</code> plugin configuration</a></li>
 <li><a href="#_dependency_plugin_configuration">9.1.3. <code>dependency</code> plugin configuration</a></li>
 <li><a href="#_shade_plugin_configuration">9.1.4. <code>shade</code> plugin configuration</a></li>
-<li><a href="#_surefire_and_failsafe_plugins">9.1.5. <code>surefire</code> and <code>failsafe</code> plugins</a></li>
+<li><a href="#_repack_plugin_configuration">9.1.5. <code>repack</code> plugin configuration</a></li>
+<li><a href="#_surefire_and_failsafe_plugins">9.1.6. <code>surefire</code> and <code>failsafe</code> plugins</a></li>
 </ul>
 </li>
 <li><a href="#_the_oss_policy_pom">9.2. The <code>oss</code> Policy POM</a></li>
@@ -612,7 +618,8 @@ table.CodeRay td.code{padding:0 0 0 .75em}
 <li><a href="#_unit_and_integration_tests_and_code_coverage">10.1. Unit and integration tests and code coverage</a></li>
 <li><a href="#_jar_properties">10.2. Jar properties</a></li>
 <li><a href="#_jar_shading">10.3. Jar shading</a></li>
-<li><a href="#_using_the_license_plugin">10.4. Using the license plugin</a></li>
+<li><a href="#_jar_repacking">10.4. Jar repacking</a></li>
+<li><a href="#_using_the_license_plugin">10.5. Using the license plugin</a></li>
 </ul>
 </li>
 <li><a href="#_maven_site_generation">11. Maven Site generation</a></li>
@@ -720,6 +727,7 @@ table.CodeRay td.code{padding:0 0 0 .75em}
 <a href="https://maven.apache.org/plugins/maven-assembly-plugin/">assembly</a>,
 <a href="https://maven.apache.org/plugins/maven-jar-plugin/">jar</a>,
 <a href="https://maven.apache.org/plugins/maven-javadoc-plugin/">javadoc</a>,
+<a href="https://basepom.github.io/repack-maven-plugin/">repack</a>,
 <a href="https://maven.apache.org/plugins/maven-source-plugin/">source</a>,
 <a href="https://maven.apache.org/plugins/maven-shade-plugin/">shade</a>,
 <a href="https://maven.apache.org/jxr/maven-jxr-plugin/">jxr</a></p>
@@ -734,10 +742,10 @@ table.CodeRay td.code{padding:0 0 0 .75em}
 <p>build quality:
 <a href="https://maven.apache.org/enforcer/maven-enforcer-plugin/">enforcer</a>,
 <a href="https://maven.apache.org/plugins/maven-dependency-plugin/">dependency</a>,
-<a href="https://basepom.github.io/dependency-versions-check-maven-plugin/">dependency-versions-check</a>,
 <a href="https://github.com/basepom/maven-plugins/">dependency-management</a>,
 <a href="https://github.com/basepom/maven-plugins/">dependency-scope</a>,
-<a href="https://github.com/basepom/duplicate-finder-maven-plugin/wiki">duplicate-finder</a>,
+<a href="https://basepom.github.io/dependency-versions-check-maven-plugin/">dependency-versions-check</a>,
+<a href="https://basepom.github.io/duplicate-finder-maven-plugin/">duplicate-finder</a>,
 <a href="https://spotbugs.github.io/spotbugs-maven-plugin/">spotbugs</a>,
 <a href="https://maven.apache.org/plugins/maven-pmd-plugin/">pmd</a>,
 <a href="https://maven.apache.org/plugins/maven-checkstyle-plugin/">checkstyle</a>,
@@ -747,7 +755,7 @@ table.CodeRay td.code{padding:0 0 0 .75em}
 <li>
 <p>tools:
 <a href="https://www.mojohaus.org/build-helper-maven-plugin/">build-helper</a>,
-<a href="https://github.com/basepom/maven-plugins/">property-helper</a>,
+<a href="https://basepom.github.io/property-helper-maven-plugin/">property-helper</a>,
 <a href="https://github.com/git-commit-id/git-commit-id-maven-plugin/blob/master/docs/using-the-plugin.md">git-commit-id</a>,
 <a href="https://github.com/brianm/really-executable-jars-maven-plugin/">really-executable-jar</a></p>
 </li>
@@ -804,6 +812,37 @@ table.CodeRay td.code{padding:0 0 0 .75em}
 </td>
 </tr>
 </table>
+</div>
+<div class="sect2">
+<h3 id="_basepom_maven_plugins"><a class="anchor" href="#_basepom_maven_plugins"></a><a class="link" href="#_basepom_maven_plugins">2.1. BasePOM Maven Plugins</a></h3>
+<div class="paragraph">
+<p>The BasePOM project maintains a number of Apache Maven plugins that are useful outside the BasePOM project as well:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><a href="https://basepom.github.io/dependency-versions-check-maven-plugin/">dependency-versions-check</a> - verifies that the resolved versions of project dependencies are mutually compatible to each other</p>
+</li>
+<li>
+<p><a href="https://basepom.github.io/duplicate-finder-maven-plugin/">duplicate-finder</a> - Finds and flags duplicate and conflicting classes and resources on the java classpath</p>
+</li>
+<li>
+<p><a href="https://basepom.github.io/property-helper-maven-plugin/">property-helper</a> - generate and manipulate properties during the build process</p>
+</li>
+<li>
+<p><a href="https://basepom.github.io/inline-maven-plugin/">inline</a> - inlines dependencies into a main artifact by rewriting classes and resources</p>
+</li>
+<li>
+<p><a href="https://basepom.github.io/repack-maven-plugin/">repack</a> - repacks code and its dependencies into a single archive for applications and services</p>
+</li>
+<li>
+<p><a href="https://github.com/basepom/maven-plugins/">dependency-management</a> - validates that the versions in dependency management and plugin management match the resolved versions</p>
+</li>
+<li>
+<p><a href="https://github.com/basepom/maven-plugins/">dependency-scope</a> - ensures that tests scoped dependencies do not override dependencies in compile scope</p>
+</li>
+</ul>
+</div>
 </div>
 </div>
 </div>
@@ -1638,9 +1677,16 @@ contain a <code>customization</code> column that gives some guidance how common 
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">basepom.shaded.main-class</p></td>
 <td class="tableblock halign-center valign-top"><p class="tableblock">(empty)</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><strong>deprecated</strong></p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">minimal</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Defines the main class for a shaded jar (using the <code>basepom.executable</code> profile). This option was ill-named and should be replaced with the <code>basepom.main-class</code> option which works for both shaded and repacked jars.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">basepom.main-class</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><code>${basepom.shaded.main-class}</code></p></td>
 <td class="tableblock halign-center valign-top"><p class="tableblock">often</p></td>
 <td class="tableblock halign-center valign-top"><p class="tableblock">minimal</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Defines the main class for the executable jar.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Defines the main class for the executable jar when shading or repacking an artifact.</p></td>
 </tr>
 </tbody>
 </table>
@@ -2550,7 +2596,7 @@ the group properties <code>basepom.check.skip|fail-basic</code> and <code>basepo
 <div class="sect3">
 <h4 id="_basepom_executable_foundation"><a class="anchor" href="#_basepom_executable_foundation"></a><a class="link" href="#_basepom_executable_foundation">8.1.2. <code>basepom.executable</code> (foundation)</a></h4>
 <div class="paragraph">
-<p>This profile activates if a <code>.build-executable</code> file exists in the current build module. This file only need to exist, it can be empty.</p>
+<p>This profile activates if a <code>.build-executable</code> file exists in the current build module. This file only needs to exist, it can be empty.</p>
 </div>
 <div class="admonitionblock warning">
 <table>
@@ -2605,7 +2651,64 @@ the group properties <code>basepom.check.skip|fail-basic</code> and <code>basepo
 </table>
 </div>
 <div class="sect3">
-<h4 id="_basepom_deploy_release_oss"><a class="anchor" href="#_basepom_deploy_release_oss"></a><a class="link" href="#_basepom_deploy_release_oss">8.1.3. <code>basepom.deploy-release</code> (oss)</a></h4>
+<h4 id="_basepom_repack_foundation"><a class="anchor" href="#_basepom_repack_foundation"></a><a class="link" href="#_basepom_repack_foundation">8.1.3. <code>basepom.repack</code> (foundation)</a></h4>
+<div class="paragraph">
+<p>This profile activates if a <code>.repack-executable</code> file exists in the current build module. This file only needs to exist, it can be empty.</p>
+</div>
+<div class="admonitionblock warning">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-warning" title="Warning"></i>
+</td>
+<td class="content">
+<div class="paragraph">
+<p>This profile is experimental. While it is possible to build executables, there are a number of configuration options of the <code>repack</code> plugin that have not been exposed yet. This profile will ultimately replace the <code>basepom.executable</code> profile.</p>
+</div>
+</td>
+</tr>
+</table>
+</div>
+<div class="paragraph">
+<p>This profile adds the following goals to the lifecycle:</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 10%;">
+<col style="width: 10%;">
+<col style="width: 10%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Plugin</th>
+<th class="tableblock halign-center valign-top">Phase</th>
+<th class="tableblock halign-center valign-top">execution id</th>
+<th class="tableblock halign-center valign-top">goal(s)</th>
+<th class="tableblock halign-left valign-top">function</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>repack-maven-plugin</code></p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">package</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">basepom.repack.default</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">repack</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">repacks the main artifact with all dependencies</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>really-executable-jar-maven-plugin</code></p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">package</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">basepom.repack.default</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">really-executable-jar</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">create an executable from the repacked jar</p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="sect3">
+<h4 id="_basepom_deploy_release_oss"><a class="anchor" href="#_basepom_deploy_release_oss"></a><a class="link" href="#_basepom_deploy_release_oss">8.1.4. <code>basepom.deploy-release</code> (oss)</a></h4>
 <div class="paragraph">
 <p>This is the release profile for releasing an artifact to the OSS repository (and subsequently to Maven Central). It is configured as release profile for the <code>release</code> plugin if the <code>oss</code> BasePOM is used. It gets activated when executing the <code>release:perform</code> goal of the <code>release</code> plugin.</p>
 </div>
@@ -2654,7 +2757,7 @@ the group properties <code>basepom.check.skip|fail-basic</code> and <code>basepo
 </table>
 </div>
 <div class="sect3">
-<h4 id="_basepom_oss_release_oss"><a class="anchor" href="#_basepom_oss_release_oss"></a><a class="link" href="#_basepom_oss_release_oss">8.1.4. <code>basepom.oss-release</code> (oss)</a></h4>
+<h4 id="_basepom_oss_release_oss"><a class="anchor" href="#_basepom_oss_release_oss"></a><a class="link" href="#_basepom_oss_release_oss">8.1.5. <code>basepom.oss-release</code> (oss)</a></h4>
 <div class="paragraph">
 <p>This is an alternate release profile for releasing an artifact to a non-staging repository. It must be activated by replacing <code>basepom.deploy-release</code> in the <code>basepom.release.profiles</code> property with <code>basepom.oss-release</code>.</p>
 </div>
@@ -2725,7 +2828,7 @@ This profile is <strong>experimental</strong> and is known to have problems with
 </div>
 </div>
 <div class="sect3">
-<h4 id="_basepom_invoker_reporting_oss"><a class="anchor" href="#_basepom_invoker_reporting_oss"></a><a class="link" href="#_basepom_invoker_reporting_oss">8.1.5. <code>basepom.invoker-reporting</code> (oss)</a></h4>
+<h4 id="_basepom_invoker_reporting_oss"><a class="anchor" href="#_basepom_invoker_reporting_oss"></a><a class="link" href="#_basepom_invoker_reporting_oss">8.1.6. <code>basepom.invoker-reporting</code> (oss)</a></h4>
 <div class="paragraph">
 <p>This profile activates if the build module contains a <code>src/it</code> directory.</p>
 </div>
@@ -2990,7 +3093,7 @@ This profile is <strong>experimental</strong> and is known to have problems with
 <div class="sect3">
 <h4 id="_shade_plugin_configuration"><a class="anchor" href="#_shade_plugin_configuration"></a><a class="link" href="#_shade_plugin_configuration">9.1.4. <code>shade</code> plugin configuration</a></h4>
 <div class="paragraph">
-<p>The <code>shade</code> plugin is used to repack a build artifact and all its dependencies into a single "fat jar".</p>
+<p>The <code>shade</code> plugin is used to "shade" a build artifact and all its dependencies into a single "fat jar" by rewriting packages and classes.</p>
 </div>
 <div class="paragraph">
 <p>In the <code>minimal</code> Policy POM, the <code>shade</code> plugin is configured to</p>
@@ -2998,7 +3101,7 @@ This profile is <strong>experimental</strong> and is known to have problems with
 <div class="ulist">
 <ul>
 <li>
-<p>support <code>basepom.shaded.main-class</code> to configure main class for a shaded jar</p>
+<p>support <code>basepom.main-class</code> to configure main class for a shaded jar</p>
 </li>
 <li>
 <p>collect all additional, named sections from dependencies into the shaded jar</p>
@@ -3010,7 +3113,23 @@ This profile is <strong>experimental</strong> and is known to have problems with
 </div>
 </div>
 <div class="sect3">
-<h4 id="_surefire_and_failsafe_plugins"><a class="anchor" href="#_surefire_and_failsafe_plugins"></a><a class="link" href="#_surefire_and_failsafe_plugins">9.1.5. <code>surefire</code> and <code>failsafe</code> plugins</a></h4>
+<h4 id="_repack_plugin_configuration"><a class="anchor" href="#_repack_plugin_configuration"></a><a class="link" href="#_repack_plugin_configuration">9.1.5. <code>repack</code> plugin configuration</a></h4>
+<div class="paragraph">
+<p>The <code>repack</code> plugin can create a "fat jar" artifact from a build artifact by including all its dependencies into a single jar. It does not rewrite any classes or unpack dependencies.</p>
+</div>
+<div class="paragraph">
+<p>In the <code>minimal</code> Policy POM, the <code>repack</code> plugin is configured to</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>support <code>basepom.main-class</code> to configure main class for a repacked jar</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect3">
+<h4 id="_surefire_and_failsafe_plugins"><a class="anchor" href="#_surefire_and_failsafe_plugins"></a><a class="link" href="#_surefire_and_failsafe_plugins">9.1.6. <code>surefire</code> and <code>failsafe</code> plugins</a></h4>
 <div class="paragraph">
 <p>The <code>minimal</code> BasePOM adds a few system properties for testing.</p>
 </div>
@@ -3250,7 +3369,16 @@ This profile is <strong>experimental</strong> and is known to have problems with
 </div>
 </div>
 <div class="sect2">
-<h3 id="_using_the_license_plugin"><a class="anchor" href="#_using_the_license_plugin"></a><a class="link" href="#_using_the_license_plugin">10.4. Using the license plugin</a></h3>
+<h3 id="_jar_repacking"><a class="anchor" href="#_jar_repacking"></a><a class="link" href="#_jar_repacking">10.4. Jar repacking</a></h3>
+<div class="paragraph">
+<p>The <code>repack-maven-plugin</code> is used to create single artifacts with all dependencies ("fat jars") for a project. This method adds all dependencies "as is" (it does not rewrite the contents of main jar or unpacks dependencies) and produces better outcomes than shading jars.</p>
+</div>
+<div class="paragraph">
+<p>Repacked artifacts cannot be used as dependencies as its contents are packaged into different directories.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_using_the_license_plugin"><a class="anchor" href="#_using_the_license_plugin"></a><a class="link" href="#_using_the_license_plugin">10.5. Using the license plugin</a></h3>
 <div class="paragraph">
 <p>The <code>oss</code> BasePOM configures the <code>license-maven-plugin</code> for releasing artifacts to Maven Central:</p>
 </div>
@@ -3555,7 +3683,7 @@ This profile is <strong>experimental</strong> and is known to have problems with
 <div id="footer">
 <div id="footer-text">
 Version 54-SNAPSHOT<br>
-Last updated 05/28/2023 18:17 -0700
+Last updated 05/30/2023 21:34 -0700
 </div>
 </div>
 </body>
