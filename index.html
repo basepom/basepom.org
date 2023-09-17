@@ -531,7 +531,7 @@ table.CodeRay td.code{padding:0 0 0 .75em}
 <h1>BasePOM Users Guide</h1>
 <div class="details">
 <span id="revnumber">version 56-SNAPSHOT,</span>
-<span id="revdate">08/11/2023 12:16 -0700</span>
+<span id="revdate">09/16/2023 18:01 -0700</span>
 </div>
 <div id="toc" class="toc2">
 <div id="toctitle">Table of Contents</div>
@@ -1421,6 +1421,13 @@ contain a <code>customization</code> column that gives some guidance how common 
 <td class="tableblock halign-center valign-top"><p class="tableblock">rarely, policy</p></td>
 <td class="tableblock halign-center valign-top"><p class="tableblock">foundation</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Controls the access level included in the javadocs.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">basepom.javadoc.legacy-mode</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><code>false</code></p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">often</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">foundation</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Controls whether the javadoc tool uses the classpath or module path when building post-java 8 projects. Unless a project defines module descriptors, legacy mode should be used.</p></td>
 </tr>
 </tbody>
 </table>
@@ -3686,7 +3693,7 @@ This profile is <strong>experimental</strong> and is known to have problems with
 <div id="footer">
 <div id="footer-text">
 Version 56-SNAPSHOT<br>
-Last updated 08/11/2023 12:16 -0700
+Last updated 09/16/2023 18:01 -0700
 </div>
 </div>
 </body>
