@@ -531,7 +531,7 @@ table.CodeRay td.code{padding:0 0 0 .75em}
 <h1>BasePOM Users Guide</h1>
 <div class="details">
 <span id="revnumber">version 57-SNAPSHOT,</span>
-<span id="revdate">10/22/2023 16:36 -0700</span>
+<span id="revdate">10/24/2023 14:45 -0700</span>
 </div>
 <div id="toc" class="toc2">
 <div id="toctitle">Table of Contents</div>
@@ -3253,7 +3253,7 @@ This profile is <strong>experimental</strong> and is known to have problems with
 <p>When the respective test plugin executes, they pick up the content of these properties (through the <code>argLine</code> configuration setting). Using a secondary property (and not the <code>argLine</code> property directly as most stack overflow posts would suggest) allows manual configuration on the command line while still preserving the ability to add the coverage agent through the build lifecycle.</p>
 </div>
 <div class="paragraph">
-<p>If the <code>argLine</code> configuration needs to be modified (e.g. in a Policy POM), the <code>@{basepom.coverage.test-args</code>}` (for <code>surefire</code>) and <code>@{basepom.coverage.it-args}</code> (for <code>failsafe</code>) <strong>must</strong> be present, otherwise this integration no longer works. Using a <code>@</code> is not a typo but necessary for late evaluation of these properties.</p>
+<p>If the <code>argLine</code> configuration needs to be modified (e.g. in a Policy POM), the <code>@{basepom.coverage.test-args}</code> (for <code>surefire</code>) and <code>@{basepom.coverage.it-args}</code> (for <code>failsafe</code>) <strong>must</strong> be present, otherwise this integration no longer works. Using a <code>@</code> is not a typo but necessary for late evaluation of these properties.</p>
 </div>
 <div class="paragraph">
 <p>Unfortunately, for the <code>invoker</code> plugin, this is not possible. For invoker, a <code>invoker.properties</code> file must be used which should contain the line</p>
@@ -3696,7 +3696,7 @@ This profile is <strong>experimental</strong> and is known to have problems with
 <div id="footer">
 <div id="footer-text">
 Version 57-SNAPSHOT<br>
-Last updated 10/22/2023 16:36 -0700
+Last updated 10/24/2023 14:45 -0700
 </div>
 </div>
 </body>
