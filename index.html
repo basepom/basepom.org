@@ -531,7 +531,7 @@ table.CodeRay td.code{padding:0 0 0 .75em}
 <h1>BasePOM Users Guide</h1>
 <div class="details">
 <span id="revnumber">version 59-SNAPSHOT,</span>
-<span id="revdate">01/27/2024 16:27 -0800</span>
+<span id="revdate">02/11/2024 15:09 -0800</span>
 </div>
 <div id="toc" class="toc2">
 <div id="toctitle">Table of Contents</div>
@@ -610,16 +610,22 @@ table.CodeRay td.code{padding:0 0 0 .75em}
 <li><a href="#_the_oss_policy_pom">9.2. The <code>oss</code> Policy POM</a></li>
 </ul>
 </li>
-<li><a href="#_plugin_configuration_notes">10. Plugin configuration notes</a>
+<li><a href="#_reproducible_builds_with_basepom">10. Reproducible Builds with BasePOM</a>
 <ul class="sectlevel2">
-<li><a href="#_unit_and_integration_tests_and_code_coverage">10.1. Unit and integration tests and code coverage</a></li>
-<li><a href="#_jar_properties">10.2. Jar properties</a></li>
-<li><a href="#_jar_shading">10.3. Jar shading</a></li>
-<li><a href="#_jar_repacking">10.4. Jar repacking</a></li>
-<li><a href="#_using_the_license_plugin">10.5. Using the license plugin</a></li>
+<li><a href="#_using_the_git_scm_information_for_reproducible_builds">10.1. Using the git SCM information for reproducible builds</a></li>
+<li><a href="#_using_pom_inheritance_with_the_git_scm_information">10.2. Using POM inheritance with the git SCM information</a></li>
 </ul>
 </li>
-<li><a href="#_maven_site_generation">11. Maven Site generation</a></li>
+<li><a href="#_plugin_configuration_notes">11. Plugin configuration notes</a>
+<ul class="sectlevel2">
+<li><a href="#_unit_and_integration_tests_and_code_coverage">11.1. Unit and integration tests and code coverage</a></li>
+<li><a href="#_jar_properties">11.2. Jar properties</a></li>
+<li><a href="#_jar_shading">11.3. Jar shading</a></li>
+<li><a href="#_jar_repacking">11.4. Jar repacking</a></li>
+<li><a href="#_using_the_license_plugin">11.5. Using the license plugin</a></li>
+</ul>
+</li>
+<li><a href="#_maven_site_generation">12. Maven Site generation</a></li>
 </ul>
 </div>
 </div>
@@ -647,6 +653,9 @@ table.CodeRay td.code{padding:0 0 0 .75em}
 <h3 id="_release_documentation"><a class="anchor" href="#_release_documentation"></a><a class="link" href="#_release_documentation">Release documentation</a></h3>
 <div class="ulist">
 <ul>
+<li>
+<p><a href="https://basepom.org/releases/59">Release 59 - 2024-02-11</a></p>
+</li>
 <li>
 <p><a href="https://basepom.org/releases/58">Release 58 - 2024-01-27</a></p>
 </li>
@@ -1629,6 +1638,13 @@ contain a <code>customization</code> column that gives some guidance how common 
 <td class="tableblock halign-left valign-top"><p class="tableblock">If <code>true</code>, skip the plugin.</p></td>
 </tr>
 <tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">basepom.git-id.skip-pom-projects</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><code>true</code></p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">sometimes</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">foundation</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">If <code>true</code>, skip plugin execution if the current project is a <code>pom</code> project (packages only a POM file)</p></td>
+</tr>
+<tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">basepom.git-id.fail-no-git</p></td>
 <td class="tableblock halign-center valign-top"><p class="tableblock"><code>false</code></p></td>
 <td class="tableblock halign-center valign-top"><p class="tableblock">sometimes, policy</p></td>
@@ -1655,6 +1671,13 @@ contain a <code>customization</code> column that gives some guidance how common 
 <td class="tableblock halign-center valign-top"><p class="tableblock">rarely, policy</p></td>
 <td class="tableblock halign-center valign-top"><p class="tableblock">foundation</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Execute only once for a Multi Module project build. This is almost never the right thing: If the build uses a <code>pom</code> packaged module as its root, then the plugin will not be executed. Also, for builds that use git submodules, the scm information may be different for each directory.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">basepom.git-id.date-format</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><code>yyyy-MM-dd&#8217;T&#8217;HH:mm:ssXXX</code></p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">rarely, policy</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">foundation</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Timestamp format as defined for <code>java.text.SimpleDateFormat</code>. The default format is compatible for the <code>project.build.outputTimestamp</code> property.</p></td>
 </tr>
 </tbody>
 </table>
@@ -2353,6 +2376,13 @@ the group properties <code>basepom.check.skip|fail-basic</code> and <code>basepo
 </thead>
 <tbody>
 <tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>git-commit-id-maven-plugin</code></p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">validate</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">basepom.default</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">revision</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">fetch SCM revision information</p></td>
+</tr>
+<tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>property-helper-maven-plugin</code></p></td>
 <td class="tableblock halign-center valign-top"><p class="tableblock">validate</p></td>
 <td class="tableblock halign-center valign-top"><p class="tableblock">basepom.default</p></td>
@@ -2365,13 +2395,6 @@ the group properties <code>basepom.check.skip|fail-basic</code> and <code>basepo
 <td class="tableblock halign-center valign-top"><p class="tableblock">basepom.default</p></td>
 <td class="tableblock halign-center valign-top"><p class="tableblock">enforce</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">enforce maven and jdk version</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>git-commit-id-maven-plugin</code></p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock">initialize</p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock">basepom.default</p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock">revision</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">fetch SCM revision information</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>maven-resources-plugin</code></p></td>
@@ -3242,10 +3265,55 @@ This profile is <strong>experimental</strong> and is known to have problems with
 </div>
 </div>
 <div class="sect1">
-<h2 id="_plugin_configuration_notes"><a class="anchor" href="#_plugin_configuration_notes"></a><a class="link" href="#_plugin_configuration_notes">10. Plugin configuration notes</a></h2>
+<h2 id="_reproducible_builds_with_basepom"><a class="anchor" href="#_reproducible_builds_with_basepom"></a><a class="link" href="#_reproducible_builds_with_basepom">10. Reproducible Builds with BasePOM</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>Apache Maven supports reproducible builds (where it is possible to create bit-identical artefacts from a given SCM revision) as described <a href="https://maven.apache.org/guides/mini/guide-reproducible-builds.html">in the reproducible build mini-guide</a>. Apache Maven writes a timestamp into a build property (<code>project.build.outputTimestamp</code>) and any plugin is expected to create reproducible output when this property is present.</p>
+</div>
+<div class="paragraph">
+<p>BasePOM supports reproducible builds in version <strong>59</strong> or higher.</p>
+</div>
+<div class="sect2">
+<h3 id="_using_the_git_scm_information_for_reproducible_builds"><a class="anchor" href="#_using_the_git_scm_information_for_reproducible_builds"></a><a class="link" href="#_using_the_git_scm_information_for_reproducible_builds">10.1. Using the git SCM information for reproducible builds</a></h3>
+<div class="paragraph">
+<p>It is possible to create reproducible builds for any git commit using BasePOM. In every POM in a project, add</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="xml"><span class="tag">&lt;properties&gt;</span>
+    <span class="tag">&lt;project.build.outputTimestamp&gt;</span>${git.commit.time}<span class="tag">&lt;/project.build.outputTimestamp&gt;</span>
+<span class="tag">&lt;/properties&gt;</span></code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>This uses the commit timestamp of the current commit as timestamp for the reproducible build. BasePOM configures the format of the timestamp to be compatible to the <code>project.build.outputTimestamp</code> property and executes the <code>git-commit-id</code> plugin as the first plugin in the build cycle, therefore ensuring that all other plugins will pick up the setting correctly.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_using_pom_inheritance_with_the_git_scm_information"><a class="anchor" href="#_using_pom_inheritance_with_the_git_scm_information"></a><a class="link" href="#_using_pom_inheritance_with_the_git_scm_information">10.2. Using POM inheritance with the git SCM information</a></h3>
+<div class="paragraph">
+<p>While the <code>artifact:check-buildplan</code> goal recommends not using POM inheritance for the <code>project.build.outputTimestamp</code> property, it can be used in combination with the <code>git.commit.time</code> value. However, by default, the
+git-commit-id plugin will skip execution for POM project, so the value may not be set correctly. To avoid this, also activate the plugin for POM projects as well. Adding the following properties:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="xml"><span class="tag">&lt;properties&gt;</span>
+    <span class="tag">&lt;project.build.outputTimestamp&gt;</span>${git.commit.time}<span class="tag">&lt;/project.build.outputTimestamp&gt;</span>
+    <span class="tag">&lt;basepom.git-id.skip-pom-projects&gt;</span>false<span class="tag">&lt;/basepom.git-id.skip-pom-projects&gt;</span>
+<span class="tag">&lt;/properties&gt;</span></code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>to the top-most POM makes a multi-module build reproducible (no additional properties in the child POMs are required).</p>
+</div>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_plugin_configuration_notes"><a class="anchor" href="#_plugin_configuration_notes"></a><a class="link" href="#_plugin_configuration_notes">11. Plugin configuration notes</a></h2>
 <div class="sectionbody">
 <div class="sect2">
-<h3 id="_unit_and_integration_tests_and_code_coverage"><a class="anchor" href="#_unit_and_integration_tests_and_code_coverage"></a><a class="link" href="#_unit_and_integration_tests_and_code_coverage">10.1. Unit and integration tests and code coverage</a></h3>
+<h3 id="_unit_and_integration_tests_and_code_coverage"><a class="anchor" href="#_unit_and_integration_tests_and_code_coverage"></a><a class="link" href="#_unit_and_integration_tests_and_code_coverage">11.1. Unit and integration tests and code coverage</a></h3>
 <div class="paragraph">
 <p>The interaction between the <code>surefire</code>, <code>failsafe</code> and <code>invoker</code> plugin and the respective code coverage plugin (jacoco) is through an agent specification that modifies the command line for test invocation.</p>
 </div>
@@ -3274,7 +3342,7 @@ This profile is <strong>experimental</strong> and is known to have problems with
 </div>
 </div>
 <div class="sect2">
-<h3 id="_jar_properties"><a class="anchor" href="#_jar_properties"></a><a class="link" href="#_jar_properties">10.2. Jar properties</a></h3>
+<h3 id="_jar_properties"><a class="anchor" href="#_jar_properties"></a><a class="link" href="#_jar_properties">11.2. Jar properties</a></h3>
 <div class="paragraph">
 <p>The <code>maven-jar-plugin</code> is used to create the main and test artifacts.</p>
 </div>
@@ -3379,7 +3447,7 @@ This profile is <strong>experimental</strong> and is known to have problems with
 </div>
 </div>
 <div class="sect2">
-<h3 id="_jar_shading"><a class="anchor" href="#_jar_shading"></a><a class="link" href="#_jar_shading">10.3. Jar shading</a></h3>
+<h3 id="_jar_shading"><a class="anchor" href="#_jar_shading"></a><a class="link" href="#_jar_shading">11.3. Jar shading</a></h3>
 <div class="paragraph">
 <p>The <code>maven-shade-plugin</code> is used to create single artifacts with all dependencies ("fat jars") for a project.</p>
 </div>
@@ -3388,7 +3456,7 @@ This profile is <strong>experimental</strong> and is known to have problems with
 </div>
 </div>
 <div class="sect2">
-<h3 id="_jar_repacking"><a class="anchor" href="#_jar_repacking"></a><a class="link" href="#_jar_repacking">10.4. Jar repacking</a></h3>
+<h3 id="_jar_repacking"><a class="anchor" href="#_jar_repacking"></a><a class="link" href="#_jar_repacking">11.4. Jar repacking</a></h3>
 <div class="paragraph">
 <p>The <code>repack-maven-plugin</code> is used to create single artifacts with all dependencies ("fat jars") for a project. This method adds all dependencies "as is" (it does not rewrite the contents of main jar or unpacks dependencies) and produces better outcomes than shading jars.</p>
 </div>
@@ -3397,7 +3465,7 @@ This profile is <strong>experimental</strong> and is known to have problems with
 </div>
 </div>
 <div class="sect2">
-<h3 id="_using_the_license_plugin"><a class="anchor" href="#_using_the_license_plugin"></a><a class="link" href="#_using_the_license_plugin">10.5. Using the license plugin</a></h3>
+<h3 id="_using_the_license_plugin"><a class="anchor" href="#_using_the_license_plugin"></a><a class="link" href="#_using_the_license_plugin">11.5. Using the license plugin</a></h3>
 <div class="paragraph">
 <p>The <code>oss</code> BasePOM configures the <code>license-maven-plugin</code> for releasing artifacts to Maven Central:</p>
 </div>
@@ -3436,7 +3504,7 @@ This profile is <strong>experimental</strong> and is known to have problems with
 </div>
 </div>
 <div class="sect1">
-<h2 id="_maven_site_generation"><a class="anchor" href="#_maven_site_generation"></a><a class="link" href="#_maven_site_generation">11. Maven Site generation</a></h2>
+<h2 id="_maven_site_generation"><a class="anchor" href="#_maven_site_generation"></a><a class="link" href="#_maven_site_generation">12. Maven Site generation</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>The <code>foundation</code> BasePOM provides basic configuration for the Maven autogenerated site which summarizes information about the build lifecycle. The <code>oss</code> BasePOM contains the necessary reporting setup to generate a base site for a project.</p>
@@ -3702,7 +3770,7 @@ This profile is <strong>experimental</strong> and is known to have problems with
 <div id="footer">
 <div id="footer-text">
 Version 59-SNAPSHOT<br>
-Last updated 01/27/2024 16:27 -0800
+Last updated 02/11/2024 15:09 -0800
 </div>
 </div>
 </body>
