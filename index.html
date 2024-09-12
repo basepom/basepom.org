@@ -531,7 +531,7 @@ table.CodeRay td.code{padding:0 0 0 .75em}
 <h1>BasePOM Users Guide</h1>
 <div class="details">
 <span id="revnumber">version 61-SNAPSHOT,</span>
-<span id="revdate">09/11/2024 17:48 -0700</span>
+<span id="revdate">09/11/2024 18:21 -0700</span>
 </div>
 <div id="toc" class="toc2">
 <div id="toctitle">Table of Contents</div>
@@ -1681,6 +1681,13 @@ contain a <code>customization</code> column that gives some guidance how common 
 <td class="tableblock halign-center valign-top"><p class="tableblock">rarely, policy</p></td>
 <td class="tableblock halign-center valign-top"><p class="tableblock">foundation</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Timestamp format as defined for <code>java.text.SimpleDateFormat</code>. The default format is compatible for the <code>project.build.outputTimestamp</code> property.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">basepom.git-id.date-format-timezone</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><code>UTC</code></p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">rarely, policy</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">foundation</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Timezone for the timestamp defined with the <code>basepom.git-id.date-format</code> property. The default timezone is UTC.</p></td>
 </tr>
 </tbody>
 </table>
@@ -3414,12 +3421,6 @@ git-commit-id plugin will skip execution for POM project, so the value may not b
 <td class="tableblock halign-center valign-top"><p class="tableblock">see <code>git.commit.id.describe</code> in the <a href="https://github.com/git-commit-id/git-commit-id-maven-plugin/blob/master/docs/using-the-plugin.md#generated-properties"><code>git-commit-id-maven-plugin</code> documentation</a></p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>Git-Remote-Origin-Url</code></p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock"><code>${git.remote.origin.url}</code> (created by the <code>git-commit-id-maven-plugin</code>)</p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock"><code>${project.groupId}:${project.artifactId}</code></p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock">see <code>git.remote.origin.url</code> in the <a href="https://github.com/git-commit-id/git-commit-id-maven-plugin/blob/master/docs/using-the-plugin.md#generated-properties"><code>git-commit-id-maven-plugin</code> documentation</a></p></td>
-</tr>
-<tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>Project-ArtifactId</code></p></td>
 <td class="tableblock halign-center valign-top"><p class="tableblock"><code>${project.artifactId}</code></p></td>
 <td class="tableblock halign-center valign-top"><p class="tableblock"><code>${project.groupId}:${project.artifactId}</code></p></td>
@@ -3773,7 +3774,7 @@ git-commit-id plugin will skip execution for POM project, so the value may not b
 <div id="footer">
 <div id="footer-text">
 Version 61-SNAPSHOT<br>
-Last updated 09/11/2024 17:48 -0700
+Last updated 09/11/2024 18:21 -0700
 </div>
 </div>
 </body>
