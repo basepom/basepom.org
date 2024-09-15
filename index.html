@@ -531,7 +531,7 @@ table.CodeRay td.code{padding:0 0 0 .75em}
 <h1>BasePOM Users Guide</h1>
 <div class="details">
 <span id="revnumber">version 61-SNAPSHOT,</span>
-<span id="revdate">09/14/2024 17:24 -0700</span>
+<span id="revdate">09/14/2024 17:35 -0700</span>
 </div>
 <div id="toc" class="toc2">
 <div id="toctitle">Table of Contents</div>
@@ -1367,6 +1367,13 @@ contain a <code>customization</code> column that gives some guidance how common 
 <td class="tableblock halign-center valign-top"><p class="tableblock">often</p></td>
 <td class="tableblock halign-center valign-top"><p class="tableblock">foundation</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">Name tag format for the release tag. See the <a href="https://maven.apache.org/maven-release/maven-release-plugin/prepare-mojo.html#tagNameFormat">Maven Release Plugin Documentation</a> for details.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">basepom.release.preparation-goals</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><code>clean install</code></p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">sometimes</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">foundation</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Defines the goals run by maven when executing <code>release:prepare</code>. If e.g. local install is not desired, use <code>clean verify</code>.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">basepom.nexus-staging.skip</p></td>
@@ -3774,7 +3781,7 @@ git-commit-id plugin will skip execution for POM project, so the value may not b
 <div id="footer">
 <div id="footer-text">
 Version 61-SNAPSHOT<br>
-Last updated 09/14/2024 17:24 -0700
+Last updated 09/14/2024 17:35 -0700
 </div>
 </div>
 </body>
