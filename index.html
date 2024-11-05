@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="generator" content="Asciidoctor 2.0.20">
+<meta name="generator" content="Asciidoctor 2.0.23">
 <title>BasePOM Users Guide</title>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700">
 <style>
@@ -140,7 +140,7 @@ p a>code:hover{color:rgba(0,0,0,.9)}
 #content::before{content:none}
 #header>h1:first-child{color:rgba(0,0,0,.85);margin-top:2.25rem;margin-bottom:0}
 #header>h1:first-child+#toc{margin-top:8px;border-top:1px solid #dddddf}
-#header>h1:only-child,body.toc2 #header>h1:nth-last-child(2){border-bottom:1px solid #dddddf;padding-bottom:8px}
+#header>h1:only-child{border-bottom:1px solid #dddddf;padding-bottom:8px}
 #header .details{border-bottom:1px solid #dddddf;line-height:1.45;padding-top:.25em;padding-bottom:.25em;padding-left:.25em;color:rgba(0,0,0,.6);display:flex;flex-flow:row wrap}
 #header .details span:first-child{margin-left:-.125em}
 #header .details span.email a{color:rgba(0,0,0,.85)}
@@ -162,6 +162,7 @@ p a>code:hover{color:rgba(0,0,0,.9)}
 #toctitle{color:#7a2518;font-size:1.2em}
 @media screen and (min-width:768px){#toctitle{font-size:1.375em}
 body.toc2{padding-left:15em;padding-right:0}
+body.toc2 #header>h1:nth-last-child(2){border-bottom:1px solid #dddddf;padding-bottom:8px}
 #toc.toc2{margin-top:0!important;background:#f8f8f7;position:fixed;width:15em;left:0;top:0;border-right:1px solid #e7e7e9;border-top-width:0!important;border-bottom-width:0!important;z-index:1000;padding:1.25em 1em;height:100%;overflow:auto}
 #toc.toc2 #toctitle{margin-top:0;margin-bottom:.8rem;font-size:1.2em}
 #toc.toc2>ul{font-size:.9em;margin-bottom:0}
@@ -327,7 +328,7 @@ a.image{text-decoration:none;display:inline-block}
 a.image object{pointer-events:none}
 sup.footnote,sup.footnoteref{font-size:.875em;position:static;vertical-align:super}
 sup.footnote a,sup.footnoteref a{text-decoration:none}
-sup.footnote a:active,sup.footnoteref a:active{text-decoration:underline}
+sup.footnote a:active,sup.footnoteref a:active,#footnotes .footnote a:first-of-type:active{text-decoration:underline}
 #footnotes{padding-top:.75em;padding-bottom:.75em;margin-bottom:.625em}
 #footnotes hr{width:20%;min-width:6.25em;margin:-.25em 0 .75em;border-width:1px 0 0}
 #footnotes .footnote{padding:0 .375em 0 .225em;line-height:1.3334;font-size:.875em;margin-left:1.2em;margin-bottom:.2em}
@@ -531,7 +532,7 @@ table.CodeRay td.code{padding:0 0 0 .75em}
 <h1>BasePOM Users Guide</h1>
 <div class="details">
 <span id="revnumber">version 61-SNAPSHOT,</span>
-<span id="revdate">09/14/2024 17:35 -0700</span>
+<span id="revdate">11/04/2024 22:36 -0800</span>
 </div>
 <div id="toc" class="toc2">
 <div id="toctitle">Table of Contents</div>
@@ -558,20 +559,21 @@ table.CodeRay td.code{padding:0 0 0 .75em}
 <li><a href="#_basepom_starting_points">5. BasePOM starting points</a></li>
 <li><a href="#_customizations_using_maven_properties">6. Customizations using Maven properties</a>
 <ul class="sectlevel2">
-<li><a href="#_standard_maven_properties">6.1. Standard Maven Properties</a></li>
-<li><a href="#_global_properties">6.2. Global properties</a></li>
-<li><a href="#_plugin_customizations">6.3. Plugin customizations</a>
+<li><a href="#_setting_the_jdk_version">6.1. Setting the JDK version</a></li>
+<li><a href="#_standard_maven_properties">6.2. Standard Maven Properties</a></li>
+<li><a href="#_global_properties">6.3. Global properties</a></li>
+<li><a href="#_plugin_customizations">6.4. Plugin customizations</a>
 <ul class="sectlevel3">
-<li><a href="#_compilation_control">6.3.1. Compilation control</a></li>
-<li><a href="#_artifact_installation_deployment_and_release_customization">6.3.2. Artifact installation, deployment and release customization</a></li>
-<li><a href="#_javadoc_generation">6.3.3. Javadoc Generation</a></li>
-<li><a href="#_unit_tests">6.3.4. Unit Tests</a></li>
-<li><a href="#_integration_tests">6.3.5. Integration Tests</a></li>
-<li><a href="#_git_version_control_support">6.3.6. git version control support</a></li>
-<li><a href="#_executable_support">6.3.7. Executable support</a></li>
+<li><a href="#_compilation_control">6.4.1. Compilation control</a></li>
+<li><a href="#_artifact_installation_deployment_and_release_customization">6.4.2. Artifact installation, deployment and release customization</a></li>
+<li><a href="#_javadoc_generation">6.4.3. Javadoc Generation</a></li>
+<li><a href="#_unit_tests">6.4.4. Unit Tests</a></li>
+<li><a href="#_integration_tests">6.4.5. Integration Tests</a></li>
+<li><a href="#_git_version_control_support">6.4.6. git version control support</a></li>
+<li><a href="#_executable_support">6.4.7. Executable support</a></li>
 </ul>
 </li>
-<li><a href="#_setting_plugin_and_dependency_versions">6.4. Setting plugin and dependency versions</a></li>
+<li><a href="#_setting_plugin_and_dependency_versions">6.5. Setting plugin and dependency versions</a></li>
 </ul>
 </li>
 <li><a href="#_code_quality_and_build_checkers">7. Code quality and Build checkers</a>
@@ -653,6 +655,9 @@ table.CodeRay td.code{padding:0 0 0 .75em}
 <h3 id="_release_documentation"><a class="anchor" href="#_release_documentation"></a><a class="link" href="#_release_documentation">Release documentation</a></h3>
 <div class="ulist">
 <ul>
+<li>
+<p><a href="https://basepom.org/releases/60">Release 61 - 2024-11-04</a></p>
+</li>
 <li>
 <p><a href="https://basepom.org/releases/60">Release 60 - 2024-09-11</a></p>
 </li>
@@ -1095,7 +1100,50 @@ contain a <code>customization</code> column that gives some guidance how common 
 </dl>
 </div>
 <div class="sect2">
-<h3 id="_standard_maven_properties"><a class="anchor" href="#_standard_maven_properties"></a><a class="link" href="#_standard_maven_properties">6.1. Standard Maven Properties</a></h3>
+<h3 id="_setting_the_jdk_version"><a class="anchor" href="#_setting_the_jdk_version"></a><a class="link" href="#_setting_the_jdk_version">6.1. Setting the JDK version</a></h3>
+<div class="paragraph">
+<p>Basepom supports different JDK versions for running the tool chain, compiling the main and the test sources:</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 10%;">
+<col style="width: 10%;">
+<col style="width: 10%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">project.build.systemJdk</th>
+<th class="tableblock halign-center valign-top"><code>11</code></th>
+<th class="tableblock halign-center valign-top">often</th>
+<th class="tableblock halign-center valign-top">foundation</th>
+<th class="tableblock halign-left valign-top">Minimal JDK version for running the Apache Maven tool chain</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">project.build.targetJdk</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><code>11</code></p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">often</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">foundation</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Target JDK version. Source code will be compiled to this JDK version.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">project.build.testJdk</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><code>${project.build.targetJdk}</code></p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">rarely</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">foundation</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Test JDK version. Test source code will be compiled to this JDK version.</p></td>
+</tr>
+</tbody>
+</table>
+<div class="paragraph">
+<p>By default, all three values are identical.</p>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_standard_maven_properties"><a class="anchor" href="#_standard_maven_properties"></a><a class="link" href="#_standard_maven_properties">6.2. Standard Maven Properties</a></h3>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 20%;">
@@ -1114,20 +1162,6 @@ contain a <code>customization</code> column that gives some guidance how common 
 </tr>
 </thead>
 <tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">project.build.systemJdk</p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock"><code>11</code></p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock">often</p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock">foundation</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Minimal JDK version for running the Apache Maven tool chain</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">project.build.targetJdk</p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock"><code>11</code></p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock">often</p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock">foundation</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Target JDK version. Build artifacts will run on this JDK version.</p></td>
-</tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">project.build.sourceEncoding</p></td>
 <td class="tableblock halign-center valign-top"><p class="tableblock"><code>UTF-8</code></p></td>
@@ -1163,6 +1197,13 @@ contain a <code>customization</code> column that gives some guidance how common 
 <td class="tableblock halign-center valign-top"><p class="tableblock">foundation</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">The target bytecode specification used in this project.</p></td>
 </tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">maven.compiler.release</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><code>${project.build.targetJdk}</code> (= <code>11</code>)</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">rarely</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">foundation</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The release JDK version used in this project.</p></td>
+</tr>
 </tbody>
 </table>
 <div class="admonitionblock note">
@@ -1173,7 +1214,7 @@ contain a <code>customization</code> column that gives some guidance how common 
 </td>
 <td class="content">
 <div class="paragraph">
-<p>The <code>maven.compiler.source</code> and <code>maven.compiler.target</code> properties may need to be set to <code>1.8</code> explicitly when setting <code>project.build.targetJdk</code> to <code>8</code>. This is a limitation of some build plugins (most prominently the GMavenPlus plugin).</p>
+<p>The <code>maven.compiler.source</code> and <code>maven.compiler.target</code> properties may need to be set to <code>1.8</code> explicitly when setting <code>project.build.targetJdk</code> to <code>8</code>. This is a limitation of some build plugins (most prominently the GMavenPlus plugin). Unless really having to compile to Java 8, the <code>maven.compiler.source</code>, <code>maven.compiler.target</code> and <code>maven.compiler.release</code> properties should not be changed but <code>project.build.targetJdk</code> should be used.</p>
 </div>
 </td>
 </tr>
@@ -1181,7 +1222,7 @@ contain a <code>customization</code> column that gives some guidance how common 
 </div>
 </div>
 <div class="sect2">
-<h3 id="_global_properties"><a class="anchor" href="#_global_properties"></a><a class="link" href="#_global_properties">6.2. Global properties</a></h3>
+<h3 id="_global_properties"><a class="anchor" href="#_global_properties"></a><a class="link" href="#_global_properties">6.3. Global properties</a></h3>
 <div class="paragraph">
 <p>These properties affect multiple plugins. POMs that add new plugins should evaluate these properties if necessary and not define plugin specific properties.</p>
 </div>
@@ -1235,7 +1276,7 @@ contain a <code>customization</code> column that gives some guidance how common 
 </table>
 </div>
 <div class="sect2">
-<h3 id="_plugin_customizations"><a class="anchor" href="#_plugin_customizations"></a><a class="link" href="#_plugin_customizations">6.3. Plugin customizations</a></h3>
+<h3 id="_plugin_customizations"><a class="anchor" href="#_plugin_customizations"></a><a class="link" href="#_plugin_customizations">6.4. Plugin customizations</a></h3>
 <div class="paragraph">
 <p>These properties control settings for specific plugins. Most plugins have an opinionated default configuration with very little need for further customization. Where it is useful, these customizations are exposed as properties that can be changed in a Project or Policy POM.</p>
 </div>
@@ -1243,7 +1284,7 @@ contain a <code>customization</code> column that gives some guidance how common 
 <p>Properties are usually grouped by prefix.</p>
 </div>
 <div class="sect3">
-<h4 id="_compilation_control"><a class="anchor" href="#_compilation_control"></a><a class="link" href="#_compilation_control">6.3.1. Compilation control</a></h4>
+<h4 id="_compilation_control"><a class="anchor" href="#_compilation_control"></a><a class="link" href="#_compilation_control">6.4.1. Compilation control</a></h4>
 <div class="paragraph">
 <p>All properties in this section should be supported by language compilers. By default, BasePOM uses the <code>maven-compiler-plugin</code> for Java.</p>
 </div>
@@ -1290,7 +1331,7 @@ contain a <code>customization</code> column that gives some guidance how common 
 </table>
 </div>
 <div class="sect3">
-<h4 id="_artifact_installation_deployment_and_release_customization"><a class="anchor" href="#_artifact_installation_deployment_and_release_customization"></a><a class="link" href="#_artifact_installation_deployment_and_release_customization">6.3.2. Artifact installation, deployment and release customization</a></h4>
+<h4 id="_artifact_installation_deployment_and_release_customization"><a class="anchor" href="#_artifact_installation_deployment_and_release_customization"></a><a class="link" href="#_artifact_installation_deployment_and_release_customization">6.4.2. Artifact installation, deployment and release customization</a></h4>
 <div class="paragraph">
 <p>Besides building, Apache Maven can install the resulting artifacts into the local repository or deploy them to a remote repository. Releasing an artifact is creating a stable, immutable build with a version that does not end in <code>-SNAPSHOT</code>. All steps of the Apache Maven lifecycle can be customized with the following properties:</p>
 </div>
@@ -1400,7 +1441,7 @@ contain a <code>customization</code> column that gives some guidance how common 
 </table>
 </div>
 <div class="sect3">
-<h4 id="_javadoc_generation"><a class="anchor" href="#_javadoc_generation"></a><a class="link" href="#_javadoc_generation">6.3.3. Javadoc Generation</a></h4>
+<h4 id="_javadoc_generation"><a class="anchor" href="#_javadoc_generation"></a><a class="link" href="#_javadoc_generation">6.4.3. Javadoc Generation</a></h4>
 <div class="paragraph">
 <p>Javadoc artifacts are created as part of the build lifecycle. While they are optional, some distribution sites (OSS, Maven Central) require the creation of a Javadoc artifact.</p>
 </div>
@@ -1461,7 +1502,7 @@ contain a <code>customization</code> column that gives some guidance how common 
 </table>
 </div>
 <div class="sect3">
-<h4 id="_unit_tests"><a class="anchor" href="#_unit_tests"></a><a class="link" href="#_unit_tests">6.3.4. Unit Tests</a></h4>
+<h4 id="_unit_tests"><a class="anchor" href="#_unit_tests"></a><a class="link" href="#_unit_tests">6.4.4. Unit Tests</a></h4>
 <div class="paragraph">
 <p>The Apache Maven <code>surefire</code> plugin is active by default. Any other test plugin should also use these properties.</p>
 </div>
@@ -1536,7 +1577,7 @@ contain a <code>customization</code> column that gives some guidance how common 
 </table>
 </div>
 <div class="sect3">
-<h4 id="_integration_tests"><a class="anchor" href="#_integration_tests"></a><a class="link" href="#_integration_tests">6.3.5. Integration Tests</a></h4>
+<h4 id="_integration_tests"><a class="anchor" href="#_integration_tests"></a><a class="link" href="#_integration_tests">6.4.5. Integration Tests</a></h4>
 <div class="paragraph">
 <p>Apache Maven supports multiple plugins for integration tests. BasePOM supports the <code>failsafe</code> and the <code>invoker</code> plugin for integration tests.</p>
 </div>
@@ -1618,7 +1659,7 @@ contain a <code>customization</code> column that gives some guidance how common 
 </table>
 </div>
 <div class="sect3">
-<h4 id="_git_version_control_support"><a class="anchor" href="#_git_version_control_support"></a><a class="link" href="#_git_version_control_support">6.3.6. git version control support</a></h4>
+<h4 id="_git_version_control_support"><a class="anchor" href="#_git_version_control_support"></a><a class="link" href="#_git_version_control_support">6.4.6. git version control support</a></h4>
 <div class="paragraph">
 <p>BasePOM uses the <a href="https://github.com/git-commit-id/git-commit-id-maven-plugin/blob/master/docs/using-the-plugin.md">git-commit-id-maven-plugin</a> to provide scm information to the build. The main use case to modify its configuration is if the code base does not actually use git.</p>
 </div>
@@ -1700,7 +1741,7 @@ contain a <code>customization</code> column that gives some guidance how common 
 </table>
 </div>
 <div class="sect3">
-<h4 id="_executable_support"><a class="anchor" href="#_executable_support"></a><a class="link" href="#_executable_support">6.3.7. Executable support</a></h4>
+<h4 id="_executable_support"><a class="anchor" href="#_executable_support"></a><a class="link" href="#_executable_support">6.4.7. Executable support</a></h4>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 20%;">
@@ -1752,7 +1793,7 @@ contain a <code>customization</code> column that gives some guidance how common 
 </div>
 </div>
 <div class="sect2">
-<h3 id="_setting_plugin_and_dependency_versions"><a class="anchor" href="#_setting_plugin_and_dependency_versions"></a><a class="link" href="#_setting_plugin_and_dependency_versions">6.4. Setting plugin and dependency versions</a></h3>
+<h3 id="_setting_plugin_and_dependency_versions"><a class="anchor" href="#_setting_plugin_and_dependency_versions"></a><a class="link" href="#_setting_plugin_and_dependency_versions">6.5. Setting plugin and dependency versions</a></h3>
 <div class="paragraph">
 <p>Each BasePOM release defines the versions for all Maven plugins and dependent libraries. The values change from release to release and are chosen based on stability and release quality of the various tools.</p>
 </div>
@@ -3781,7 +3822,7 @@ git-commit-id plugin will skip execution for POM project, so the value may not b
 <div id="footer">
 <div id="footer-text">
 Version 61-SNAPSHOT<br>
-Last updated 09/14/2024 17:35 -0700
+Last updated 11/04/2024 22:36 -0800
 </div>
 </div>
 </body>
