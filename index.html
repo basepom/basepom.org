@@ -532,7 +532,7 @@ table.CodeRay td.code{padding:0 0 0 .75em}
 <h1>BasePOM Users Guide</h1>
 <div class="details">
 <span id="revnumber">version 63-SNAPSHOT,</span>
-<span id="revdate">05/09/2025 15:21 -0700</span>
+<span id="revdate">05/09/2025 17:08 -0700</span>
 </div>
 <div id="toc" class="toc2">
 <div id="toctitle">Table of Contents</div>
@@ -590,8 +590,8 @@ table.CodeRay td.code{padding:0 0 0 .75em}
 <li><a href="#_basepom_invoker_integration_testing_foundation">8.1.1. <code>basepom.invoker-integration-testing</code> (foundation)</a></li>
 <li><a href="#_basepom_executable_foundation">8.1.2. <code>basepom.executable</code> (foundation)</a></li>
 <li><a href="#_basepom_repack_foundation">8.1.3. <code>basepom.repack</code> (foundation)</a></li>
-<li><a href="#_basepom_deploy_release_oss">8.1.4. <code>basepom.deploy-release</code> (oss)</a></li>
-<li><a href="#_basepom_oss_release_oss">8.1.5. <code>basepom.oss-release</code> (oss)</a></li>
+<li><a href="#_basepom_central_release_oss">8.1.4. <code>basepom.central-release</code> (oss)</a></li>
+<li><a href="#_basepom_deploy_release_oss">8.1.5. <code>basepom.deploy-release</code> (oss)</a></li>
 <li><a href="#_basepom_invoker_reporting_oss">8.1.6. <code>basepom.invoker-reporting</code> (oss)</a></li>
 </ul>
 </li>
@@ -622,8 +622,8 @@ table.CodeRay td.code{padding:0 0 0 .75em}
 <ul class="sectlevel2">
 <li><a href="#_unit_and_integration_tests_and_code_coverage">11.1. Unit and integration tests and code coverage</a></li>
 <li><a href="#_jar_properties">11.2. Jar properties</a></li>
-<li><a href="#_jar_shading">11.3. Jar shading</a></li>
-<li><a href="#_jar_repacking">11.4. Jar repacking</a></li>
+<li><a href="#_shading_a_jar_artifact">11.3. Shading a jar artifact</a></li>
+<li><a href="#_repacking_a_jar_artifact">11.4. Repacking a jar artifact</a></li>
 <li><a href="#_using_the_license_plugin">11.5. Using the license plugin</a></li>
 </ul>
 </li>
@@ -656,49 +656,52 @@ table.CodeRay td.code{padding:0 0 0 .75em}
 <div class="ulist">
 <ul>
 <li>
-<p><a href="https://basepom.org/releases/62">Release 62 - 2025-03-30</a></p>
+<p><a href="https://basepom.org/releases/63">Release 63 — 2025-05-09</a></p>
 </li>
 <li>
-<p><a href="https://basepom.org/releases/61">Release 61 - 2024-11-04</a></p>
+<p><a href="https://basepom.org/releases/62">Release 62 — 2025-03-30</a></p>
 </li>
 <li>
-<p><a href="https://basepom.org/releases/60">Release 60 - 2024-09-11</a></p>
+<p><a href="https://basepom.org/releases/61">Release 61 — 2024-11-04</a></p>
 </li>
 <li>
-<p><a href="https://basepom.org/releases/59">Release 59 - 2024-02-11</a></p>
+<p><a href="https://basepom.org/releases/60">Release 60 — 2024-09-11</a></p>
 </li>
 <li>
-<p><a href="https://basepom.org/releases/58">Release 58 - 2024-01-27</a></p>
+<p><a href="https://basepom.org/releases/59">Release 59 — 2024-02-11</a></p>
 </li>
 <li>
-<p><a href="https://basepom.org/releases/57">Release 57 - 2023-12-27</a></p>
+<p><a href="https://basepom.org/releases/58">Release 58 — 2024-01-27</a></p>
 </li>
 <li>
-<p><a href="https://basepom.org/releases/56">Release 56 - 2023-10-18</a></p>
+<p><a href="https://basepom.org/releases/57">Release 57 — 2023-12-27</a></p>
 </li>
 <li>
-<p><a href="https://basepom.org/releases/55">Release 55 - 2023-08-11</a></p>
+<p><a href="https://basepom.org/releases/56">Release 56 — 2023-10-18</a></p>
 </li>
 <li>
-<p><a href="https://basepom.org/releases/54">Release 54 - 2023-05-31</a></p>
+<p><a href="https://basepom.org/releases/55">Release 55 — 2023-08-11</a></p>
 </li>
 <li>
-<p><a href="https://basepom.org/releases/53">Release 53 - 2023-05-12</a></p>
+<p><a href="https://basepom.org/releases/54">Release 54 — 2023-05-31</a></p>
 </li>
 <li>
-<p><a href="https://basepom.org/releases/52">Release 52 - 2023-03-02</a></p>
+<p><a href="https://basepom.org/releases/53">Release 53 — 2023-05-12</a></p>
 </li>
 <li>
-<p><a href="https://basepom.org/releases/51">Release 51 - 2023-01-03</a></p>
+<p><a href="https://basepom.org/releases/52">Release 52 — 2023-03-02</a></p>
 </li>
 <li>
-<p><a href="https://basepom.org/releases/50">Release 50 - 2022-10-18</a></p>
+<p><a href="https://basepom.org/releases/51">Release 51 — 2023-01-03</a></p>
 </li>
 <li>
-<p><a href="https://basepom.org/releases/49">Release 49 - 2022-09-01</a></p>
+<p><a href="https://basepom.org/releases/50">Release 50 — 2022-10-18</a></p>
 </li>
 <li>
-<p><a href="https://basepom.org/releases/48">Release 48 - 2022-08-12</a></p>
+<p><a href="https://basepom.org/releases/49">Release 49 — 2022-09-01</a></p>
+</li>
+<li>
+<p><a href="https://basepom.org/releases/48">Release 48 — 2022-08-12</a></p>
 </li>
 </ul>
 </div>
@@ -709,7 +712,7 @@ table.CodeRay td.code{padding:0 0 0 .75em}
 <h2 id="_introduction"><a class="anchor" href="#_introduction"></a><a class="link" href="#_introduction">1. Introduction</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>The BasePOM project aims to make using Apache Maven as a build tool painless. It provides a set of well known plugins for Apache Maven with an opinionated base configuration and a number of configuration options. It is aiming at Java projects but can easily be extended for other languages that are supported by Apache Maven.</p>
+<p>The BasePOM project aims to make using Apache Maven as a build tool painless. It provides a set of well-known plugins for Apache Maven with an opinionated base configuration and a number of configuration options. It is aiming at Java projects but can easily be extended for other languages that are supported by Apache Maven.</p>
 </div>
 <div class="paragraph">
 <p>It provides base configurations for unified, organization-wide build setups and supports simple project setups and complex Multi Module project use cases.</p>
@@ -726,7 +729,7 @@ table.CodeRay td.code{padding:0 0 0 .75em}
 <p><strong>Opinionated configuration</strong>. BasePOM Parent POMs configure Maven Plugins with reasonable defaults</p>
 </li>
 <li>
-<p><strong>Property based customization</strong>. BasePOM Parent POMs expose a number of properties that can be customized in Child POMs or from the command line</p>
+<p><strong>Property-based customization</strong>. BasePOM Parent POMs expose a number of properties that can be customized in Child POMs or from the command line</p>
 </li>
 <li>
 <p><strong>Profile activation</strong>. BasePOM Parent POMs contain a number of profiles that activate under specific conditions and customize build steps or activate specific plugins</p>
@@ -796,7 +799,7 @@ table.CodeRay td.code{padding:0 0 0 .75em}
 <a href="https://maven.apache.org/scm/maven-scm-plugin/">scm</a>,
 <a href="https://maven.apache.org/maven-release/maven-release-plugin/">release</a>,
 <a href="https://maven.apache.org/plugins/maven-gpg-plugin/">gpg</a>,
-<a href="https://github.com/sonatype/nexus-maven-plugins/">nexus-staging</a></p>
+<a href="https://central.sonatype.org/publish/publish-portal-maven/">central-publishing</a></p>
 </li>
 <li>
 <p>site building:
@@ -853,25 +856,25 @@ table.CodeRay td.code{padding:0 0 0 .75em}
 <div class="ulist">
 <ul>
 <li>
-<p><a href="https://basepom.github.io/dependency-versions-check-maven-plugin/">dependency-versions-check</a> - verifies that the resolved versions of project dependencies are mutually compatible to each other</p>
+<p><a href="https://basepom.github.io/dependency-versions-check-maven-plugin/">dependency-versions-check</a> — verifies that the resolved versions of project dependencies are mutually compatible to each other</p>
 </li>
 <li>
-<p><a href="https://basepom.github.io/duplicate-finder-maven-plugin/" target="_blank" rel="noopener">duplicate-finder</a> - Finds and flags duplicate and conflicting classes and resources on the java classpath</p>
+<p><a href="https://basepom.github.io/duplicate-finder-maven-plugin/" target="_blank" rel="noopener">duplicate-finder</a> — Finds and flags duplicate and conflicting classes and resources on the java classpath</p>
 </li>
 <li>
-<p><a href="https://basepom.github.io/property-helper-maven-plugin/" target="_blank" rel="noopener">property-helper</a> - generate and manipulate properties during the build process</p>
+<p><a href="https://basepom.github.io/property-helper-maven-plugin/" target="_blank" rel="noopener">property-helper</a> — generate and manipulate properties during the build process</p>
 </li>
 <li>
-<p><a href="https://basepom.github.io/inline-maven-plugin/" target="_blank" rel="noopener">inline</a> - inlines dependencies into a main artifact by rewriting classes and resources</p>
+<p><a href="https://basepom.github.io/inline-maven-plugin/" target="_blank" rel="noopener">inline</a> — inlines dependencies into a main artifact by rewriting classes and resources</p>
 </li>
 <li>
-<p><a href="https://basepom.github.io/repack-maven-plugin/" target="_blank" rel="noopener">repack</a> - repacks code and its dependencies into a single archive for applications and services</p>
+<p><a href="https://basepom.github.io/repack-maven-plugin/" target="_blank" rel="noopener">repack</a> — repacks code and its dependencies into a single archive for applications and services</p>
 </li>
 <li>
-<p><a href="https://github.com/basepom/maven-plugins/tree/main/dependency-management/" target="_blank" rel="noopener">dependency-management</a> - validates that the versions in dependency management and plugin management match the resolved versions</p>
+<p><a href="https://github.com/basepom/maven-plugins/tree/main/dependency-management/" target="_blank" rel="noopener">dependency-management</a> — validates that the versions in dependency management and plugin management match the resolved versions</p>
 </li>
 <li>
-<p><a href="https://github.com/basepom/maven-plugins/tree/main/dependency-scope/" target="_blank" rel="noopener">dependency-scope</a> - ensures that tests scoped dependencies do not override dependencies in compile scope</p>
+<p><a href="https://github.com/basepom/maven-plugins/tree/main/dependency-scope/" target="_blank" rel="noopener">dependency-scope</a> — ensures that tests scoped dependencies do not override dependencies in compile scope</p>
 </li>
 </ul>
 </div>
@@ -888,28 +891,40 @@ table.CodeRay td.code{padding:0 0 0 .75em}
 <p>Even though there have been <a href="https://maven.apache.org/articles.html">a number of attempts to improve the documentation situation</a>, getting a Maven build going is often dreaded by developers.</p>
 </div>
 <div class="paragraph">
-<p>None of that is a fundamental Maven problem. Setting up Maven is much easier than setting up build tools that require programming or scripting. And POM inheritance allow centralized setup of almost all aspects of a build.</p>
+<p>None of that is a fundamental Maven problem. Setting up Maven is much easier than setting up build tools that require programming or scripting. And POM inheritance allows centralized setup for many aspects of a build.</p>
 </div>
 <div class="sect2">
 <h3 id="_requirements"><a class="anchor" href="#_requirements"></a><a class="link" href="#_requirements">3.1. Requirements</a></h3>
 <div class="ulist">
 <ul>
 <li>
-<p>Java 11 is the minimal version for building. It is highly recommended to use the latest LTS version (Java 17) to execute the build process. Each of those Java versions can build project artifacts that are compatible with JDK version 7 or later.</p>
+<p>Java 17 is the minimal version for building. It is highly recommended to use the latest Java LTS version (Java 21) to execute the build process. Each of those Java versions can build project artifacts that are compatible with JDK version 7 or later.</p>
 </li>
 <li>
-<p>Maven 3.6.0 is the minimal version for building. It is recommended to use Apache Maven 3.8.4 or later. BasePOM will stay compatible with the 3.6.0 version of Maven as long as this constraint does not stop innovating.</p>
+<p>Apache Maven 3.9.0 is the minimal version for building. It is recommended to use the latest Apache Maven 3.x.x. BasePOM will stay compatible with the 3.6.3 version of Maven as long as this constraint does not stop innovating.</p>
 </li>
 </ul>
+</div>
+<div class="admonitionblock note">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-note" title="Note"></i>
+</td>
+<td class="content">
+Apache Maven 4 has reached the RC stage, and there might be a release soon. BasePOM will provide a separate set of POMs for Apache 4 once it has been released. The main branch will stay compatible with Apache Maven 3 until version 4 has reached sufficient adoption within the Java community.
+</td>
+</tr>
+</table>
 </div>
 </div>
 <div class="sect2">
 <h3 id="_releases_and_compatibility"><a class="anchor" href="#_releases_and_compatibility"></a><a class="link" href="#_releases_and_compatibility">3.2. Releases and compatibility</a></h3>
 <div class="paragraph">
-<p>BasePOM uses single digit versioning for releases. Every release is a major version and while there is an effort to keep releases backwards compatible, it is only an effort not goal. Any change in a BasePOM release is listed in the <a href="https://github.com/basepom/basepom/blob/main/CHANGES.md">CHANGES file on GitHub</a>.</p>
+<p>BasePOM uses single-digit versioning for releases. Every release is a major version, and while there is an effort to keep releases backwards compatible, it is only an effort, not a goal. Any change in a BasePOM release is listed in the <a href="https://github.com/basepom/basepom/blob/main/CHANGES.md">CHANGES file on GitHub</a>.</p>
 </div>
 <div class="paragraph">
-<p>Build systems are generally stable and there should be no need to upgrade the BasePOM version unless there are compatibility issues with the current version, features from a newer version needed or known security problems.</p>
+<p>Build systems are generally stable, and there should be no need to upgrade the BasePOM version unless there are compatibility issues with the current version, features from a newer version needed or known security problems.</p>
 </div>
 </div>
 <div class="sect2">
@@ -935,7 +950,7 @@ table.CodeRay td.code{padding:0 0 0 .75em}
 </dd>
 <dt class="hdlist1">POM</dt>
 <dd>
-<p>Project object model. The configuration file read by the Apache Maven build tool to execute build steps for a project. A standard POM file is structured using XML and is named <code>pom.xml</code>.</p>
+<p>Project object model. The configuration file which is read by the Apache Maven build tool to execute build steps for a project. A standard POM file is structured using XML and is named <code>pom.xml</code>.</p>
 </dd>
 <dt class="hdlist1">Child POM</dt>
 <dd>
@@ -955,7 +970,7 @@ table.CodeRay td.code{padding:0 0 0 .75em}
 </dd>
 <dt class="hdlist1">Policy POM</dt>
 <dd>
-<p>A POM file that inherits from a Base POM file and configures specific policies e.g. for an organization. A policy POM in turn serves as a Base POM for an organization.</p>
+<p>A POM file that inherits from a Base POM file and configures specific policies e.g., for an organization. A policy POM in turn serves as a Base POM for an organization.</p>
 </dd>
 </dl>
 </div>
@@ -976,7 +991,7 @@ table.CodeRay td.code{padding:0 0 0 .75em}
 <dl>
 <dt class="hdlist1">foundation</dt>
 <dd>
-<p>The <code>foundation</code> POM provides an opinionated base configuration but not any code-specific policies. It sets the Maven plugins up for further configuration in a specific Policy POM. It is intended as starting point when putting together an organization specific Policy POM. Projects will rarely use this directly.</p>
+<p>The <code>foundation</code> POM provides an opinionated base configuration but not any code-specific policies. It sets the Maven plugins up for further configuration in a specific Policy POM. It is intended as a starting point when putting together an organization-specific Policy POM. Projects will rarely use this directly.</p>
 </dd>
 </dl>
 </div>
@@ -1056,7 +1071,7 @@ table.CodeRay td.code{padding:0 0 0 .75em}
 <p>BasePOM provides a set of properties that configure the various Maven plugins. The default values have been chosen so that they make sense for most projects.</p>
 </div>
 <div class="paragraph">
-<p>Each property can be overridden from the command line, a Policy POM or a project specific POM file.</p>
+<p>Each property can be overridden from the command line, a Policy POM or a project-specific POM file.</p>
 </div>
 <div class="paragraph">
 <p>All properties are namespaced using the <code>.</code> separator.</p>
@@ -1086,15 +1101,15 @@ contain a <code>customization</code> column that gives some guidance how common 
 </dd>
 <dt class="hdlist1">sometimes</dt>
 <dd>
-<p>This is a default value that works for most projects. Project or Policy POMs can override it but most don&#8217;t.</p>
+<p>This is a default value that works for most projects. Project or Policy POMs can override it, but most don&#8217;t.</p>
 </dd>
 <dt class="hdlist1">rarely</dt>
 <dd>
-<p>The default value should work for almost every project. Only in very special cases is it overridden by a Project or Policy POM.</p>
+<p>The default value should work for almost every project. Only in very specific cases is it overridden by a Project or Policy POM.</p>
 </dd>
 <dt class="hdlist1">policy</dt>
 <dd>
-<p>This is a value that is often modified as part of a larger, organization-wide policy set of customizations.</p>
+<p>This is a value often modified as part of a larger, organization-wide policy set of customizations.</p>
 </dd>
 <dt class="hdlist1">profile</dt>
 <dd>
@@ -1217,7 +1232,7 @@ contain a <code>customization</code> column that gives some guidance how common 
 </td>
 <td class="content">
 <div class="paragraph">
-<p>The <code>maven.compiler.source</code> and <code>maven.compiler.target</code> properties may need to be set to <code>1.8</code> explicitly when setting <code>project.build.targetJdk</code> to <code>8</code>. This is a limitation of some build plugins (most prominently the GMavenPlus plugin). Unless really having to compile to Java 8, the <code>maven.compiler.source</code>, <code>maven.compiler.target</code> and <code>maven.compiler.release</code> properties should not be changed but <code>project.build.targetJdk</code> should be used.</p>
+<p>The <code>maven.compiler.source</code> and <code>maven.compiler.target</code> properties may need to be set to <code>1.8</code> explicitly when setting <code>project.build.targetJdk</code> to <code>8</code>. This is a limitation of some build plugins, (most prominently the GMavenPlus plugin). Unless really having to compile to Java 8, the <code>maven.compiler.source</code>, <code>maven.compiler.target</code> and <code>maven.compiler.release</code> properties should not be changed but <code>project.build.targetJdk</code> should be used.</p>
 </div>
 </td>
 </tr>
@@ -1227,7 +1242,7 @@ contain a <code>customization</code> column that gives some guidance how common 
 <div class="sect2">
 <h3 id="_global_properties"><a class="anchor" href="#_global_properties"></a><a class="link" href="#_global_properties">6.3. Global properties</a></h3>
 <div class="paragraph">
-<p>These properties affect multiple plugins. POMs that add new plugins should evaluate these properties if necessary and not define plugin specific properties.</p>
+<p>These properties affect multiple plugins. POMs that add new plugins should evaluate these properties if necessary and not define plugin-specific properties.</p>
 </div>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
@@ -1270,10 +1285,10 @@ contain a <code>customization</code> column that gives some guidance how common 
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">basepom.maven.version</p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock"><code>3.6.0</code></p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><code>3.6.3</code></p></td>
 <td class="tableblock halign-center valign-top"><p class="tableblock">sometimes</p></td>
 <td class="tableblock halign-center valign-top"><p class="tableblock">foundation</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The minimum version of Apache Maven required.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The minimum required version for Apache Maven.</p></td>
 </tr>
 </tbody>
 </table>
@@ -1289,7 +1304,7 @@ contain a <code>customization</code> column that gives some guidance how common 
 <div class="sect3">
 <h4 id="_compilation_control"><a class="anchor" href="#_compilation_control"></a><a class="link" href="#_compilation_control">6.4.1. Compilation control</a></h4>
 <div class="paragraph">
-<p>All properties in this section should be supported by language compilers. By default, BasePOM uses the <code>maven-compiler-plugin</code> for Java.</p>
+<p>Language compilers should support all properties in this section. By default, BasePOM uses the <code>maven-compiler-plugin</code> for Java.</p>
 </div>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
@@ -1378,11 +1393,67 @@ contain a <code>customization</code> column that gives some guidance how common 
 <td class="tableblock halign-left valign-top"><p class="tableblock">If <code>true</code>, deploy artifacts at the end of a Multi Module project build cycle.</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">basepom.install.skip</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">basepom.central-publishing.skip</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><code>true</code></p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">rarely</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">oss</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">If <code>true</code>, skip central publishing. This is set to <code>false</code> by the <code>basepom.central-release</code> profile.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">basepom.central-publishing.fail-build</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><code>true</code></p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">rarely</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">oss</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">If <code>true</code> skip publishing if the build failed.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">basepom.central-publishing.repo-id</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><code>central</code></p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">rarely</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">oss</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The repository Id used to look up credentials in <code>settings.xml</code>. Default is <code>central</code>.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">basepom.central-publishing.auto-publish</p></td>
 <td class="tableblock halign-center valign-top"><p class="tableblock"><code>false</code></p></td>
 <td class="tableblock halign-center valign-top"><p class="tableblock">rarely</p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock">foundation</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">If <code>true</code>, skip artifact installation.</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">oss</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">If <code>false</code>, requires manual publishing of a release on the <code>central.maven.org</code> portal. If <code>true</code>, a successful upload  that passes all publishing criteria is automatically published.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">basepom.central-publishing.wait-until</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><code>validated</code></p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">rarely</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">oss</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>validated</code> waits until the uploaded artifacts have passed repository validation checks. <code>uploaded</code> ends the maven build as soon as the artifacts are uploaded. <code>published</code> waits until the artifacts have been published (This requires <code>basepom.central-publishing.auto-publish</code> to be <code>true</code>).</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">basepom.central-publishing.checksums</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><code>all</code></p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">rarely</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">oss</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Controls the creation of checksums for the uploaded artifacts. <code>all</code> creates MD5, SHA1, SHA256 and SHA512 checksums, <code>none</code> creates no checksums and <code>required</code> only creates MD5 and SHA1.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">basepom.central-publishing.deployment-name</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><code>${project.groupId}:${project.artifactId}:${project.version}</code></p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">rarely</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">oss</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Name of the deployment on the central dashboards.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">basepom.deploy.snapshot.repo-id</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><code>${basepom.central-publishing.repo-id}</code></p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">sometimes, policy</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">oss</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Defines the snapshot repository id for deployments. Defaults to <code>central</code>. When using the <code>basepom.deploy-release</code> profile, this is set to <code>sonatype-nexus-staging</code>.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">basepom.deploy.snapshot.url</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><code><a href="https://central.sonatype.com/repository/maven-snapshots/" class="bare">https://central.sonatype.com/repository/maven-snapshots/</a></code></p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">sometimes, policy</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">oss</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Defines the snapshot repository URL for deployments. When using the <code>basepom.deploy-release</code> profile, this is set to <code><a href="https://oss.sonatype.org/service/local/staging/deploy/maven2/" class="bare">https://oss.sonatype.org/service/local/staging/deploy/maven2/</a></code></p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">basepom.deploy.skip</p></td>
@@ -1392,11 +1463,18 @@ contain a <code>customization</code> column that gives some guidance how common 
 <td class="tableblock halign-left valign-top"><p class="tableblock">If <code>true</code>, skip artifact deployment.</p></td>
 </tr>
 <tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">basepom.install.skip</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><code>false</code></p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">rarely</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">foundation</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">If <code>true</code>, skip artifact installation.</p></td>
+</tr>
+<tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">basepom.release.profiles</p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock"><code>basepom.deploy-release</code></p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><code>basepom.central-release</code></p></td>
 <td class="tableblock halign-center valign-top"><p class="tableblock">rarely</p></td>
 <td class="tableblock halign-center valign-top"><p class="tableblock">oss</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Sets the name of one or more release profiles. Multiple release profiles must be comma-separated. By default, the <code>basepom.deploy-release</code> profile is used, which uploads to Sonatype OSS using the Apache deploy plugin. Alternatively, the <code>basepom.oss-release</code> profile can be used which uses the Sonatype Nexus OSS plugin.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Sets the name of one or more release profiles. Multiple release profiles must be comma-separated. By default, the <code>basepom.central-release</code> profile is used, which uploads to Maven Central using the Sonatype Central Publishing plugin. Alternatively, the <code>basepom.deployt-release</code> profile can be used which uses the Apache deploy plugin and the OSS service. The OSS service has been declared end-of-life by June 30th, 2025 and may no longer be supported after that date.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">basepom.release.push-changes</p></td>
@@ -1417,28 +1495,7 @@ contain a <code>customization</code> column that gives some guidance how common 
 <td class="tableblock halign-center valign-top"><p class="tableblock"><code>clean install</code></p></td>
 <td class="tableblock halign-center valign-top"><p class="tableblock">sometimes</p></td>
 <td class="tableblock halign-center valign-top"><p class="tableblock">foundation</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Defines the goals run by maven when executing <code>release:prepare</code>. If e.g. local install is not desired, use <code>clean verify</code>.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">basepom.nexus-staging.skip</p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock"><code>true</code></p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock">rarely</p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock">oss</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">If <code>true</code> skips artifact installation.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">basepom.nexus-staging.staging-url</p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock"><code><a href="https://s01.oss.sonatype.org/" class="bare">https://s01.oss.sonatype.org/</a></code></p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock">rarely</p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock">oss</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The staging repository for deploying to Sonatype OSS. Used only with the nexus staging plugin. The deploy plugin uses the standard maven repository settings.</p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">basepom.nexus-staging.release-after-close</p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock"><code>false</code></p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock">often</p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock">oss</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Whether to release right after the deployment ends. The default is <code>false</code> (either run <code>mvn nexus-staging:release</code> or use the Sonatype OSS GUI to deploy).</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Defines the goals run by maven when executing <code>release:prepare</code>. If e.g., local installation is not desired, use <code>clean verify</code>.</p></td>
 </tr>
 </tbody>
 </table>
@@ -1471,35 +1528,35 @@ contain a <code>customization</code> column that gives some guidance how common 
 <td class="tableblock halign-center valign-top"><p class="tableblock"><code>true</code></p></td>
 <td class="tableblock halign-center valign-top"><p class="tableblock">often, profile</p></td>
 <td class="tableblock halign-center valign-top"><p class="tableblock">foundation</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">If <code>true</code>, generate a javadoc artifact as part of the build.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">If <code>true</code>, generate a Javadoc artifact as part of the build.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">basepom.javadoc.doclint</p></td>
 <td class="tableblock halign-center valign-top"><p class="tableblock"><code>none</code></p></td>
 <td class="tableblock halign-center valign-top"><p class="tableblock">sometimes</p></td>
 <td class="tableblock halign-center valign-top"><p class="tableblock">foundation</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Controls the <a href="https://docs.oracle.com/javase/8/docs/technotes/tools/windows/javadoc.html#BEJEFABE">Javadoc <code>-Xdoclint</code> setting</a>.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Controls the <a href="https://docs.oracle.com/javase/8/docs/technotes/tools/windows/javadoc.html#BEJEFABE"><code>-Xdoclint</code> setting when generating Javadoc</a>.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">basepom.javadoc.exclude-package-names</p></td>
 <td class="tableblock halign-center valign-top"><p class="tableblock">``</p></td>
 <td class="tableblock halign-center valign-top"><p class="tableblock">sometimes</p></td>
 <td class="tableblock halign-center valign-top"><p class="tableblock">foundation</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Allows exclusion of package names from javadoc generation. See <a href="https://maven.apache.org/plugins/maven-javadoc-plugin/javadoc-mojo.html#excludePackageNames">Maven javadoc plugin</a> documentation for the exact syntax.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Allows the exclusion of package names from Javadoc generation. See <a href="https://maven.apache.org/plugins/maven-javadoc-plugin/javadoc-mojo.html#excludePackageNames">Maven Javadoc plugin</a> documentation for the exact syntax.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">basepom.javadoc.show</p></td>
 <td class="tableblock halign-center valign-top"><p class="tableblock"><code>public</code></p></td>
 <td class="tableblock halign-center valign-top"><p class="tableblock">rarely, policy</p></td>
 <td class="tableblock halign-center valign-top"><p class="tableblock">foundation</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Controls the access level included in the javadocs.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Controls the access level included in the Javadocs.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">basepom.javadoc.legacy-mode</p></td>
 <td class="tableblock halign-center valign-top"><p class="tableblock"><code>false</code></p></td>
 <td class="tableblock halign-center valign-top"><p class="tableblock">often</p></td>
 <td class="tableblock halign-center valign-top"><p class="tableblock">foundation</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Controls whether the javadoc tool uses the classpath or module path when building post-java 8 projects. Unless a project defines module descriptors, legacy mode should be used.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Controls whether Javadoc generation uses the classpath or module path when building post-java 8 projects. Unless a project defines module descriptors, legacy mode should be used.</p></td>
 </tr>
 </tbody>
 </table>
@@ -1546,7 +1603,7 @@ contain a <code>customization</code> column that gives some guidance how common 
 <td class="tableblock halign-center valign-top"><p class="tableblock"><code>0.75C</code></p></td>
 <td class="tableblock halign-center valign-top"><p class="tableblock">sometimes, policy</p></td>
 <td class="tableblock halign-center valign-top"><p class="tableblock">foundation</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Controls the number of parallel tests to run. Default is the 3/4 of number of reported CPU cores.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Controls the number of parallel tests to run. The default is 3/4 of reported CPU cores.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">basepom.test.reuse-vm</p></td>
@@ -1664,7 +1721,7 @@ contain a <code>customization</code> column that gives some guidance how common 
 <div class="sect3">
 <h4 id="_git_version_control_support"><a class="anchor" href="#_git_version_control_support"></a><a class="link" href="#_git_version_control_support">6.4.6. git version control support</a></h4>
 <div class="paragraph">
-<p>BasePOM uses the <a href="https://github.com/git-commit-id/git-commit-id-maven-plugin/blob/master/docs/using-the-plugin.md">git-commit-id-maven-plugin</a> to provide scm information to the build. The main use case to modify its configuration is if the code base does not actually use git.</p>
+<p>BasePOM uses the <a href="https://github.com/git-commit-id/git-commit-id-maven-plugin/blob/master/docs/using-the-plugin.md">git-commit-id-maven-plugin</a> to provide scm information to the build. The main use case to modify its configuration is if the code base does not use git.</p>
 </div>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
@@ -1710,7 +1767,7 @@ contain a <code>customization</code> column that gives some guidance how common 
 <td class="tableblock halign-center valign-top"><p class="tableblock"><code>true</code></p></td>
 <td class="tableblock halign-center valign-top"><p class="tableblock">rarely, policy</p></td>
 <td class="tableblock halign-center valign-top"><p class="tableblock">foundation</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">If <code>true</code>, fail if the plugin can not extract build information from the local git repository.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">If <code>true</code>, fail if the plugin cannot extract build information from the local git repository.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">basepom.git-id.use-native</p></td>
@@ -1798,7 +1855,7 @@ contain a <code>customization</code> column that gives some guidance how common 
 <div class="sect2">
 <h3 id="_setting_plugin_and_dependency_versions"><a class="anchor" href="#_setting_plugin_and_dependency_versions"></a><a class="link" href="#_setting_plugin_and_dependency_versions">6.5. Setting plugin and dependency versions</a></h3>
 <div class="paragraph">
-<p>Each BasePOM release defines the versions for all Maven plugins and dependent libraries. The values change from release to release and are chosen based on stability and release quality of the various tools.</p>
+<p>Each BasePOM release defines the versions for all Maven plugins and dependent libraries. The values change from release to release and are chosen based on the stability and release quality of the various tools.</p>
 </div>
 <div class="paragraph">
 <p>These versions can be overwritten in Policy POMs, project POMs  or the command line.</p>
@@ -1825,6 +1882,11 @@ contain a <code>customization</code> column that gives some guidance how common 
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>dep.plugin.build-helper.version</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">foundation</p></td>
+<td class="tableblock halign-left valign-top"></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>dep.plugin.central-publishing.version</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">oss</p></td>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
 <tr>
@@ -1924,11 +1986,6 @@ contain a <code>customization</code> column that gives some guidance how common 
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>dep.plugin.license.version</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">oss</p></td>
-<td class="tableblock halign-left valign-top"></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>dep.plugin.nexus-staging.version</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">oss</p></td>
 <td class="tableblock halign-left valign-top"></td>
 </tr>
@@ -2036,40 +2093,40 @@ contain a <code>customization</code> column that gives some guidance how common 
 <div class="ulist">
 <ul>
 <li>
-<p><a href="https://maven.apache.org/enforcer/maven-enforcer-plugin/index.html">Maven Enforcer</a> - Basic checks for Build JDK, Maven version etc. ("The Loving Iron Fist of Maven™")</p>
+<p><a href="https://maven.apache.org/enforcer/maven-enforcer-plugin/index.html">Maven Enforcer</a> — Basic checks for Build JDK, Maven version etc. ("The Loving Iron Fist of Maven™")</p>
 </li>
 <li>
-<p><a href="https://maven.apache.org/plugins/maven-dependency-plugin/">Maven Dependency Plugin</a> - Ensure declared and used dependencies.</p>
+<p><a href="https://maven.apache.org/plugins/maven-dependency-plugin/">Maven Dependency Plugin</a> — Ensure declared and used dependencies.</p>
 </li>
 <li>
-<p><a href="https://github.com/basepom/duplicate-finder-maven-plugin/wiki">Duplicate Finder Plugin</a> - Test for duplicate classes on the class path which threaten build stability</p>
+<p><a href="https://github.com/basepom/duplicate-finder-maven-plugin/wiki">Duplicate Finder Plugin</a> — Test for duplicate classes on the class path which threaten build stability</p>
 </li>
 <li>
-<p><a href="https://github.com/basepom/maven-plugins/">Dependency Management Plugin</a> - Ensure that plugins and dependencies are declared in <code>pluginManagement</code> and <code>dependencyManagement</code> sections</p>
+<p><a href="https://github.com/basepom/maven-plugins/">Dependency Management Plugin</a> — Ensure that plugins and dependencies are declared in <code>pluginManagement</code> and <code>dependencyManagement</code> sections</p>
 </li>
 <li>
-<p><a href="https://github.com/basepom/maven-plugins/">Dependency Scope Plugin</a> - Ensure that transitive dependencies are not accidentally declared in <code>test</code> scope.</p>
+<p><a href="https://github.com/basepom/maven-plugins/">Dependency Scope Plugin</a> — Ensure that transitive dependencies are not accidentally declared in <code>test</code> scope.</p>
 </li>
 <li>
-<p><a href="https://basepom.github.io/dependency-versions-check-maven-plugin/">Dependency Versions Check Plugin</a> - Ensure that multiple dependency references with different versions converge.</p>
+<p><a href="https://basepom.github.io/dependency-versions-check-maven-plugin/">Dependency Versions Check Plugin</a> — Ensure that multiple dependency references with different versions converge.</p>
 </li>
 <li>
-<p><a href="https://spotbugs.github.io/spotbugs-maven-plugin/">Spotbugs</a> - Run the spotbugs code quality tool.</p>
+<p><a href="https://spotbugs.github.io/spotbugs-maven-plugin/">Spotbugs</a> — Run the spotbugs code quality tool.</p>
 </li>
 <li>
-<p><a href="https://www.eclemma.org/jacoco/trunk/doc/maven.html">Coverage</a> - Use the jacoco code coverage tool.</p>
+<p><a href="https://www.eclemma.org/jacoco/trunk/doc/maven.html">Coverage</a> — Use the jacoco code coverage tool.</p>
 </li>
 <li>
-<p><a href="https://maven.apache.org/plugins/maven-pmd-plugin/">Maven PMD</a> - Run the PMD code quality tool.</p>
+<p><a href="https://maven.apache.org/plugins/maven-pmd-plugin/">Maven PMD</a> — Run the PMD code quality tool.</p>
 </li>
 <li>
-<p><a href="https://maven.apache.org/plugins/maven-checkstyle-plugin/">Maven Checkstyle</a> - Run the checkstyle code formatting and checker tool.</p>
+<p><a href="https://maven.apache.org/plugins/maven-checkstyle-plugin/">Maven Checkstyle</a> — Run the checkstyle code formatting and checker tool.</p>
 </li>
 <li>
-<p><a href="https://maven.apache.org/plugins/maven-javadoc-plugin/">Maven Javadoc</a> - Lint the javadoc included in the source code.</p>
+<p><a href="https://maven.apache.org/plugins/maven-javadoc-plugin/">Maven Javadoc</a> — Lint the Javadoc included in the source code.</p>
 </li>
 <li>
-<p><a href="https://mycila.carbou.me/license-maven-plugin/">License check plugin</a> - Ensure that source code files contain correct license headers.</p>
+<p><a href="https://mycila.carbou.me/license-maven-plugin/">License check plugin</a> — Ensure that source code files contain correct license headers.</p>
 </li>
 </ul>
 </div>
@@ -2091,8 +2148,8 @@ contain a <code>customization</code> column that gives some guidance how common 
 <thead>
 <tr>
 <th class="tableblock halign-left valign-top">Checker</th>
-<th class="tableblock halign-left valign-top">property for enabling/disabling</th>
-<th class="tableblock halign-left valign-top">property for build failure enable/disable</th>
+<th class="tableblock halign-left valign-top">enabling/disabling property</th>
+<th class="tableblock halign-left valign-top">property for enabling/disabling build failure</th>
 </tr>
 </thead>
 <tbody>
@@ -2187,7 +2244,7 @@ contain a <code>customization</code> column that gives some guidance how common 
 </td>
 <td class="content">
 <div class="paragraph">
-<p>Javadoc is special, because it generates an artifact but also provides checking ("linting") of the javadoc blocks in the source code. Javadoc generation is
+<p>Javadoc is special because it generates an artifact but also provides checking ("linting") of the Javadoc blocks in the source code. Javadoc generation is
 often controlled independently of checker runs, so it is not part of the <code>basepom.check.skip-</code> properties. Failing the build however still uses the <code>basepom.check.fail-</code> convention.</p>
 </div>
 </td>
@@ -2227,23 +2284,23 @@ the group properties <code>basepom.check.skip|fail-basic</code> and <code>basepo
 <div class="ulist">
 <ul>
 <li>
-<p><code>all</code> which contains all <code>basic</code> and <code>extended</code> checks.</p>
+<p><code>all</code> — contains all <code>basic</code> and <code>extended</code> checks.</p>
 </li>
 <li>
-<p><code>basic</code>, which contains <code>enforcer</code>, <code>dependency</code>, <code>duplicate-finder</code>, <code>dependency-management</code>, <code>dependency-scope</code> and <code>dependency-versions-check</code></p>
+<p><code>basic</code> — contains <code>enforcer</code>, <code>dependency</code>, <code>duplicate-finder</code>, <code>dependency-management</code>, <code>dependency-scope</code> and <code>dependency-versions-check</code></p>
 </li>
 <li>
-<p><code>extended</code> is different for three BasePOM types:</p>
+<p><code>extended</code> — Depends on the different BasePOM types:</p>
 <div class="ulist">
 <ul>
 <li>
-<p>for the <code>foundation</code> BasePOM, it contains <code>spotbugs</code> and <code>coverage</code></p>
+<p><code>spotbugs</code> and <code>coverage</code> for the <code>foundation</code> BasePOM</p>
 </li>
 <li>
-<p>for the <code>minimal</code> BasePOM, it contains <code>spotbugs</code>, <code>coverage</code>, <code>pmd</code>, and <code>checkstyle</code></p>
+<p><code>spotbugs</code>, <code>coverage</code>, <code>pmd</code>, and <code>checkstyle</code> for the <code>minimal</code> BasePOM</p>
 </li>
 <li>
-<p>for the <code>oss</code> BasePOM, it contains <code>spotbugs</code>, <code>coverage</code>, <code>pmd</code>, <code>checkstyle</code> and <code>license</code></p>
+<p><code>spotbugs</code>, <code>coverage</code>, <code>pmd</code>, <code>checkstyle</code> and <code>license</code> for the <code>oss</code> BasePOM</p>
 </li>
 </ul>
 </div>
@@ -2251,7 +2308,7 @@ the group properties <code>basepom.check.skip|fail-basic</code> and <code>basepo
 </ul>
 </div>
 <div class="paragraph">
-<p>In the foundation BasePOM, the <code>pmd</code> and <code>checkstyle</code> checkers are deactivated. All other checkers are active. All active checkers will fail the build if an error is detected.</p>
+<p>For the <code>foundation</code> BasePOM, the <code>pmd</code> and <code>checkstyle</code> checkers are deactivated. All other checkers are active. All active checkers will fail the build if an error is detected.</p>
 </div>
 </div>
 <div class="sect2">
@@ -2268,7 +2325,7 @@ the group properties <code>basepom.check.skip|fail-basic</code> and <code>basepo
 <p>early execution avoids long compile times and then checkers failing the artifact generation</p>
 </li>
 <li>
-<p>late execution allows the execution of the compilation and test lifecycle phases without having to continuously fix unrelated problems (e.g. dependencies or code style issues).</p>
+<p>late execution allows the execution of the compilation and test lifecycle phases without having to continuously fix unrelated problems (e.g., dependencies or code style issues).</p>
 </li>
 </ul>
 </div>
@@ -2416,7 +2473,7 @@ the group properties <code>basepom.check.skip|fail-basic</code> and <code>basepo
 <h2 id="_build_cycle"><a class="anchor" href="#_build_cycle"></a><a class="link" href="#_build_cycle">8. Build cycle</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>BasePOM configures all the Maven plugins as part of the Maven build lifecycle. Being configured is different from execution, though. Plugin execution can be skipped for many reasons, most common is that the plugin configuration has a <code>skip</code> property set.</p>
+<p>BasePOM configures all the Maven plugins as part of the Maven build lifecycle. Being configured is different from execution, though. Plugin execution can be skipped for many reasons; most common is that the plugin configuration has a <code>skip</code> property set.</p>
 </div>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
@@ -2448,7 +2505,7 @@ the group properties <code>basepom.check.skip|fail-basic</code> and <code>basepo
 <td class="tableblock halign-center valign-top"><p class="tableblock">validate</p></td>
 <td class="tableblock halign-center valign-top"><p class="tableblock">basepom.default</p></td>
 <td class="tableblock halign-center valign-top"><p class="tableblock">get</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">create build specific ids</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">create build-specific ids</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>maven-enforcer-plugin</code></p></td>
@@ -2811,58 +2868,12 @@ the group properties <code>basepom.check.skip|fail-basic</code> and <code>basepo
 </table>
 </div>
 <div class="sect3">
-<h4 id="_basepom_deploy_release_oss"><a class="anchor" href="#_basepom_deploy_release_oss"></a><a class="link" href="#_basepom_deploy_release_oss">8.1.4. <code>basepom.deploy-release</code> (oss)</a></h4>
+<h4 id="_basepom_central_release_oss"><a class="anchor" href="#_basepom_central_release_oss"></a><a class="link" href="#_basepom_central_release_oss">8.1.4. <code>basepom.central-release</code> (oss)</a></h4>
 <div class="paragraph">
-<p>This is the release profile for releasing an artifact to the OSS repository (and subsequently to Maven Central). It is configured as release profile for the <code>release</code> plugin if the <code>oss</code> BasePOM is used. It gets activated when executing the <code>release:perform</code> goal of the <code>release</code> plugin.</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>skip unit tests (all tests have already passed as part of the release process)</p>
-</li>
-<li>
-<p>skip all checkers that are following the <code>basepom.check.skip-all</code> setting (they have already been executed as part of the release process)</p>
-</li>
-<li>
-<p>always create a <code>javadoc</code> artifact</p>
-</li>
-</ul>
+<p>This is the release profile for releasing an artifact to the Maven central repository. As the old OSS service is sunset and will be turned off, this is now the default release profile. It is configured as release profile for the <code>release</code> plugin if the <code>oss</code> BasePOM is used. It gets activated when executing the <code>release:perform</code> goal of the <code>release</code> plugin.</p>
 </div>
 <div class="paragraph">
-<p>This profile adds the following goals to the lifecycle:</p>
-</div>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 20%;">
-<col style="width: 10%;">
-<col style="width: 10%;">
-<col style="width: 10%;">
-<col style="width: 50%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">Plugin</th>
-<th class="tableblock halign-center valign-top">Phase</th>
-<th class="tableblock halign-center valign-top">execution id</th>
-<th class="tableblock halign-center valign-top">goal(s)</th>
-<th class="tableblock halign-left valign-top">function</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>maven-gpg-plugin</code></p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock">verify</p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock">basepom.release.default</p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock">sign</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">create GPG signature for releasing to OSS</p></td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="sect3">
-<h4 id="_basepom_oss_release_oss"><a class="anchor" href="#_basepom_oss_release_oss"></a><a class="link" href="#_basepom_oss_release_oss">8.1.5. <code>basepom.oss-release</code> (oss)</a></h4>
-<div class="paragraph">
-<p>This is an alternate release profile for releasing an artifact to a non-staging repository. It must be activated by replacing <code>basepom.deploy-release</code> in the <code>basepom.release.profiles</code> property with <code>basepom.oss-release</code>.</p>
+<p>This profile uses the <a href="https://central.sonatype.com/artifact/org.sonatype.central/central-publishing-maven-plugin" target="_blank" rel="noopener">Central Publishing Plugin</a>, which is now the recommended way of publishing software to the Central repository.</p>
 </div>
 <div class="ulist">
 <ul>
@@ -2881,6 +2892,9 @@ the group properties <code>basepom.check.skip|fail-basic</code> and <code>basepo
 </ul>
 </div>
 <div class="paragraph">
+<p>This profile does not use the <code>&lt;distributionManagement&gt;</code> section of a project pom. The deployment repositories are configured using the <code>basepom.deploy.snapshot.repo-id</code> property for snapshots and <code>basepom.central-publishing.repo-id</code> for release artifacts. It uses <code>central</code> as the repository id for both snapshots and releases. The local <code>settings.xml</code> file must contain credentials for it to authenticate for artifact upload.</p>
+</div>
+<div class="paragraph">
 <p>This profile adds the following goals to the lifecycle:</p>
 </div>
 <table class="tableblock frame-all grid-all stretch">
@@ -2906,29 +2920,72 @@ the group properties <code>basepom.check.skip|fail-basic</code> and <code>basepo
 <td class="tableblock halign-center valign-top"><p class="tableblock">verify</p></td>
 <td class="tableblock halign-center valign-top"><p class="tableblock">basepom.release.default</p></td>
 <td class="tableblock halign-center valign-top"><p class="tableblock">sign</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">create GPG signature for releasing to OSS</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">creates the GPG signature for releasing to OSS</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>maven-nexus-staging-plugin</code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>central-publishing-maven-plugin</code></p></td>
 <td class="tableblock halign-center valign-top"><p class="tableblock">deploy</p></td>
 <td class="tableblock halign-center valign-top"><p class="tableblock">basepom.release.default</p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock">deploy</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">deploy the project to the Nexus OSS staging area. Depending on the setting of <code>basepom.nexus-staging.release-after-close</code>, the project will be directly released, otherwise the repo will be closed and must be released in an additional step.</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">publish</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">publish the artifact to the central repository staging area.</p></td>
 </tr>
 </tbody>
 </table>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-note" title="Note"></i>
-</td>
-<td class="content">
-This profile is <strong>experimental</strong> and is known to have problems with some multi-module builds (<a href="https://issues.sonatype.org/browse/NEXUS-38262" target="_blank" rel="noopener">NEXUS-38262</a>).
-</td>
-</tr>
-</table>
 </div>
+<div class="sect3">
+<h4 id="_basepom_deploy_release_oss"><a class="anchor" href="#_basepom_deploy_release_oss"></a><a class="link" href="#_basepom_deploy_release_oss">8.1.5. <code>basepom.deploy-release</code> (oss)</a></h4>
+<div class="paragraph">
+<p>This profile used to be the default release profile before Basepom 63. It must be activated by replacing <code>basepom.central-release</code> in the <code>basepom.release.profiles</code> property with <code>basepom.deploy-release</code>. This profile uses the OSS service to deploy to Maven Central. The OSS service is end-of-life by June 30th, 2025. This profile may no longer work after that date.</p>
+</div>
+<div class="paragraph">
+<p>The profile is configured as release profile for the <code>release</code> plugin if the <code>oss</code> BasePOM is used. It gets activated when executing the <code>release:perform</code> goal of the <code>release</code> plugin.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>skip unit tests (all tests have already passed as part of the release process)</p>
+</li>
+<li>
+<p>skip all checkers that are following the <code>basepom.check.skip-all</code> setting (they have already been executed as part of the release process)</p>
+</li>
+<li>
+<p>always create a <code>javadoc</code> artifact</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>This profile uses the <code>&lt;distributionManagement&gt;</code> section of a project POM. By default, the snapshot repository is <code>sonatype-nexus-snapshots</code> (defined by the <code>basepom.deploy.snapshot.repo-id</code> property) and <code>sonatype-nexus-staging</code> as defined by the OSS upload rules. The local <code>settings.xml</code> file must contain credentials for these ids to authenticate to the repositories for artifact upload.</p>
+</div>
+<div class="paragraph">
+<p>This profile adds the following goals to the lifecycle:</p>
+</div>
+<table class="tableblock frame-all grid-all stretch">
+<colgroup>
+<col style="width: 20%;">
+<col style="width: 10%;">
+<col style="width: 10%;">
+<col style="width: 10%;">
+<col style="width: 50%;">
+</colgroup>
+<thead>
+<tr>
+<th class="tableblock halign-left valign-top">Plugin</th>
+<th class="tableblock halign-center valign-top">Phase</th>
+<th class="tableblock halign-center valign-top">execution id</th>
+<th class="tableblock halign-center valign-top">goal(s)</th>
+<th class="tableblock halign-left valign-top">function</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><code>maven-gpg-plugin</code></p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">verify</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">basepom.release.default</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">sign</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">creates the GPG signature for releasing to OSS</p></td>
+</tr>
+</tbody>
+</table>
 </div>
 <div class="sect3">
 <h4 id="_basepom_invoker_reporting_oss"><a class="anchor" href="#_basepom_invoker_reporting_oss"></a><a class="link" href="#_basepom_invoker_reporting_oss">8.1.6. <code>basepom.invoker-reporting</code> (oss)</a></h4>
@@ -2982,13 +3039,13 @@ This profile is <strong>experimental</strong> and is known to have problems with
 <h2 id="_creating_a_policypom_to_apply_a_build_policy"><a class="anchor" href="#_creating_a_policypom_to_apply_a_build_policy"></a><a class="link" href="#_creating_a_policypom_to_apply_a_build_policy">9. Creating a PolicyPOM to apply a build policy</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Most organizations create internal policies on how builds should be organized, what rules should be enforced etc. Having such policies codified and enforced by the build system are a massive boost for code quality and reuse.</p>
+<p>Most organizations create internal policies on how builds should be organized, what rules should be enforced etc. Having such policies codified and enforced by the build system is a massive boost for code quality and reuse.</p>
 </div>
 <div class="paragraph">
-<p>An organization that plans to use BasePOM should also create an organization specific Policy POM.</p>
+<p>An organization that plans to use BasePOM should also create an organization-specific Policy POM.</p>
 </div>
 <div class="paragraph">
-<p>BasePOMs were designed specifically to allow policy enforcement across many projects. The <code>minimal</code> and <code>oss</code> BasePOMs are examples on how to create Policy POMs that can be used by projects.</p>
+<p>BasePOMs were designed specifically to allow policy enforcement across many projects. The <code>minimal</code> and <code>oss</code> BasePOMs are examples on how to create Policy POMs for projects to use.</p>
 </div>
 <div class="paragraph">
 <p>A PolicyPOM should define or apply specific rules for</p>
@@ -2996,7 +3053,7 @@ This profile is <strong>experimental</strong> and is known to have problems with
 <div class="ulist">
 <ul>
 <li>
-<p>property settings (e.g. required JDK level, checker settings etc.)</p>
+<p>property settings (e.g., required JDK level, checker settings etc.)</p>
 </li>
 <li>
 <p>remote repositories for artifacts and artifact deployment</p>
@@ -3092,7 +3149,7 @@ This profile is <strong>experimental</strong> and is known to have problems with
 </tbody>
 </table>
 <div class="paragraph">
-<p>Similar to classes, there are other resources on the class path as well. Most of those should be unique, however there are a few resources that are often packaged into jars where duplicates can be tolerated.</p>
+<p>Similar to classes, there are other resources on the class path as well. Most of these resources should be unique. However, there are a few resources that are often packaged into jars where duplicates can be tolerated.</p>
 </div>
 <div class="paragraph">
 <p>The following resource patterns are ignored:</p>
@@ -3120,7 +3177,7 @@ This profile is <strong>experimental</strong> and is known to have problems with
 <div class="sect3">
 <h4 id="_pmd_plugin_configuration"><a class="anchor" href="#_pmd_plugin_configuration"></a><a class="link" href="#_pmd_plugin_configuration">9.1.2. <code>pmd</code> plugin configuration</a></h4>
 <div class="paragraph">
-<p>PMD does code analysis and flags common programming errors and anti-patterns. This is useful for code that is actually written but less so for code that is auto-generated where the constructs in auto-generated classes can not be modified unless the code generator itself is changed.</p>
+<p>PMD does code analysis and flags common programming errors and antipatterns. This is useful for code that is actually written but less so for code that is auto-generated where the constructs in auto-generated classes cannot be modified unless the code generator itself is changed.</p>
 </div>
 <div class="paragraph">
 <p>Auto-generated code is usually located in <code>target/generated-sources/stubs</code> and <code>target/generated-sources/annotations</code>. These folders are excluded from being scanned by PMD.</p>
@@ -3218,7 +3275,7 @@ This profile is <strong>experimental</strong> and is known to have problems with
 <div class="sect3">
 <h4 id="_repack_plugin_configuration"><a class="anchor" href="#_repack_plugin_configuration"></a><a class="link" href="#_repack_plugin_configuration">9.1.5. <code>repack</code> plugin configuration</a></h4>
 <div class="paragraph">
-<p>The <code>repack</code> plugin can create a "fat jar" artifact from a build artifact by including all its dependencies into a single jar. It does not rewrite any classes or unpack dependencies.</p>
+<p>The <code>repack</code> plugin can create a "fat jar" artifact from a build artifact by including all its dependencies in a single jar. It does not rewrite any classes or unpack dependencies.</p>
 </div>
 <div class="paragraph">
 <p>In the <code>minimal</code> Policy POM, the <code>repack</code> plugin is configured to</p>
@@ -3253,7 +3310,7 @@ This profile is <strong>experimental</strong> and is known to have problems with
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>sun.jnu.encoding</code></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>${project.build.sourceEncoding}</code></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>sun.jnu.encoding</code> is used for encoding/decoding file paths</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">This setting is used by the JVM to encode/decode file paths</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>user.timezone</code></p></td>
@@ -3282,13 +3339,13 @@ This profile is <strong>experimental</strong> and is known to have problems with
 <div class="ulist">
 <ul>
 <li>
-<p>the <code>license</code> checker is added to the <code>extended</code> set of Build checkers.</p>
+<p>The <code>license</code> checker is added to the <code>extended</code> set of Build checkers.</p>
 </li>
 <li>
-<p>configure the OSS repositories for snapshot and release distribution. The repositories are configured as <code>sonatype-nexus-snapshots</code> and <code>sonatype-nexus-staging</code>. The local <code>settings.xml</code> file must contain credentials for these ids to authenticate to the repositories for artifact upload.</p>
+<p>Configures the OSS repositories for snapshot and release distribution. This differs based on the release profile. See below for a description of the available repositories.</p>
 </li>
 <li>
-<p>set the <code>basepom.deploy-release</code> profile as release profile for the <code>maven-release-plugin</code>, which uses the <a href="https://maven.apache.org/plugins/maven-deploy-plugin/">Apache deploy plugin</a> to upload the project.</p>
+<p>Sets the <code>basepom.deploy-release</code> profile as release profile for the <code>maven-release-plugin</code>, which uses the <a href="https://maven.apache.org/plugins/maven-deploy-plugin/">Apache deploy plugin</a> to upload the project.</p>
 </li>
 </ul>
 </div>
@@ -3329,7 +3386,7 @@ This profile is <strong>experimental</strong> and is known to have problems with
 <h2 id="_reproducible_builds_with_basepom"><a class="anchor" href="#_reproducible_builds_with_basepom"></a><a class="link" href="#_reproducible_builds_with_basepom">10. Reproducible Builds with BasePOM</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Apache Maven supports reproducible builds (where it is possible to create bit-identical artefacts from a given SCM revision) as described <a href="https://maven.apache.org/guides/mini/guide-reproducible-builds.html">in the reproducible build mini-guide</a>. Apache Maven writes a timestamp into a build property (<code>project.build.outputTimestamp</code>) and any plugin is expected to create reproducible output when this property is present.</p>
+<p>Apache Maven supports reproducible builds (where it is possible to create bit-identical artifacts from a given SCM revision) as described <a href="https://maven.apache.org/guides/mini/guide-reproducible-builds.html">in the reproducible build mini-guide</a>. Apache Maven writes a timestamp into a build property (<code>project.build.outputTimestamp</code>) and any plugin is expected to create reproducible output when this property is present.</p>
 </div>
 <div class="paragraph">
 <p>BasePOM supports reproducible builds in version <strong>59</strong> or higher.</p>
@@ -3347,14 +3404,14 @@ This profile is <strong>experimental</strong> and is known to have problems with
 </div>
 </div>
 <div class="paragraph">
-<p>This uses the commit timestamp of the current commit as timestamp for the reproducible build. BasePOM configures the format of the timestamp to be compatible to the <code>project.build.outputTimestamp</code> property and executes the <code>git-commit-id</code> plugin as the first plugin in the build cycle, therefore ensuring that all other plugins will pick up the setting correctly.</p>
+<p>This uses the commit timestamp of the current commit as the timestamp for the reproducible build. BasePOM configures the format of the timestamp to be compatible to the <code>project.build.outputTimestamp</code> property and executes the <code>git-commit-id</code> plugin as the first plugin in the build cycle, therefore ensuring that all other plugins will pick up the setting correctly.</p>
 </div>
 </div>
 <div class="sect2">
 <h3 id="_using_pom_inheritance_with_the_git_scm_information"><a class="anchor" href="#_using_pom_inheritance_with_the_git_scm_information"></a><a class="link" href="#_using_pom_inheritance_with_the_git_scm_information">10.2. Using POM inheritance with the git SCM information</a></h3>
 <div class="paragraph">
-<p>While the <code>artifact:check-buildplan</code> goal recommends not using POM inheritance for the <code>project.build.outputTimestamp</code> property, it can be used in combination with the <code>git.commit.time</code> value. However, by default, the
-git-commit-id plugin will skip execution for POM project, so the value may not be set correctly. To avoid this, also activate the plugin for POM projects as well. Adding the following properties:</p>
+<p>While the <code>artifact:check-buildplan</code> goal recommends not using POM inheritance for the <code>project.build.outputTimestamp</code> property, it can be used in combination with the <code>git.commit.time</code> value. By default, the
+<code>git-commit-id</code> plugin will skip execution for a POM project, so the value may not be set correctly. To avoid this, activate the plugin for POM projects as well by adding the following properties to the top-most POM:</p>
 </div>
 <div class="listingblock">
 <div class="content">
@@ -3365,7 +3422,7 @@ git-commit-id plugin will skip execution for POM project, so the value may not b
 </div>
 </div>
 <div class="paragraph">
-<p>to the top-most POM makes a multi-module build reproducible (no additional properties in the child POMs are required).</p>
+<p>This makes a multi-module build reproducible (no additional properties in the child POMs are required).</p>
 </div>
 </div>
 </div>
@@ -3388,7 +3445,7 @@ git-commit-id plugin will skip execution for POM project, so the value may not b
 <p>When the respective test plugin executes, they pick up the content of these properties (through the <code>argLine</code> configuration setting). Using a secondary property (and not the <code>argLine</code> property directly as most stack overflow posts would suggest) allows manual configuration on the command line while still preserving the ability to add the coverage agent through the build lifecycle.</p>
 </div>
 <div class="paragraph">
-<p>If the <code>argLine</code> configuration needs to be modified (e.g. in a Policy POM), the <code>@{basepom.coverage.test-args}</code> (for <code>surefire</code>) and <code>@{basepom.coverage.it-args}</code> (for <code>failsafe</code>) <strong>must</strong> be present, otherwise this integration no longer works. Using a <code>@</code> is not a typo but necessary for late evaluation of these properties.</p>
+<p>If the <code>argLine</code> configuration needs to be modified (e.g., in a Policy POM), the <code>@{basepom.coverage.test-args}</code> (for <code>surefire</code>) and <code>@{basepom.coverage.it-args}</code> (for <code>failsafe</code>) <strong>must</strong> be present, otherwise this integration no longer works. Using a <code>@</code> is not a typo but necessary for late evaluation of these properties.</p>
 </div>
 <div class="paragraph">
 <p>Unfortunately, for the <code>invoker</code> plugin, this is not possible. For invoker, a <code>invoker.properties</code> file must be used which should contain the line</p>
@@ -3399,7 +3456,7 @@ git-commit-id plugin will skip execution for POM project, so the value may not b
 </div>
 </div>
 <div class="paragraph">
-<p>to emulate the <code>argLine</code> setting for <code>surefire</code> and <code>failsafe</code>. This property file is also late (at runtime) evaluated.</p>
+<p>This line emulates the <code>argLine</code> setting for <code>surefire</code> and <code>failsafe</code>. This property file is also late (at runtime) evaluated.</p>
 </div>
 </div>
 <div class="sect2">
@@ -3431,7 +3488,7 @@ git-commit-id plugin will skip execution for POM project, so the value may not b
 <tbody>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><code>X-BasePOM-Build-Id</code></p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock">${basepom.build.id}, unique build UUID, created for every build</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><code>${basepom.build.id}</code>, unique build UUID, created for every build</p></td>
 <td class="tableblock halign-center valign-top"><p class="tableblock">main</p></td>
 <td class="tableblock halign-center valign-top"><p class="tableblock">unique build id for each artifact</p></td>
 </tr>
@@ -3502,21 +3559,21 @@ git-commit-id plugin will skip execution for POM project, so the value may not b
 </div>
 </div>
 <div class="sect2">
-<h3 id="_jar_shading"><a class="anchor" href="#_jar_shading"></a><a class="link" href="#_jar_shading">11.3. Jar shading</a></h3>
+<h3 id="_shading_a_jar_artifact"><a class="anchor" href="#_shading_a_jar_artifact"></a><a class="link" href="#_shading_a_jar_artifact">11.3. Shading a jar artifact</a></h3>
 <div class="paragraph">
 <p>The <code>maven-shade-plugin</code> is used to create single artifacts with all dependencies ("fat jars") for a project.</p>
 </div>
 <div class="paragraph">
-<p>BasePOM does not create a dependency reduced POM and all shaded artifacts are attached. Shaded artifacts should <strong>never</strong> be used as dependencies but should be terminal (e.g. an application jar).</p>
+<p>BasePOM does not create a dependency-reduced POM. All shaded artifacts are attached. Shaded artifacts should <strong>never</strong> be used as dependencies but should be terminal (e.g., an application jar).</p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_jar_repacking"><a class="anchor" href="#_jar_repacking"></a><a class="link" href="#_jar_repacking">11.4. Jar repacking</a></h3>
+<h3 id="_repacking_a_jar_artifact"><a class="anchor" href="#_repacking_a_jar_artifact"></a><a class="link" href="#_repacking_a_jar_artifact">11.4. Repacking a jar artifact</a></h3>
 <div class="paragraph">
-<p>The <code>repack-maven-plugin</code> is used to create single artifacts with all dependencies ("fat jars") for a project. This method adds all dependencies "as is" (it does not rewrite the contents of main jar or unpacks dependencies) and produces better outcomes than shading jars.</p>
+<p>The <code>repack-maven-plugin</code> is used to create single artifacts with all dependencies ("fat jars") for a project. Repacking adds all dependencies "as is" and does not change the contents of the main jar or unpacks dependencies. This produces better outcomes than shading jars.</p>
 </div>
 <div class="paragraph">
-<p>Repacked artifacts cannot be used as dependencies as its contents are packaged into different directories.</p>
+<p>Repacked artifacts cannot be used as dependencies as their contents are packaged into different directories.</p>
 </div>
 </div>
 <div class="sect2">
@@ -3527,7 +3584,7 @@ git-commit-id plugin will skip execution for POM project, so the value may not b
 <div class="ulist">
 <ul>
 <li>
-<p>use the Apache Software License without copyright line</p>
+<p>use the Apache Software License without the copyright line</p>
 </li>
 <li>
 <p>map <code>g4</code>, <code>groovy</code> and <code>java</code> files to <code>SLASHSTAR_STYLE</code></p>
@@ -3608,7 +3665,7 @@ git-commit-id plugin will skip execution for POM project, so the value may not b
 <td class="tableblock halign-center valign-top"><p class="tableblock"><code>development</code></p></td>
 <td class="tableblock halign-center valign-top"><p class="tableblock">often</p></td>
 <td class="tableblock halign-center valign-top"><p class="tableblock">foundation</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">The path on the remote repository where the site is deployed</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">The remote repository path where the site is deployed</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">basepom.site.scm.branch</p></td>
@@ -3706,7 +3763,7 @@ git-commit-id plugin will skip execution for POM project, so the value may not b
 <td class="tableblock halign-center valign-top"><p class="tableblock"><code>${basepom.check.fail-javadoc}</code></p></td>
 <td class="tableblock halign-center valign-top"><p class="tableblock">rarely</p></td>
 <td class="tableblock halign-center valign-top"><p class="tableblock">oss</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">If <code>true</code>, fail the site build if the javadoc generation fails.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">If <code>true</code>, fail the site build if the Javadoc generation fails.</p></td>
 </tr>
 </tbody>
 </table>
@@ -3825,7 +3882,7 @@ git-commit-id plugin will skip execution for POM project, so the value may not b
 <div id="footer">
 <div id="footer-text">
 Version 63-SNAPSHOT<br>
-Last updated 05/09/2025 15:21 -0700
+Last updated 05/09/2025 17:08 -0700
 </div>
 </div>
 </body>
