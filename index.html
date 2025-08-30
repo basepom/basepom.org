@@ -532,7 +532,7 @@ table.CodeRay td.code{padding:0 0 0 .75em}
 <h1>BasePOM Users Guide</h1>
 <div class="details">
 <span id="revnumber">version 64-SNAPSHOT,</span>
-<span id="revdate">05/09/2025 17:10 -0700</span>
+<span id="revdate">08/29/2025 21:29 -0700</span>
 </div>
 <div id="toc" class="toc2">
 <div id="toctitle">Table of Contents</div>
@@ -655,6 +655,9 @@ table.CodeRay td.code{padding:0 0 0 .75em}
 <h3 id="_release_documentation"><a class="anchor" href="#_release_documentation"></a><a class="link" href="#_release_documentation">Release documentation</a></h3>
 <div class="ulist">
 <ul>
+<li>
+<p><a href="https://basepom.org/releases/64">Release 64 — 2025-08-29</a></p>
+</li>
 <li>
 <p><a href="https://basepom.org/releases/63">Release 63 — 2025-05-09</a></p>
 </li>
@@ -1672,6 +1675,20 @@ contain a <code>customization</code> column that gives some guidance how common 
 <td class="tableblock halign-center valign-top"><p class="tableblock">often, profile</p></td>
 <td class="tableblock halign-center valign-top"><p class="tableblock">foundation</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">If <code>true</code>, skip all integration tests. The default is the value of the standard Maven <code>skipITs</code> property.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">basepom.it.skip-install</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><code>$\{basepom.it.skip}</code></p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">often, profile</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">foundation</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">If <code>true</code>, skip installation of artifacts for integration tests in the integration test repository. The default is the value of the <code>basepom.it.skip</code> property.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">basepom.it.test-scope</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><code>test</code></p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">often, profile</p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock">foundation</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Sets the maven resolution scope to decide which artifacts to install in the integration test repository. The default is all artifacts in test scope.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">basepom.it.memory</p></td>
@@ -3882,7 +3899,7 @@ the group properties <code>basepom.check.skip|fail-basic</code> and <code>basepo
 <div id="footer">
 <div id="footer-text">
 Version 64-SNAPSHOT<br>
-Last updated 05/09/2025 17:10 -0700
+Last updated 08/29/2025 21:29 -0700
 </div>
 </div>
 </body>
