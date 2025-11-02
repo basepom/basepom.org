@@ -532,7 +532,7 @@ table.CodeRay td.code{padding:0 0 0 .75em}
 <h1>BasePOM Users Guide</h1>
 <div class="details">
 <span id="revnumber">version 66-SNAPSHOT,</span>
-<span id="revdate">10/12/2025 19:41 -0700</span>
+<span id="revdate">11/02/2025 14:50 -0800</span>
 </div>
 <div id="toc" class="toc2">
 <div id="toctitle">Table of Contents</div>
@@ -576,58 +576,59 @@ table.CodeRay td.code{padding:0 0 0 .75em}
 <li><a href="#_setting_plugin_and_dependency_versions">6.5. Setting plugin and dependency versions</a></li>
 </ul>
 </li>
-<li><a href="#_code_quality_and_build_checkers">7. Code quality and Build checkers</a>
+<li><a href="#_url_inheritance">7. URL inheritance</a></li>
+<li><a href="#_code_quality_and_build_checkers">8. Code quality and Build checkers</a>
 <ul class="sectlevel2">
-<li><a href="#_checker_hierarchy">7.1. Checker hierarchy</a></li>
-<li><a href="#_checker_execution_phases">7.2. Checker execution phases</a></li>
-<li><a href="#_checker_customization">7.3. Checker customization</a></li>
+<li><a href="#_checker_hierarchy">8.1. Checker hierarchy</a></li>
+<li><a href="#_checker_execution_phases">8.2. Checker execution phases</a></li>
+<li><a href="#_checker_customization">8.3. Checker customization</a></li>
 </ul>
 </li>
-<li><a href="#_build_cycle">8. Build cycle</a>
+<li><a href="#_build_cycle">9. Build cycle</a>
 <ul class="sectlevel2">
-<li><a href="#_build_profiles">8.1. Build profiles</a>
+<li><a href="#_build_profiles">9.1. Build profiles</a>
 <ul class="sectlevel3">
-<li><a href="#_basepom_invoker_integration_testing_foundation">8.1.1. <code>basepom.invoker-integration-testing</code> (foundation)</a></li>
-<li><a href="#_basepom_executable_foundation">8.1.2. <code>basepom.executable</code> (foundation)</a></li>
-<li><a href="#_basepom_repack_foundation">8.1.3. <code>basepom.repack</code> (foundation)</a></li>
-<li><a href="#_basepom_central_release_oss">8.1.4. <code>basepom.central-release</code> (oss)</a></li>
-<li><a href="#_basepom_deploy_release_oss">8.1.5. <code>basepom.deploy-release</code> (oss)</a></li>
-<li><a href="#_basepom_invoker_reporting_oss">8.1.6. <code>basepom.invoker-reporting</code> (oss)</a></li>
+<li><a href="#_basepom_invoker_integration_testing_foundation">9.1.1. <code>basepom.invoker-integration-testing</code> (foundation)</a></li>
+<li><a href="#_basepom_executable_foundation">9.1.2. <code>basepom.executable</code> (foundation)</a></li>
+<li><a href="#_basepom_repack_foundation">9.1.3. <code>basepom.repack</code> (foundation)</a></li>
+<li><a href="#_basepom_central_release_oss">9.1.4. <code>basepom.central-release</code> (oss)</a></li>
+<li><a href="#_basepom_deploy_release_oss">9.1.5. <code>basepom.deploy-release</code> (oss)</a></li>
+<li><a href="#_basepom_invoker_reporting_oss">9.1.6. <code>basepom.invoker-reporting</code> (oss)</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li><a href="#_creating_a_policypom_to_apply_a_build_policy">9. Creating a PolicyPOM to apply a build policy</a>
+<li><a href="#_creating_a_policypom_to_apply_a_build_policy">10. Creating a PolicyPOM to apply a build policy</a>
 <ul class="sectlevel2">
-<li><a href="#_the_minimal_policy_pom">9.1. The <code>minimal</code> Policy POM</a>
+<li><a href="#_the_minimal_policy_pom">10.1. The <code>minimal</code> Policy POM</a>
 <ul class="sectlevel3">
-<li><a href="#_duplicate_finder_plugin_configuration">9.1.1. <code>duplicate-finder</code> plugin configuration</a></li>
-<li><a href="#_pmd_plugin_configuration">9.1.2. <code>pmd</code> plugin configuration</a></li>
-<li><a href="#_dependency_plugin_configuration">9.1.3. <code>dependency</code> plugin configuration</a></li>
-<li><a href="#_shade_plugin_configuration">9.1.4. <code>shade</code> plugin configuration</a></li>
-<li><a href="#_repack_plugin_configuration">9.1.5. <code>repack</code> plugin configuration</a></li>
-<li><a href="#_surefire_and_failsafe_plugins">9.1.6. <code>surefire</code> and <code>failsafe</code> plugins</a></li>
+<li><a href="#_duplicate_finder_plugin_configuration">10.1.1. <code>duplicate-finder</code> plugin configuration</a></li>
+<li><a href="#_pmd_plugin_configuration">10.1.2. <code>pmd</code> plugin configuration</a></li>
+<li><a href="#_dependency_plugin_configuration">10.1.3. <code>dependency</code> plugin configuration</a></li>
+<li><a href="#_shade_plugin_configuration">10.1.4. <code>shade</code> plugin configuration</a></li>
+<li><a href="#_repack_plugin_configuration">10.1.5. <code>repack</code> plugin configuration</a></li>
+<li><a href="#_surefire_and_failsafe_plugins">10.1.6. <code>surefire</code> and <code>failsafe</code> plugins</a></li>
 </ul>
 </li>
-<li><a href="#_the_oss_policy_pom">9.2. The <code>oss</code> Policy POM</a></li>
+<li><a href="#_the_oss_policy_pom">10.2. The <code>oss</code> Policy POM</a></li>
 </ul>
 </li>
-<li><a href="#_reproducible_builds_with_basepom">10. Reproducible Builds with BasePOM</a>
+<li><a href="#_reproducible_builds_with_basepom">11. Reproducible Builds with BasePOM</a>
 <ul class="sectlevel2">
-<li><a href="#_using_the_git_scm_information_for_reproducible_builds">10.1. Using the git SCM information for reproducible builds</a></li>
-<li><a href="#_using_pom_inheritance_with_the_git_scm_information">10.2. Using POM inheritance with the git SCM information</a></li>
+<li><a href="#_using_the_git_scm_information_for_reproducible_builds">11.1. Using the git SCM information for reproducible builds</a></li>
+<li><a href="#_using_pom_inheritance_with_the_git_scm_information">11.2. Using POM inheritance with the git SCM information</a></li>
 </ul>
 </li>
-<li><a href="#_plugin_configuration_notes">11. Plugin configuration notes</a>
+<li><a href="#_plugin_configuration_notes">12. Plugin configuration notes</a>
 <ul class="sectlevel2">
-<li><a href="#_unit_and_integration_tests_and_code_coverage">11.1. Unit and integration tests and code coverage</a></li>
-<li><a href="#_jar_properties">11.2. Jar properties</a></li>
-<li><a href="#_shading_a_jar_artifact">11.3. Shading a jar artifact</a></li>
-<li><a href="#_repacking_a_jar_artifact">11.4. Repacking a jar artifact</a></li>
-<li><a href="#_using_the_license_plugin">11.5. Using the license plugin</a></li>
+<li><a href="#_unit_and_integration_tests_and_code_coverage">12.1. Unit and integration tests and code coverage</a></li>
+<li><a href="#_jar_properties">12.2. Jar properties</a></li>
+<li><a href="#_shading_a_jar_artifact">12.3. Shading a jar artifact</a></li>
+<li><a href="#_repacking_a_jar_artifact">12.4. Repacking a jar artifact</a></li>
+<li><a href="#_using_the_license_plugin">12.5. Using the license plugin</a></li>
 </ul>
 </li>
-<li><a href="#_maven_site_generation">12. Maven Site generation</a></li>
+<li><a href="#_maven_site_generation">13. Maven Site generation</a></li>
 </ul>
 </div>
 </div>
@@ -1569,7 +1570,7 @@ contain a <code>customization</code> column that gives some guidance how common 
 <td class="tableblock halign-center valign-top"><p class="tableblock"><code>${project.name} ${project.version} API</code></p></td>
 <td class="tableblock halign-center valign-top"><p class="tableblock">sometimes</p></td>
 <td class="tableblock halign-center valign-top"><p class="tableblock">foundation</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Controls the title for the javadoc API documentation.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Controls the title for the Javadoc API documentation.</p></td>
 </tr>
 </tbody>
 </table>
@@ -1698,7 +1699,7 @@ contain a <code>customization</code> column that gives some guidance how common 
 <td class="tableblock halign-center valign-top"><p class="tableblock"><code>test</code></p></td>
 <td class="tableblock halign-center valign-top"><p class="tableblock">often, profile</p></td>
 <td class="tableblock halign-center valign-top"><p class="tableblock">foundation</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Sets the maven resolution scope to decide which artifacts to install in the integration test repository. The default is all artifacts in test scope.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Sets the maven resolution scope to decide which artifacts are installed in the integration test repository. The default is 'all artifacts' in the test scope.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">basepom.it.memory</p></td>
@@ -2112,7 +2113,44 @@ contain a <code>customization</code> column that gives some guidance how common 
 </div>
 </div>
 <div class="sect1">
-<h2 id="_code_quality_and_build_checkers"><a class="anchor" href="#_code_quality_and_build_checkers"></a><a class="link" href="#_code_quality_and_build_checkers">7. Code quality and Build checkers</a></h2>
+<h2 id="_url_inheritance"><a class="anchor" href="#_url_inheritance"></a><a class="link" href="#_url_inheritance">7. URL inheritance</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>The BasePOM project is designed to work with the <code>git</code> SCM repositories. Unlike other SCMs, <code>git</code> has a single URL for the SCM which is valid for all modules within a multi-module build.</p>
+</div>
+<div class="paragraph">
+<p>BasePOM turns off the "url inheritance" scheme in the poms and the <code>&lt;scm&gt;</code> settings to match <code>git</code> behavior. If this is not desired, add the following attributes to a policy pom:</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre class="CodeRay highlight"><code data-lang="xml"><span class="tag">&lt;project</span> <span class="attribute-name">xmlns</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">http://maven.apache.org/POM/4.0.0</span><span class="delimiter">&quot;</span></span>
+         <span class="attribute-name">xmlns:xsi</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">http://www.w3.org/2001/XMLSchema-instance</span><span class="delimiter">&quot;</span></span>
+         <span class="attribute-name">xsi:schemaLocation</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd</span><span class="delimiter">&quot;</span></span>
+         <span class="attribute-name">child.project.url.inherit.append.path</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">true</span><span class="delimiter">&quot;</span></span><span class="tag">&gt;</span>
+    <span class="tag">&lt;modelVersion&gt;</span>4.0.0<span class="tag">&lt;/modelVersion&gt;</span>
+
+    <span class="tag">&lt;parent&gt;</span>
+        <span class="tag">&lt;groupId&gt;</span>org.basepom<span class="tag">&lt;/groupId&gt;</span>
+        <span class="tag">&lt;artifactId&gt;</span>basepom-{flavor}<span class="tag">&lt;/artifactId&gt;</span>
+        <span class="tag">&lt;version&gt;</span>66-SNAPSHOT<span class="tag">&lt;/version&gt;</span>
+    <span class="tag">&lt;/parent&gt;</span>
+
+    <span class="tag">&lt;scm</span> <span class="attribute-name">child.scm.connection.inherit.append.path</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">true</span><span class="delimiter">&quot;</span></span>
+         <span class="attribute-name">child.scm.developerConnection.inherit.append.path</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">true</span><span class="delimiter">&quot;</span></span>
+         <span class="attribute-name">child.scm.url.inherit.append.path</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">true</span><span class="delimiter">&quot;</span></span>
+    <span class="attribute-name">...</span>
+    <span class="error">&lt;</span><span class="error">/</span><span class="attribute-name">scm</span><span class="tag">&gt;</span>
+...
+<span class="tag">&lt;/project&gt;</span></code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>This restores the default behavior. These attributes are documented <a href="https://maven.apache.org/ref/3-LATEST/maven-model-builder/#inheritance-assembly">as part of the Maven Model Builder</a> and supported with all current versions of Maven 3.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_code_quality_and_build_checkers"><a class="anchor" href="#_code_quality_and_build_checkers"></a><a class="link" href="#_code_quality_and_build_checkers">8. Code quality and Build checkers</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>BasePOM brings a set of preconfigured plugins to check the quality of the code base and ensure that the resulting artifacts are valid. The following plugins are supported:</p>
@@ -2279,7 +2317,7 @@ often controlled independently of checker runs, so it is not part of the <code>b
 </table>
 </div>
 <div class="sect2">
-<h3 id="_checker_hierarchy"><a class="anchor" href="#_checker_hierarchy"></a><a class="link" href="#_checker_hierarchy">7.1. Checker hierarchy</a></h3>
+<h3 id="_checker_hierarchy"><a class="anchor" href="#_checker_hierarchy"></a><a class="link" href="#_checker_hierarchy">8.1. Checker hierarchy</a></h3>
 <div class="paragraph">
 <p>The different checkers are grouped together but can also be individually controlled. By default,
 the group properties <code>basepom.check.skip|fail-basic</code> and <code>basepom.check.skip|fail-extended</code> inherit the value of the <code>basepom.check.skip|fail-all</code> properties:</p>
@@ -2339,7 +2377,7 @@ the group properties <code>basepom.check.skip|fail-basic</code> and <code>basepo
 </div>
 </div>
 <div class="sect2">
-<h3 id="_checker_execution_phases"><a class="anchor" href="#_checker_execution_phases"></a><a class="link" href="#_checker_execution_phases">7.2. Checker execution phases</a></h3>
+<h3 id="_checker_execution_phases"><a class="anchor" href="#_checker_execution_phases"></a><a class="link" href="#_checker_execution_phases">8.2. Checker execution phases</a></h3>
 <div class="paragraph">
 <p>While some checkers rely on class files, others only look at source code or configuration. These checkers can be executed before compilation ("early") or after compilation and test execution ("late").</p>
 </div>
@@ -2399,7 +2437,7 @@ the group properties <code>basepom.check.skip|fail-basic</code> and <code>basepo
 </table>
 </div>
 <div class="sect2">
-<h3 id="_checker_customization"><a class="anchor" href="#_checker_customization"></a><a class="link" href="#_checker_customization">7.3. Checker customization</a></h3>
+<h3 id="_checker_customization"><a class="anchor" href="#_checker_customization"></a><a class="link" href="#_checker_customization">8.3. Checker customization</a></h3>
 <div class="paragraph">
 <p>Most checkers are self-contained and need no additional configuration. Others (especially PMD and checkstyle) require extensive policy configuration (see the <a href="#_creating_a_policypom_to_apply_a_build_policy">Creating a PolicyPOM to apply a build policy</a> section).</p>
 </div>
@@ -2497,7 +2535,7 @@ the group properties <code>basepom.check.skip|fail-basic</code> and <code>basepo
 </div>
 </div>
 <div class="sect1">
-<h2 id="_build_cycle"><a class="anchor" href="#_build_cycle"></a><a class="link" href="#_build_cycle">8. Build cycle</a></h2>
+<h2 id="_build_cycle"><a class="anchor" href="#_build_cycle"></a><a class="link" href="#_build_cycle">9. Build cycle</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>BasePOM configures all the Maven plugins as part of the Maven build lifecycle. Being configured is different from execution, though. Plugin execution can be skipped for many reasons; most common is that the plugin configuration has a <code>skip</code> property set.</p>
@@ -2705,12 +2743,12 @@ the group properties <code>basepom.check.skip|fail-basic</code> and <code>basepo
 </tbody>
 </table>
 <div class="sect2">
-<h3 id="_build_profiles"><a class="anchor" href="#_build_profiles"></a><a class="link" href="#_build_profiles">8.1. Build profiles</a></h3>
+<h3 id="_build_profiles"><a class="anchor" href="#_build_profiles"></a><a class="link" href="#_build_profiles">9.1. Build profiles</a></h3>
 <div class="paragraph">
 <p>A BasePOM may contain additional profiles that configure plugins or add goals to the lifecycle.</p>
 </div>
 <div class="sect3">
-<h4 id="_basepom_invoker_integration_testing_foundation"><a class="anchor" href="#_basepom_invoker_integration_testing_foundation"></a><a class="link" href="#_basepom_invoker_integration_testing_foundation">8.1.1. <code>basepom.invoker-integration-testing</code> (foundation)</a></h4>
+<h4 id="_basepom_invoker_integration_testing_foundation"><a class="anchor" href="#_basepom_invoker_integration_testing_foundation"></a><a class="link" href="#_basepom_invoker_integration_testing_foundation">9.1.1. <code>basepom.invoker-integration-testing</code> (foundation)</a></h4>
 <div class="paragraph">
 <p>This profile activates if the build module contains a <code>src/it</code> directory.</p>
 </div>
@@ -2781,7 +2819,7 @@ the group properties <code>basepom.check.skip|fail-basic</code> and <code>basepo
 </table>
 </div>
 <div class="sect3">
-<h4 id="_basepom_executable_foundation"><a class="anchor" href="#_basepom_executable_foundation"></a><a class="link" href="#_basepom_executable_foundation">8.1.2. <code>basepom.executable</code> (foundation)</a></h4>
+<h4 id="_basepom_executable_foundation"><a class="anchor" href="#_basepom_executable_foundation"></a><a class="link" href="#_basepom_executable_foundation">9.1.2. <code>basepom.executable</code> (foundation)</a></h4>
 <div class="paragraph">
 <p>This profile activates if a <code>.build-executable</code> file exists in the current build module. This file only needs to exist, it can be empty.</p>
 </div>
@@ -2838,7 +2876,7 @@ the group properties <code>basepom.check.skip|fail-basic</code> and <code>basepo
 </table>
 </div>
 <div class="sect3">
-<h4 id="_basepom_repack_foundation"><a class="anchor" href="#_basepom_repack_foundation"></a><a class="link" href="#_basepom_repack_foundation">8.1.3. <code>basepom.repack</code> (foundation)</a></h4>
+<h4 id="_basepom_repack_foundation"><a class="anchor" href="#_basepom_repack_foundation"></a><a class="link" href="#_basepom_repack_foundation">9.1.3. <code>basepom.repack</code> (foundation)</a></h4>
 <div class="paragraph">
 <p>This profile activates if a <code>.repack-executable</code> file exists in the current build module. This file only needs to exist, it can be empty.</p>
 </div>
@@ -2895,7 +2933,7 @@ the group properties <code>basepom.check.skip|fail-basic</code> and <code>basepo
 </table>
 </div>
 <div class="sect3">
-<h4 id="_basepom_central_release_oss"><a class="anchor" href="#_basepom_central_release_oss"></a><a class="link" href="#_basepom_central_release_oss">8.1.4. <code>basepom.central-release</code> (oss)</a></h4>
+<h4 id="_basepom_central_release_oss"><a class="anchor" href="#_basepom_central_release_oss"></a><a class="link" href="#_basepom_central_release_oss">9.1.4. <code>basepom.central-release</code> (oss)</a></h4>
 <div class="paragraph">
 <p>This is the release profile for releasing an artifact to the Maven central repository. As the old OSS service is sunset and will be turned off, this is now the default release profile. It is configured as release profile for the <code>release</code> plugin if the <code>oss</code> BasePOM is used. It gets activated when executing the <code>release:perform</code> goal of the <code>release</code> plugin.</p>
 </div>
@@ -2960,7 +2998,7 @@ the group properties <code>basepom.check.skip|fail-basic</code> and <code>basepo
 </table>
 </div>
 <div class="sect3">
-<h4 id="_basepom_deploy_release_oss"><a class="anchor" href="#_basepom_deploy_release_oss"></a><a class="link" href="#_basepom_deploy_release_oss">8.1.5. <code>basepom.deploy-release</code> (oss)</a></h4>
+<h4 id="_basepom_deploy_release_oss"><a class="anchor" href="#_basepom_deploy_release_oss"></a><a class="link" href="#_basepom_deploy_release_oss">9.1.5. <code>basepom.deploy-release</code> (oss)</a></h4>
 <div class="paragraph">
 <p>This profile used to be the default release profile before Basepom 63. It must be activated by replacing <code>basepom.central-release</code> in the <code>basepom.release.profiles</code> property with <code>basepom.deploy-release</code>. This profile uses the OSS service to deploy to Maven Central. The OSS service is end-of-life by June 30th, 2025. This profile may no longer work after that date.</p>
 </div>
@@ -3015,7 +3053,7 @@ the group properties <code>basepom.check.skip|fail-basic</code> and <code>basepo
 </table>
 </div>
 <div class="sect3">
-<h4 id="_basepom_invoker_reporting_oss"><a class="anchor" href="#_basepom_invoker_reporting_oss"></a><a class="link" href="#_basepom_invoker_reporting_oss">8.1.6. <code>basepom.invoker-reporting</code> (oss)</a></h4>
+<h4 id="_basepom_invoker_reporting_oss"><a class="anchor" href="#_basepom_invoker_reporting_oss"></a><a class="link" href="#_basepom_invoker_reporting_oss">9.1.6. <code>basepom.invoker-reporting</code> (oss)</a></h4>
 <div class="paragraph">
 <p>This profile activates if the build module contains a <code>src/it</code> directory.</p>
 </div>
@@ -3063,7 +3101,7 @@ the group properties <code>basepom.check.skip|fail-basic</code> and <code>basepo
 </div>
 </div>
 <div class="sect1">
-<h2 id="_creating_a_policypom_to_apply_a_build_policy"><a class="anchor" href="#_creating_a_policypom_to_apply_a_build_policy"></a><a class="link" href="#_creating_a_policypom_to_apply_a_build_policy">9. Creating a PolicyPOM to apply a build policy</a></h2>
+<h2 id="_creating_a_policypom_to_apply_a_build_policy"><a class="anchor" href="#_creating_a_policypom_to_apply_a_build_policy"></a><a class="link" href="#_creating_a_policypom_to_apply_a_build_policy">10. Creating a PolicyPOM to apply a build policy</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Most organizations create internal policies on how builds should be organized, what rules should be enforced etc. Having such policies codified and enforced by the build system is a massive boost for code quality and reuse.</p>
@@ -3080,7 +3118,7 @@ the group properties <code>basepom.check.skip|fail-basic</code> and <code>basepo
 <div class="ulist">
 <ul>
 <li>
-<p>property settings (e.g., required JDK level, checker settings etc.)</p>
+<p>property settings (e.g., required JDK level, checker settings, etc.)</p>
 </li>
 <li>
 <p>remote repositories for artifacts and artifact deployment</p>
@@ -3100,7 +3138,7 @@ the group properties <code>basepom.check.skip|fail-basic</code> and <code>basepo
 </ul>
 </div>
 <div class="sect2">
-<h3 id="_the_minimal_policy_pom"><a class="anchor" href="#_the_minimal_policy_pom"></a><a class="link" href="#_the_minimal_policy_pom">9.1. The <code>minimal</code> Policy POM</a></h3>
+<h3 id="_the_minimal_policy_pom"><a class="anchor" href="#_the_minimal_policy_pom"></a><a class="link" href="#_the_minimal_policy_pom">10.1. The <code>minimal</code> Policy POM</a></h3>
 <div class="paragraph">
 <p>When using the <code>minimal</code> BasePOM for a project, some policies are applied:</p>
 </div>
@@ -3133,9 +3171,9 @@ the group properties <code>basepom.check.skip|fail-basic</code> and <code>basepo
 <p>The <code>minimal</code> BasePOM uses a <a href="https://github.com/basepom/basepom-policy">policy jar</a> to store the configuration for <code>spotbugs</code> and <code>checkstyle</code>.</p>
 </div>
 <div class="sect3">
-<h4 id="_duplicate_finder_plugin_configuration"><a class="anchor" href="#_duplicate_finder_plugin_configuration"></a><a class="link" href="#_duplicate_finder_plugin_configuration">9.1.1. <code>duplicate-finder</code> plugin configuration</a></h4>
+<h4 id="_duplicate_finder_plugin_configuration"><a class="anchor" href="#_duplicate_finder_plugin_configuration"></a><a class="link" href="#_duplicate_finder_plugin_configuration">10.1.1. <code>duplicate-finder</code> plugin configuration</a></h4>
 <div class="paragraph">
-<p>The <code>duplicate-finder</code> plugin will flag any class that appears multiple times on the class path (in multiple jars). While this is generally desirable, there are some common jars that overlap in a benign way. Almost all of these overlaps are specific to annotation classes.</p>
+<p>The <code>duplicate-finder</code> plugin will flag any class that appears multiple times on the class path (in multiple jars). While this is generally desirable, there are some common jars that contain the same classes. Almost all of these overlaps are specific to annotation classes.</p>
 </div>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
@@ -3145,7 +3183,7 @@ the group properties <code>basepom.check.skip|fail-basic</code> and <code>basepo
 <thead>
 <tr>
 <th class="tableblock halign-left valign-top">package</th>
-<th class="tableblock halign-left valign-top">dependencies (jars that may contain these classes)</th>
+<th class="tableblock halign-left valign-top">related dependencies (jars that may contain these classes)</th>
 </tr>
 </thead>
 <tbody>
@@ -3202,7 +3240,7 @@ the group properties <code>basepom.check.skip|fail-basic</code> and <code>basepo
 </div>
 </div>
 <div class="sect3">
-<h4 id="_pmd_plugin_configuration"><a class="anchor" href="#_pmd_plugin_configuration"></a><a class="link" href="#_pmd_plugin_configuration">9.1.2. <code>pmd</code> plugin configuration</a></h4>
+<h4 id="_pmd_plugin_configuration"><a class="anchor" href="#_pmd_plugin_configuration"></a><a class="link" href="#_pmd_plugin_configuration">10.1.2. <code>pmd</code> plugin configuration</a></h4>
 <div class="paragraph">
 <p>PMD does code analysis and flags common programming errors and antipatterns. This is useful for code that is actually written but less so for code that is auto-generated where the constructs in auto-generated classes cannot be modified unless the code generator itself is changed.</p>
 </div>
@@ -3211,9 +3249,9 @@ the group properties <code>basepom.check.skip|fail-basic</code> and <code>basepo
 </div>
 </div>
 <div class="sect3">
-<h4 id="_dependency_plugin_configuration"><a class="anchor" href="#_dependency_plugin_configuration"></a><a class="link" href="#_dependency_plugin_configuration">9.1.3. <code>dependency</code> plugin configuration</a></h4>
+<h4 id="_dependency_plugin_configuration"><a class="anchor" href="#_dependency_plugin_configuration"></a><a class="link" href="#_dependency_plugin_configuration">10.1.3. <code>dependency</code> plugin configuration</a></h4>
 <div class="paragraph">
-<p>Similar to the <code>duplicate-checker</code>, the <code>dependency</code> plugin checks what elements are on the class path and whether these are used. This process is more difficult for elements that need to be present at compile-time but not at runtime and that are not referenced from the build artifacts.</p>
+<p>Similar to the <code>duplicate-checker</code>, the <code>dependency</code> plugin checks what elements are on the class path and whether these are used. This process is more difficult for elements that need to be present at compile time but not at runtime and that are not referenced from the build artifacts.</p>
 </div>
 <div class="paragraph">
 <p>For the <code>minimal</code> BasePOM, the <code>dependency</code> plugin is configured to:</p>
@@ -3278,7 +3316,7 @@ the group properties <code>basepom.check.skip|fail-basic</code> and <code>basepo
 </table>
 </div>
 <div class="sect3">
-<h4 id="_shade_plugin_configuration"><a class="anchor" href="#_shade_plugin_configuration"></a><a class="link" href="#_shade_plugin_configuration">9.1.4. <code>shade</code> plugin configuration</a></h4>
+<h4 id="_shade_plugin_configuration"><a class="anchor" href="#_shade_plugin_configuration"></a><a class="link" href="#_shade_plugin_configuration">10.1.4. <code>shade</code> plugin configuration</a></h4>
 <div class="paragraph">
 <p>The <code>shade</code> plugin is used to "shade" a build artifact and all its dependencies into a single "fat jar" by rewriting packages and classes.</p>
 </div>
@@ -3300,7 +3338,7 @@ the group properties <code>basepom.check.skip|fail-basic</code> and <code>basepo
 </div>
 </div>
 <div class="sect3">
-<h4 id="_repack_plugin_configuration"><a class="anchor" href="#_repack_plugin_configuration"></a><a class="link" href="#_repack_plugin_configuration">9.1.5. <code>repack</code> plugin configuration</a></h4>
+<h4 id="_repack_plugin_configuration"><a class="anchor" href="#_repack_plugin_configuration"></a><a class="link" href="#_repack_plugin_configuration">10.1.5. <code>repack</code> plugin configuration</a></h4>
 <div class="paragraph">
 <p>The <code>repack</code> plugin can create a "fat jar" artifact from a build artifact by including all its dependencies in a single jar. It does not rewrite any classes or unpack dependencies.</p>
 </div>
@@ -3316,7 +3354,7 @@ the group properties <code>basepom.check.skip|fail-basic</code> and <code>basepo
 </div>
 </div>
 <div class="sect3">
-<h4 id="_surefire_and_failsafe_plugins"><a class="anchor" href="#_surefire_and_failsafe_plugins"></a><a class="link" href="#_surefire_and_failsafe_plugins">9.1.6. <code>surefire</code> and <code>failsafe</code> plugins</a></h4>
+<h4 id="_surefire_and_failsafe_plugins"><a class="anchor" href="#_surefire_and_failsafe_plugins"></a><a class="link" href="#_surefire_and_failsafe_plugins">10.1.6. <code>surefire</code> and <code>failsafe</code> plugins</a></h4>
 <div class="paragraph">
 <p>The <code>minimal</code> BasePOM adds a few system properties for testing.</p>
 </div>
@@ -3359,7 +3397,7 @@ the group properties <code>basepom.check.skip|fail-basic</code> and <code>basepo
 </div>
 </div>
 <div class="sect2">
-<h3 id="_the_oss_policy_pom"><a class="anchor" href="#_the_oss_policy_pom"></a><a class="link" href="#_the_oss_policy_pom">9.2. The <code>oss</code> Policy POM</a></h3>
+<h3 id="_the_oss_policy_pom"><a class="anchor" href="#_the_oss_policy_pom"></a><a class="link" href="#_the_oss_policy_pom">10.2. The <code>oss</code> Policy POM</a></h3>
 <div class="paragraph">
 <p>The <code>oss</code> BasePOM is intended for projects that distribute their artifacts through the Sonatype <a href="https://oss.sonatype.org/">OSS</a> ecosystem to Maven Central. In addition to the <code>minimal</code> policy, it applies the following configuration:</p>
 </div>
@@ -3410,7 +3448,7 @@ the group properties <code>basepom.check.skip|fail-basic</code> and <code>basepo
 </div>
 </div>
 <div class="sect1">
-<h2 id="_reproducible_builds_with_basepom"><a class="anchor" href="#_reproducible_builds_with_basepom"></a><a class="link" href="#_reproducible_builds_with_basepom">10. Reproducible Builds with BasePOM</a></h2>
+<h2 id="_reproducible_builds_with_basepom"><a class="anchor" href="#_reproducible_builds_with_basepom"></a><a class="link" href="#_reproducible_builds_with_basepom">11. Reproducible Builds with BasePOM</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>Apache Maven supports reproducible builds (where it is possible to create bit-identical artifacts from a given SCM revision) as described <a href="https://maven.apache.org/guides/mini/guide-reproducible-builds.html">in the reproducible build mini-guide</a>. Apache Maven writes a timestamp into a build property (<code>project.build.outputTimestamp</code>) and any plugin is expected to create reproducible output when this property is present.</p>
@@ -3419,7 +3457,7 @@ the group properties <code>basepom.check.skip|fail-basic</code> and <code>basepo
 <p>BasePOM supports reproducible builds in version <strong>59</strong> or higher.</p>
 </div>
 <div class="sect2">
-<h3 id="_using_the_git_scm_information_for_reproducible_builds"><a class="anchor" href="#_using_the_git_scm_information_for_reproducible_builds"></a><a class="link" href="#_using_the_git_scm_information_for_reproducible_builds">10.1. Using the git SCM information for reproducible builds</a></h3>
+<h3 id="_using_the_git_scm_information_for_reproducible_builds"><a class="anchor" href="#_using_the_git_scm_information_for_reproducible_builds"></a><a class="link" href="#_using_the_git_scm_information_for_reproducible_builds">11.1. Using the git SCM information for reproducible builds</a></h3>
 <div class="paragraph">
 <p>It is possible to create reproducible builds for any git commit using BasePOM. In every POM in a project, add</p>
 </div>
@@ -3435,7 +3473,7 @@ the group properties <code>basepom.check.skip|fail-basic</code> and <code>basepo
 </div>
 </div>
 <div class="sect2">
-<h3 id="_using_pom_inheritance_with_the_git_scm_information"><a class="anchor" href="#_using_pom_inheritance_with_the_git_scm_information"></a><a class="link" href="#_using_pom_inheritance_with_the_git_scm_information">10.2. Using POM inheritance with the git SCM information</a></h3>
+<h3 id="_using_pom_inheritance_with_the_git_scm_information"><a class="anchor" href="#_using_pom_inheritance_with_the_git_scm_information"></a><a class="link" href="#_using_pom_inheritance_with_the_git_scm_information">11.2. Using POM inheritance with the git SCM information</a></h3>
 <div class="paragraph">
 <p>While the <code>artifact:check-buildplan</code> goal recommends not using POM inheritance for the <code>project.build.outputTimestamp</code> property, it can be used in combination with the <code>git.commit.time</code> value. By default, the
 <code>git-commit-id</code> plugin will skip execution for a POM project, so the value may not be set correctly. To avoid this, activate the plugin for POM projects as well by adding the following properties to the top-most POM:</p>
@@ -3455,10 +3493,10 @@ the group properties <code>basepom.check.skip|fail-basic</code> and <code>basepo
 </div>
 </div>
 <div class="sect1">
-<h2 id="_plugin_configuration_notes"><a class="anchor" href="#_plugin_configuration_notes"></a><a class="link" href="#_plugin_configuration_notes">11. Plugin configuration notes</a></h2>
+<h2 id="_plugin_configuration_notes"><a class="anchor" href="#_plugin_configuration_notes"></a><a class="link" href="#_plugin_configuration_notes">12. Plugin configuration notes</a></h2>
 <div class="sectionbody">
 <div class="sect2">
-<h3 id="_unit_and_integration_tests_and_code_coverage"><a class="anchor" href="#_unit_and_integration_tests_and_code_coverage"></a><a class="link" href="#_unit_and_integration_tests_and_code_coverage">11.1. Unit and integration tests and code coverage</a></h3>
+<h3 id="_unit_and_integration_tests_and_code_coverage"><a class="anchor" href="#_unit_and_integration_tests_and_code_coverage"></a><a class="link" href="#_unit_and_integration_tests_and_code_coverage">12.1. Unit and integration tests and code coverage</a></h3>
 <div class="paragraph">
 <p>The interaction between the <code>surefire</code>, <code>failsafe</code> and <code>invoker</code> plugin and the respective code coverage plugin (jacoco) is through an agent specification that modifies the command line for test invocation.</p>
 </div>
@@ -3487,7 +3525,7 @@ the group properties <code>basepom.check.skip|fail-basic</code> and <code>basepo
 </div>
 </div>
 <div class="sect2">
-<h3 id="_jar_properties"><a class="anchor" href="#_jar_properties"></a><a class="link" href="#_jar_properties">11.2. Jar properties</a></h3>
+<h3 id="_jar_properties"><a class="anchor" href="#_jar_properties"></a><a class="link" href="#_jar_properties">12.2. Jar properties</a></h3>
 <div class="paragraph">
 <p>The <code>maven-jar-plugin</code> is used to create the main and test artifacts.</p>
 </div>
@@ -3586,7 +3624,7 @@ the group properties <code>basepom.check.skip|fail-basic</code> and <code>basepo
 </div>
 </div>
 <div class="sect2">
-<h3 id="_shading_a_jar_artifact"><a class="anchor" href="#_shading_a_jar_artifact"></a><a class="link" href="#_shading_a_jar_artifact">11.3. Shading a jar artifact</a></h3>
+<h3 id="_shading_a_jar_artifact"><a class="anchor" href="#_shading_a_jar_artifact"></a><a class="link" href="#_shading_a_jar_artifact">12.3. Shading a jar artifact</a></h3>
 <div class="paragraph">
 <p>The <code>maven-shade-plugin</code> is used to create single artifacts with all dependencies ("fat jars") for a project.</p>
 </div>
@@ -3595,7 +3633,7 @@ the group properties <code>basepom.check.skip|fail-basic</code> and <code>basepo
 </div>
 </div>
 <div class="sect2">
-<h3 id="_repacking_a_jar_artifact"><a class="anchor" href="#_repacking_a_jar_artifact"></a><a class="link" href="#_repacking_a_jar_artifact">11.4. Repacking a jar artifact</a></h3>
+<h3 id="_repacking_a_jar_artifact"><a class="anchor" href="#_repacking_a_jar_artifact"></a><a class="link" href="#_repacking_a_jar_artifact">12.4. Repacking a jar artifact</a></h3>
 <div class="paragraph">
 <p>The <code>repack-maven-plugin</code> is used to create single artifacts with all dependencies ("fat jars") for a project. Repacking adds all dependencies "as is" and does not change the contents of the main jar or unpacks dependencies. This produces better outcomes than shading jars.</p>
 </div>
@@ -3604,7 +3642,7 @@ the group properties <code>basepom.check.skip|fail-basic</code> and <code>basepo
 </div>
 </div>
 <div class="sect2">
-<h3 id="_using_the_license_plugin"><a class="anchor" href="#_using_the_license_plugin"></a><a class="link" href="#_using_the_license_plugin">11.5. Using the license plugin</a></h3>
+<h3 id="_using_the_license_plugin"><a class="anchor" href="#_using_the_license_plugin"></a><a class="link" href="#_using_the_license_plugin">12.5. Using the license plugin</a></h3>
 <div class="paragraph">
 <p>The <code>oss</code> BasePOM configures the <code>license-maven-plugin</code> for releasing artifacts to Maven Central:</p>
 </div>
@@ -3643,7 +3681,7 @@ the group properties <code>basepom.check.skip|fail-basic</code> and <code>basepo
 </div>
 </div>
 <div class="sect1">
-<h2 id="_maven_site_generation"><a class="anchor" href="#_maven_site_generation"></a><a class="link" href="#_maven_site_generation">12. Maven Site generation</a></h2>
+<h2 id="_maven_site_generation"><a class="anchor" href="#_maven_site_generation"></a><a class="link" href="#_maven_site_generation">13. Maven Site generation</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>The <code>foundation</code> BasePOM provides basic configuration for the Maven autogenerated site which summarizes information about the build lifecycle. The <code>oss</code> BasePOM contains the necessary reporting setup to generate a base site for a project.</p>
@@ -3909,7 +3947,7 @@ the group properties <code>basepom.check.skip|fail-basic</code> and <code>basepo
 <div id="footer">
 <div id="footer-text">
 Version 66-SNAPSHOT<br>
-Last updated 10/12/2025 19:41 -0700
+Last updated 11/02/2025 14:50 -0800
 </div>
 </div>
 </body>
