@@ -531,13 +531,13 @@ table.CodeRay td.code{padding:0 0 0 .75em}
 <div id="header">
 <h1>BasePOM Users Guide</h1>
 <div class="details">
-<span id="revnumber">version 68-SNAPSHOT,</span>
-<span id="revdate">12/18/2025 11:42 -0800</span>
+<span id="revnumber">version 69-SNAPSHOT,</span>
+<span id="revdate">02/10/2026 21:18 -0800</span>
 </div>
 <div id="toc" class="toc2">
 <div id="toctitle">Table of Contents</div>
 <ul class="sectlevel1">
-<li><a href="#_development_documentation_68_snapshot">Development documentation (68-SNAPSHOT)</a>
+<li><a href="#_development_documentation_69_snapshot">Development documentation (69-SNAPSHOT)</a>
 <ul class="sectlevel2">
 <li><a href="#_release_documentation">Release documentation</a></li>
 </ul>
@@ -592,8 +592,7 @@ table.CodeRay td.code{padding:0 0 0 .75em}
 <li><a href="#_basepom_executable_foundation">9.1.2. <code>basepom.executable</code> (foundation)</a></li>
 <li><a href="#_basepom_repack_foundation">9.1.3. <code>basepom.repack</code> (foundation)</a></li>
 <li><a href="#_basepom_central_release_oss">9.1.4. <code>basepom.central-release</code> (oss)</a></li>
-<li><a href="#_basepom_deploy_release_oss">9.1.5. <code>basepom.deploy-release</code> (oss)</a></li>
-<li><a href="#_basepom_invoker_reporting_oss">9.1.6. <code>basepom.invoker-reporting</code> (oss)</a></li>
+<li><a href="#_basepom_invoker_reporting_oss">9.1.5. <code>basepom.invoker-reporting</code> (oss)</a></li>
 </ul>
 </li>
 </ul>
@@ -634,7 +633,7 @@ table.CodeRay td.code{padding:0 0 0 .75em}
 </div>
 <div id="content">
 <div class="sect1">
-<h2 id="_development_documentation_68_snapshot"><a class="anchor" href="#_development_documentation_68_snapshot"></a><a class="link" href="#_development_documentation_68_snapshot">Development documentation (68-SNAPSHOT)</a></h2>
+<h2 id="_development_documentation_69_snapshot"><a class="anchor" href="#_development_documentation_69_snapshot"></a><a class="link" href="#_development_documentation_69_snapshot">Development documentation (69-SNAPSHOT)</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p>This is the documentation for the current development state of the BasePOM project. All information in here reflects the current state of development on the <code>main</code> branch and is subject to change until it has been released as a numbered version.</p>
@@ -657,7 +656,10 @@ table.CodeRay td.code{padding:0 0 0 .75em}
 <div class="ulist">
 <ul>
 <li>
-<p><a href="https://basepom.org/releases/66">Release 67 — 2025-12-18</a></p>
+<p><a href="https://basepom.org/releases/68">Release 68 — 2026-02-10</a></p>
+</li>
+<li>
+<p><a href="https://basepom.org/releases/67">Release 67 — 2025-12-18</a></p>
 </li>
 <li>
 <p><a href="https://basepom.org/releases/66">Release 66 — 2025-11-02</a></p>
@@ -914,7 +916,7 @@ table.CodeRay td.code{padding:0 0 0 .75em}
 <p>Java 17 is the minimal version for building. It is highly recommended to use the latest Java LTS version (Java 21) to execute the build process. Each of those Java versions can build project artifacts that are compatible with JDK version 7 or later.</p>
 </li>
 <li>
-<p>Apache Maven 3.9.0 is the minimal version for building. It is recommended to use the latest Apache Maven 3.x.x. BasePOM will stay compatible with the 3.6.3 version of Maven as long as this constraint does not stop innovating.</p>
+<p>Apache Maven 3.9.0 is the minimal version for building. It is recommended to use the latest Apache Maven 3.x.x.</p>
 </li>
 </ul>
 </div>
@@ -1021,7 +1023,7 @@ Apache Maven 4 has reached the RC stage, and there might be a release soon. Base
     <span class="tag">&lt;parent&gt;</span>
         <span class="tag">&lt;groupId&gt;</span>org.basepom<span class="tag">&lt;/groupId&gt;</span>
         <span class="tag">&lt;artifactId&gt;</span>basepom-foundation<span class="tag">&lt;/artifactId&gt;</span>
-        <span class="tag">&lt;version&gt;</span>68-SNAPSHOT<span class="tag">&lt;/version&gt;</span>
+        <span class="tag">&lt;version&gt;</span>69-SNAPSHOT<span class="tag">&lt;/version&gt;</span>
     <span class="tag">&lt;/parent&gt;</span>
 ...
 <span class="tag">&lt;/project&gt;</span></code></pre>
@@ -1045,7 +1047,7 @@ Apache Maven 4 has reached the RC stage, and there might be a release soon. Base
     <span class="tag">&lt;parent&gt;</span>
         <span class="tag">&lt;groupId&gt;</span>org.basepom<span class="tag">&lt;/groupId&gt;</span>
         <span class="tag">&lt;artifactId&gt;</span>basepom-minimal<span class="tag">&lt;/artifactId&gt;</span>
-        <span class="tag">&lt;version&gt;</span>68-SNAPSHOT<span class="tag">&lt;/version&gt;</span>
+        <span class="tag">&lt;version&gt;</span>69-SNAPSHOT<span class="tag">&lt;/version&gt;</span>
     <span class="tag">&lt;/parent&gt;</span>
 ...
 <span class="tag">&lt;/project&gt;</span></code></pre>
@@ -1069,7 +1071,7 @@ Apache Maven 4 has reached the RC stage, and there might be a release soon. Base
     <span class="tag">&lt;parent&gt;</span>
         <span class="tag">&lt;groupId&gt;</span>org.basepom<span class="tag">&lt;/groupId&gt;</span>
         <span class="tag">&lt;artifactId&gt;</span>basepom-oss<span class="tag">&lt;/artifactId&gt;</span>
-        <span class="tag">&lt;version&gt;</span>68-SNAPSHOT<span class="tag">&lt;/version&gt;</span>
+        <span class="tag">&lt;version&gt;</span>69-SNAPSHOT<span class="tag">&lt;/version&gt;</span>
     <span class="tag">&lt;/parent&gt;</span>
 ...
 <span class="tag">&lt;/project&gt;</span></code></pre>
@@ -1298,7 +1300,7 @@ contain a <code>customization</code> column that gives some guidance how common 
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">basepom.maven.version</p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock"><code>3.6.3</code></p></td>
+<td class="tableblock halign-center valign-top"><p class="tableblock"><code>3.9.0</code></p></td>
 <td class="tableblock halign-center valign-top"><p class="tableblock">sometimes</p></td>
 <td class="tableblock halign-center valign-top"><p class="tableblock">foundation</p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock">The minimum required version for Apache Maven.</p></td>
@@ -1459,14 +1461,14 @@ contain a <code>customization</code> column that gives some guidance how common 
 <td class="tableblock halign-center valign-top"><p class="tableblock"><code>${basepom.central-publishing.repo-id}</code></p></td>
 <td class="tableblock halign-center valign-top"><p class="tableblock">sometimes, policy</p></td>
 <td class="tableblock halign-center valign-top"><p class="tableblock">oss</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Defines the snapshot repository id for deployments. Defaults to <code>central</code>. When using the <code>basepom.deploy-release</code> profile, this is set to <code>sonatype-nexus-staging</code>.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Defines the snapshot repository id for deployments. Defaults to <code>central</code>.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">basepom.deploy.snapshot.url</p></td>
 <td class="tableblock halign-center valign-top"><p class="tableblock"><code><a href="https://central.sonatype.com/repository/maven-snapshots/" class="bare">https://central.sonatype.com/repository/maven-snapshots/</a></code></p></td>
 <td class="tableblock halign-center valign-top"><p class="tableblock">sometimes, policy</p></td>
 <td class="tableblock halign-center valign-top"><p class="tableblock">oss</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Defines the snapshot repository URL for deployments. When using the <code>basepom.deploy-release</code> profile, this is set to <code><a href="https://oss.sonatype.org/service/local/staging/deploy/maven2/" class="bare">https://oss.sonatype.org/service/local/staging/deploy/maven2/</a></code></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Defines the snapshot repository URL for deployments.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">basepom.deploy.skip</p></td>
@@ -1487,7 +1489,7 @@ contain a <code>customization</code> column that gives some guidance how common 
 <td class="tableblock halign-center valign-top"><p class="tableblock"><code>basepom.central-release</code></p></td>
 <td class="tableblock halign-center valign-top"><p class="tableblock">rarely</p></td>
 <td class="tableblock halign-center valign-top"><p class="tableblock">oss</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">Sets the name of one or more release profiles. Multiple release profiles must be comma-separated. By default, the <code>basepom.central-release</code> profile is used, which uploads to Maven Central using the Sonatype Central Publishing plugin. Alternatively, the <code>basepom.deployt-release</code> profile can be used which uses the Apache deploy plugin and the OSS service. The OSS service has been declared end-of-life by June 30th, 2025 and may no longer be supported after that date.</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Sets the name of one or more release profiles. Multiple release profiles must be comma-separated. By default, the <code>basepom.central-release</code> profile is used, which uploads to Maven Central using the Sonatype Central Publishing plugin.</p></td>
 </tr>
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock">basepom.release.push-changes</p></td>
@@ -2138,7 +2140,7 @@ contain a <code>customization</code> column that gives some guidance how common 
     <span class="tag">&lt;parent&gt;</span>
         <span class="tag">&lt;groupId&gt;</span>org.basepom<span class="tag">&lt;/groupId&gt;</span>
         <span class="tag">&lt;artifactId&gt;</span>basepom-{flavor}<span class="tag">&lt;/artifactId&gt;</span>
-        <span class="tag">&lt;version&gt;</span>68-SNAPSHOT<span class="tag">&lt;/version&gt;</span>
+        <span class="tag">&lt;version&gt;</span>69-SNAPSHOT<span class="tag">&lt;/version&gt;</span>
     <span class="tag">&lt;/parent&gt;</span>
 
     <span class="tag">&lt;scm</span> <span class="attribute-name">child.scm.connection.inherit.append.path</span>=<span class="string"><span class="delimiter">&quot;</span><span class="content">true</span><span class="delimiter">&quot;</span></span>
@@ -3004,62 +3006,7 @@ the group properties <code>basepom.check.skip|fail-basic</code> and <code>basepo
 </table>
 </div>
 <div class="sect3">
-<h4 id="_basepom_deploy_release_oss"><a class="anchor" href="#_basepom_deploy_release_oss"></a><a class="link" href="#_basepom_deploy_release_oss">9.1.5. <code>basepom.deploy-release</code> (oss)</a></h4>
-<div class="paragraph">
-<p>This profile used to be the default release profile before Basepom 63. It must be activated by replacing <code>basepom.central-release</code> in the <code>basepom.release.profiles</code> property with <code>basepom.deploy-release</code>. This profile uses the OSS service to deploy to Maven Central. The OSS service is end-of-life by June 30th, 2025. This profile may no longer work after that date.</p>
-</div>
-<div class="paragraph">
-<p>The profile is configured as release profile for the <code>release</code> plugin if the <code>oss</code> BasePOM is used. It gets activated when executing the <code>release:perform</code> goal of the <code>release</code> plugin.</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>skip unit tests (all tests have already passed as part of the release process)</p>
-</li>
-<li>
-<p>skip all checkers that are following the <code>basepom.check.skip-all</code> setting (they have already been executed as part of the release process)</p>
-</li>
-<li>
-<p>always create a <code>javadoc</code> artifact</p>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<p>This profile uses the <code>&lt;distributionManagement&gt;</code> section of a project POM. By default, the snapshot repository is <code>sonatype-nexus-snapshots</code> (defined by the <code>basepom.deploy.snapshot.repo-id</code> property) and <code>sonatype-nexus-staging</code> as defined by the OSS upload rules. The local <code>settings.xml</code> file must contain credentials for these ids to authenticate to the repositories for artifact upload.</p>
-</div>
-<div class="paragraph">
-<p>This profile adds the following goals to the lifecycle:</p>
-</div>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 20%;">
-<col style="width: 10%;">
-<col style="width: 10%;">
-<col style="width: 10%;">
-<col style="width: 50%;">
-</colgroup>
-<thead>
-<tr>
-<th class="tableblock halign-left valign-top">Plugin</th>
-<th class="tableblock halign-center valign-top">Phase</th>
-<th class="tableblock halign-center valign-top">execution id</th>
-<th class="tableblock halign-center valign-top">goal(s)</th>
-<th class="tableblock halign-left valign-top">function</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><code>maven-gpg-plugin</code></p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock">verify</p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock">basepom.release.default</p></td>
-<td class="tableblock halign-center valign-top"><p class="tableblock">sign</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">creates the GPG signature for releasing to OSS</p></td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="sect3">
-<h4 id="_basepom_invoker_reporting_oss"><a class="anchor" href="#_basepom_invoker_reporting_oss"></a><a class="link" href="#_basepom_invoker_reporting_oss">9.1.6. <code>basepom.invoker-reporting</code> (oss)</a></h4>
+<h4 id="_basepom_invoker_reporting_oss"><a class="anchor" href="#_basepom_invoker_reporting_oss"></a><a class="link" href="#_basepom_invoker_reporting_oss">9.1.5. <code>basepom.invoker-reporting</code> (oss)</a></h4>
 <div class="paragraph">
 <p>This profile activates if the build module contains a <code>src/it</code> directory.</p>
 </div>
@@ -3413,15 +3360,10 @@ the group properties <code>basepom.check.skip|fail-basic</code> and <code>basepo
 <p>The <code>license</code> checker is added to the <code>extended</code> set of Build checkers.</p>
 </li>
 <li>
-<p>Configures the OSS repositories for snapshot and release distribution. This differs based on the release profile. See below for a description of the available repositories.</p>
-</li>
-<li>
-<p>Sets the <code>basepom.deploy-release</code> profile as release profile for the <code>maven-release-plugin</code>, which uses the <a href="https://maven.apache.org/plugins/maven-deploy-plugin/">Apache deploy plugin</a> to upload the project.</p>
+<p>Configures the OSS repositories for snapshot and release distribution. This differs based on the release profile. See below for a description of the available repositories.
+The <code>oss</code> BasePOM also adds the following goals to the lifecycle:</p>
 </li>
 </ul>
-</div>
-<div class="paragraph">
-<p>The <code>oss</code> BasePOM also adds the following goals to the lifecycle:</p>
 </div>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
@@ -3952,8 +3894,8 @@ the group properties <code>basepom.check.skip|fail-basic</code> and <code>basepo
 </div>
 <div id="footer">
 <div id="footer-text">
-Version 68-SNAPSHOT<br>
-Last updated 12/18/2025 11:42 -0800
+Version 69-SNAPSHOT<br>
+Last updated 02/10/2026 21:18 -0800
 </div>
 </div>
 </body>
